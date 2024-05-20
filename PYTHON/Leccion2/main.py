@@ -1,16 +1,23 @@
-# This is a sample Python script.
+'''
+# Sentencia if/else
+condicion = False
+if condicion == True:
+    print("Condición Verdadera")
+elif condicion == False:
+    print("Condición Falsa")
+else:
+    print("Condición sin especificar")
+'''
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#Ejercicio: Convercion de número a texto
+num = int(input("Digite un número en el rango del 1 al 3: "))
+numTexto = ""
+if num == 1:
+    numTexto = "Número UNO"
+elif num == 2:
+    numTexto = "Número DOS"
+elif num == 3:
+    numTexto = "Número TRES"
+else:
+    numTexto = "Número fuera del rango"
+print(f'El número ingresado es: {num} - {numTexto}')

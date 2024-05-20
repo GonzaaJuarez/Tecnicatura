@@ -5,46 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="787a7533-8a81-41f9-a80e-999406db2764" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/build/classes/HolaMundo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/build/classes/detallesLibro.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/src/HolaMundo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVA/Leccion1/HolaMundo/src/detallesLibro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVASCRIPT/Leccion01/01-01-holamundo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVASCRIPT/Leccion01/HolaMundo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../JAVASCRIPT/Leccion01/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PRESENCIALFRAN/PresencialFran/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PRESENCIALFRAN/PresencialFran/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PRESENCIALFRAN/PresencialFran/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PRESENCIALFRAN/PresencialFran/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PRESENCIALFRAN/PresencialFran/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PRESENCIALFRAN/PresencialFran/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PRESENCIALFRAN/PresencialFran/src/EjercicioGrados.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PRESENCIALFRAN/PresencialFran/src/EjercicioIMC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HolaMundo/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HolaMundo/.idea/HolaMundo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HolaMundo/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HolaMundo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HolaMundo/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../HolaMundo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Leccion2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Leccion2/.idea/Leccion2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Leccion2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Leccion2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Leccion2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Leccion2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Leccion2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,21 +30,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Ejercicio1y2.executor": "Run",
-    "Python.Ejercicio1y2Clase4.executor": "Run",
-    "Python.EjerciciosClase3 (1).executor": "Run",
-    "Python.EjerciciosClase5 (1).executor": "Run",
-    "Python.EjerciciosClase5.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.rectangulo.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/PORTATIL/TECNICATURA/PYTHON/HolaMundo"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Ejercicio1y2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ejercicio1y2Clase4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.EjerciciosClase3 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.EjerciciosClase5 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.EjerciciosClase5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rectangulo.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PORTATIL/TECNICATURA/PYTHON/HolaMundo&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\PORTATIL\TECNICATURA\PYTHON" />
@@ -181,28 +142,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="Leccion1" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Leccion1" />
       <option name="ENV_FILES" value="" />
@@ -245,86 +184,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="Leccion1" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Docutils task">
-      <module name="Leccion1" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Sphinx task">
-      <module name="Leccion1" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="Leccion1" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="Leccion1" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>
