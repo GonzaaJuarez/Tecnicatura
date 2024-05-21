@@ -1,0 +1,38 @@
+Sintaxis similares entere java y javascript
+Operadores simplificados
++=
+-=
+*=
+/=
+
+Operadores Aritmeticos
++
+-
+*
+/
+
+Operadores de Asignación
+=
+
+Operadores de COmparación
+==
+
+Documentar
+// -> comentario de una linea
+/* */ -> comentario de varias lineas
+
+Secuencias de escape
+\' -> Muestra comilla simple
+\" -> Muestra comilla doble
+\\ -> para mostrar un BackSlash
+\n -> Salto de linea
+\r -> Retorno
+\t -> Tabulación
+\b -> Retroceso
+\f -> Salto de página
+
+Operador de aumento y Decremento
+++
+--
+
+
