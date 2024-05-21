@@ -98,7 +98,7 @@ public class HolaMundo {
         System.out.println("Valor minimo del long: " + Long.MIN_VALUE);//-9223372036854775808
         System.out.println("Valor maximo del long: " + Long.MAX_VALUE);//9223372036854775807
         */
-        
+        /*
         //Numeros Reales o con decimal:
         float numFloat = 3.4028235E38F;
         //colocar la F mayuscula para aclarar que es float
@@ -111,6 +111,80 @@ public class HolaMundo {
         System.out.println("numDouble = " + numDouble);
         System.out.println("Valor minimo del double: " + Double.MIN_VALUE);//4.9E-324
         System.out.println("Valor maximo del double: " + Double.MAX_VALUE);//1.7976931348623157E308
+        */
+        /*
+        // Inferencia de tipos var y tipos primitivos
+        var numEntero = 20;
+        System.out.println("numEntero = " + numEntero);
+        var numFloat = 10.3F; //con el punto se convierte en double, colocamos F para que sea float
+        System.out.println("numFloat = " + numFloat);
+        var numDouble = 3.5;
+        System.out.println("numDouble = " + numDouble);
+        */
+        /*
+        //Primitivos CHAR
+        char miVariableChar = 'a';
+        System.out.println("miVariableChar = " + miVariableChar);
+        char varCaracater = '\u00AE'; // indicamos a Java con el codigo unicode
+        System.out.println("varCaracater = " + varCaracater);
+        char varCharacterDecimal = 174; // valor decimal del unicode
+        System.out.println("varCharacterDecimal = " + varCharacterDecimal);
+        char varCharacterSimbolo = '®'; //con el caracter (copiar y pegar)
+        System.out.println("varCharacterSimbolo = " + varCharacterSimbolo);
+        
+        var varCaracater2 = '\u00AE'; // indicamos a Java con el codigo unicode
+        System.out.println("varCaracater2 = " + varCaracater2);
+        var varCharacterDecimal2 = (char)174; // lo toma como entero, por eso especificar tipo char
+        System.out.println("varCharacterDecimal2 = " + varCharacterDecimal2);
+        var varCharacterSimbolo2 = '®'; //con el caracter (copiar y pegar)
+        System.out.println("varCharacterSimbolo2 = " + varCharacterSimbolo2);
+        
+        int varEnteroChar = '®'; // muestra el valor decimal asociado al signo
+        System.out.println("varEnteroChar = " + varEnteroChar);
+        int caracterChar = 'b';
+        System.out.println("caracterChar = " + caracterChar);
+        */
+        /*
+        //Tipos primitivos Booleanos
+        boolean varBool = true; // tambien se puede usar var
+        System.out.println("varBool = " + varBool);
+        
+        if(varBool){
+            System.out.println("La bandera es VERDE");
+        }
+        else{
+            System.out.println("La bandera es ROJA");
+        }
+        // Algoritmo: ¡Es mayor de edad?
+        var edad = 23;
+        if(edad >= 18){
+            System.out.println("Eres mayor de edad.");
+        }
+        else{
+            System.out.println("NO eres mayor de edad.");
+        }
+        */
+        
+        //Converciones de tipos primitivos
+        var edad = Integer.parseInt("23"); //de string a int
+        System.out.println("edad = " + (edad + 2)); //puedo sumar, porque es un int
+        var valorPi = Double.parseDouble("3.1416"); //de string a double
+        System.out.println("valorPi = " + valorPi);
+        
+        // pedir un valor
+        var entrada = new Scanner(System.in);
+        System.out.println("Digite su edad: ");
+        edad = Integer.parseInt(entrada.nextLine());
+        System.out.println("edad = " + edad);
+        
+        var edadTexto = String.valueOf(23);
+        System.out.println("edadTexto = " + edadTexto);
+        var fraseChar = "GonzaloJuarez".charAt(3); //muestra el caracter que ocupa el lugar que se indique
+        System.out.println("fraseChar = " + fraseChar);
+        
+        System.out.println("Digite un caracter: ");
+        fraseChar = entrada.nextLine().charAt(0);
+        System.out.println("fraseChar = " + fraseChar);
         
     }
 
