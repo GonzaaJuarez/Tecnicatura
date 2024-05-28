@@ -55,3 +55,7 @@ Operadores Racionales (boolean)
 >=
 <
 <=
+
+Operadores Lógicos
+And -> && Doble aspersen
+OR -> 
