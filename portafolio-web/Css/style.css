@@ -1,0 +1,92 @@
+/* Comentarios CSS*/
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+.h1 {
+    margin: 1;
+}
+.navigation {
+    list-style: none;
+    padding: 0;
+    
+}
+
+.navigation li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.navigation li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navigation li a:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    padding: 20px;
+    margin: 20px 0;
+}
+.container-sobremi{
+    color: black;
+}
+.container-experiencia{
+    color: black;
+}
+
+/* Responsividad */
+/* Celular (Pantallas pequeñas, hasta 767px) */
+@media (max-width: 767px) {
+    .titulo {
+        justify-content: center;
+    }
+    .navigation {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .container-sobremi {
+        width: 100%;
+        padding: 1;
+        margin-top: 1rem;
+        line-height: 2.5rem;
+        font-size: small;
+    }
+}
+
+/* Tableta (Pantallas medianas, entre 768px y 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .titulo {
+        justify-content: center;
+    }
+    .navigation {
+        gap: 2rem;
+        justify-content: center;
+    }
+}
+
+/* Escritorio (Pantallas anchas, 1024px y superiores) */
+@media (min-width: 1024px) {
+    .titulo {
+        justify-content: flex-start;
+    }
+    .navigation {
+        gap: 3rem;
+        justify-content: flex-end;
+        margin: 0 3rem;
+    }
+}
