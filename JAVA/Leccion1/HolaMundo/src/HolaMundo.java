@@ -71,7 +71,7 @@ public class HolaMundo {
         var titulo2 = entrada.nextLine();
         System.out.println("Resultado: " + titulo2 + " " + usuario2);
          */
-        /*
+ /*
         //Numeros enteros:
         byte numEnteroByte = 127;
         System.out.println("numEnteroByte = " + numEnteroByte);
@@ -97,8 +97,8 @@ public class HolaMundo {
         System.out.println("numEnteroLong = " + numEnteroLong);
         System.out.println("Valor minimo del long: " + Long.MIN_VALUE);//-9223372036854775808
         System.out.println("Valor maximo del long: " + Long.MAX_VALUE);//9223372036854775807
-        */
-        /*
+         */
+ /*
         //Numeros Reales o con decimal:
         float numFloat = 3.4028235E38F;
         //colocar la F mayuscula para aclarar que es float
@@ -111,8 +111,8 @@ public class HolaMundo {
         System.out.println("numDouble = " + numDouble);
         System.out.println("Valor minimo del double: " + Double.MIN_VALUE);//4.9E-324
         System.out.println("Valor maximo del double: " + Double.MAX_VALUE);//1.7976931348623157E308
-        */
-        /*
+         */
+ /*
         // Inferencia de tipos var y tipos primitivos
         var numEntero = 20;
         System.out.println("numEntero = " + numEntero);
@@ -120,8 +120,8 @@ public class HolaMundo {
         System.out.println("numFloat = " + numFloat);
         var numDouble = 3.5;
         System.out.println("numDouble = " + numDouble);
-        */
-        /*
+         */
+ /*
         //Primitivos CHAR
         char miVariableChar = 'a';
         System.out.println("miVariableChar = " + miVariableChar);
@@ -143,8 +143,8 @@ public class HolaMundo {
         System.out.println("varEnteroChar = " + varEnteroChar);
         int caracterChar = 'b';
         System.out.println("caracterChar = " + caracterChar);
-        */
-        /*
+         */
+ /*
         //Tipos primitivos Booleanos
         boolean varBool = true; // tambien se puede usar var
         System.out.println("varBool = " + varBool);
@@ -163,8 +163,8 @@ public class HolaMundo {
         else{
             System.out.println("NO eres mayor de edad.");
         }
-        */
-        
+         */
+ /*
         //Converciones de tipos primitivos
         var edad = Integer.parseInt("23"); //de string a int
         System.out.println("edad = " + (edad + 2)); //puedo sumar, porque es un int
@@ -185,6 +185,165 @@ public class HolaMundo {
         System.out.println("Digite un caracter: ");
         fraseChar = entrada.nextLine().charAt(0);
         System.out.println("fraseChar = " + fraseChar);
+         */
+ /*
+        int num1 = 5, num2 = 4;
+        var solucion = num1 + num2;
+        System.out.println("solucion de la suma = " + solucion);
+        solucion = num1 - num2;
+        System.out.println("solucion de la resta = " + solucion);
+        solucion = num1 * num2;
+        System.out.println("solucion de la multiplicación = " + solucion);
+        solucion = num1 / num2;
+        System.out.println("solucion de la división = " + solucion);
+        solucion = num1 % num2;
+        System.out.println("solucion del modulo= " + solucion);
+        var solucion2 = 3.4 / num2;
+        System.out.println("solucion de la división = " + solucion2);
+        
+        //Ejercicio Numeros pares
+        if (num1 % 2 == 0){
+            System.out.println("El número es PAR");
+        }        
+        else{
+            System.out.println("El número es IMPAR");
+        }
+         */
+ /*
+        int varNum1 = 5, varNum2 = 4;
+        int varNum3 = varNum1 + 6 - varNum2; //una operación
+        System.out.println("varNum3 = " + varNum3);
+        
+        varNum1 += 1;
+        System.out.println("varNum1 +1 = " + varNum1);
+        varNum1 -= 1;
+        System.out.println("varNum1 -1 = " + varNum1);
+        varNum1 *= 2;
+        System.out.println("varNum1 *2 = " + varNum1);
+        varNum1 /= 2;
+        System.out.println("varNum1 /2 = " + varNum1);
+        varNum1 %= 2;
+        System.out.println("varNum1 %2 = " + varNum1);
+         */
+ /*
+        //Operadores UNITARIOS
+        //Cambio de signo
+        var varA = 7;
+        var varB = -varA;
+        System.out.println("varA = " + varA);
+        System.out.println("varB = " + varB);
+        //Negación para boolean
+        var varC = true;
+        var varD = !varC;
+        System.out.println("varC = " + varC);
+        System.out.println("varD = " + varD);
+        //Incremento
+        //Pre-Incremento
+        var varE = 9;
+        var varF = ++varE;
+        System.out.println("varE = " + varE); // al escribir el ++varE ya queda incrementada
+        System.out.println("varF = " + varF);
+        //Post-Incremento
+        var varG = 3;
+        var varH = varG++; //varG pasa a valer 4 y varH vale 3
+        System.out.println("varG = " + varG);
+        System.out.println("varH = " + varH);
+        //Decremento ocurre lo mismo
+        //Pre-Decremento
+        var varI = 5;
+        var varJ = --varI;
+        System.out.println("varI = " + varI);
+        System.out.println("varJ = " + varJ);
+        //Post-Decremento
+        var varK = 6;
+        var varL = varK--;
+        System.out.println("varK = " + varK);
+        System.out.println("varL = " + varL);
+         */
+ /*
+        //Operadores de IGUALDAD y RELACIONALES
+        var aNum = 5;
+        var bNum = 4;
+        var cNum = (aNum == bNum); //igualdad
+        System.out.println("cNum = " + cNum);
+        var dNum = (aNum != bNum); // diferencia
+        System.out.println("dNum = " + dNum);
+        
+        // para cadenas:
+        var cadenaA = "Hello";
+        var cadenaB = "bye bye";
+        var cVar = cadenaA == cadenaB; //no compara contenido de las cadenas
+        System.out.println("cVar = " + cVar);
+        
+        var fVar = cadenaA.equals(cadenaB); // compara el contenido de las cadenas
+        System.out.println("fVar = " + fVar); 
+        
+        var gVar = aNum > bNum; 
+        // > mayor >= mayor igual < menor <= menor igual == igual !=desigual
+        System.out.println("gVar = " + gVar);
+         */
+ /*
+        // Ejercicio PAR o IMPAR
+        if (aNum %2 == 0){
+            System.out.println("El número es PAR");
+        }
+        else{
+            System.out.println("El número es IMPAR");
+        }
+        // Ejercicio MAYOR DE EDAD
+        var edad = 23;
+        if(edad >= 18){
+            System.out.println("Es MAYOR de edad");
+        }
+        else{
+            System.out.println("Es MENOR de edad");
+        }
+         */
+        /*
+        //Operadores CONDICIONALES
+        // AND &&
+        var valorA = 7;
+        var valorMin = 0;
+        var valorMax = 10;
+        var respuesta = (valorA >= valorMin && valorA <= valorMax);
+        if (respuesta) {
+            System.out.println("Se encuentra dentro del rango");
+        } else {
+            System.out.println("NO se encuentra dentro del rango");
+        }
+        // OR ||
+        var vacaciones = true;
+        var diaLibre = false;
+        if (vacaciones || diaLibre) {
+            System.out.println("Puede asistir al juego");
+        } else {
+            System.out.println("NO puede asistir al juego");
+        }
+        */
+        /*
+        //Operadores Ternarios
+        //se usa con expreciones sencillas
+        var resultadoT = (5 > 4) ? "Verdadero" : "Falso";
+        System.out.println("resultadoT = " + resultadoT);
+        var numeroT = 7;
+        resultadoT = (numeroT % 2 == 0) ? "Es PAR" : "Es IMPAR";
+        System.out.println("resultadoT = " + resultadoT);
+        */
+        
+        var x = 5;
+        var y = 10;
+        var z = ++x +y--;
+        System.out.println("x = " + x); // 06 
+        System.out.println("y = " + y); // 09
+        System.out.println("z = " + z); // 16
+        
+        var solucionAritmetrica = 4 + 5 * 6 / 3; // orden * / + 14
+        System.out.println("solucionAritmetrica = " + solucionAritmetrica);
+        
+        solucionAritmetrica = (4 + 5) * 6 / 3; // orden (+) * / 18
+        System.out.println("solucionAritmetrica = " + solucionAritmetrica);
+        
+        
         
     }
 
