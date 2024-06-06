@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-// Ejercicio: El mayor de dos números (Operador ternario)
+// Ejercicio 5: Hacer un programa que calcule e imprima la suma de tres calificaciones
 
 public class EjercicioNumMayor {
 

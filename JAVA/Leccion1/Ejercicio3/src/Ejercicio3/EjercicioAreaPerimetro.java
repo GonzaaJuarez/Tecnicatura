@@ -1,3 +1,5 @@
+package Ejercicio3;
+
 
 import java.util.Scanner;
 
