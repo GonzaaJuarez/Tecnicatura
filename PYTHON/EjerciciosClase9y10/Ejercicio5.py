@@ -1,3 +1,4 @@
+
 '''
 Ejercicio 5:
    Calcular el factorial de un número mayor o igual a cero
