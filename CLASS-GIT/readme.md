@@ -948,3 +948,157 @@ Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requ
 
 ---
 ---
+
+## CLASE 11 MIÉRCOLES 12 DE JUNIO DEL 2024 - Portafolio 5
+
+#### Resolución de conflictos al hacer merge parte 11
+
+**Sección lectura**
+
+Git nunca borra nada, a menos que nosotros se lo indiquemos. Cuando usamos los comandos **git merge** o **git checkout** estamos cambiando de rama o creando un nuevo commit, no borrando ramas ni commits (recuerda que puedes borrar commits con **git reset** y ramas con **git branch -d**).  
+  
+Git es muy inteligente y puede resolver algunos conflictos automáticamente: cambios, nuevas líneas, entre otros. Pero algunas veces no sabe cómo resolver estas diferencias, por ejemplo, cuando dos ramas diferentes hacen cambios distintos a una misma línea.  
+  
+Esto lo conocemos como conflicto y lo podemos resolver manualmente. Solo debemos hacer el merge, ir a nuestro editor de código y elegir si queremos quedarnos con alguna de estas dos versiones o algo diferente. Algunos editores de código como Visual Studio Code nos ayudan a resolver estos conflictos sin necesidad de borrar o escribir líneas de texto, basta con hacer clic en un botón y guardar el archivo.  
+  
+Recuerda que siempre debemos crear un nuevo commit para aplicar los cambios del merge. Si Git puede resolver el conflicto, hará commit automáticamente. Pero, en caso de no pueda resolverlo, debemos solucionarlo y hacer el commit.  
+  
+Los archivos con conflictos por el comando **git merge** entran en un nuevo estado que conocemos como **Unmerged**. Funcionan muy parecido a los archivos en estado **Unstaged**, algo así como un estado intermedio entre **Untracked** y **Unstaged**. Solo debemos ejecutar **git add** para pasarlos al área de staging y **git commit** para aplicar los cambios en el repositorio.  
+  
+Cómo revertir un merge Si nos hemos equivocado y queremos cancelar el merge, debemos usar el siguiente comando:  
+  
+**git merge --abort**  
+  <br>
+  
+**Conflictos en repositorios remotos** 
+Al trabajar con otras personas, es necesario utilizar un repositorio remoto.  
+­  
+- *Para copiar el repositorio remoto al directorio de trabajo local, se utiliza el comando git clone , y para enviar cambios al repositorio remoto se utiliza* **git push**.  
+  
+- *Para actualizar el repositorio local se hace uso del comando git fetch, luego se debe fusionar los datos traídos con los locales usando* **git merge**. 
+  
+- *Para traer los datos y fusionarlos a la vez, en un solo comando, se usa* **git pull**.  
+  
+ - *Para crear commits rápidamente, fusionando git add y git commit -m "", usamos* **git commit -am ""**. 
+  
+- *Para generar nuevas ramas, hay que posicionarse sobre la rama que se desea copiar y utilizar el comando* **git branch**.  
+  
+- *Para saltar entre ramas, se usa el comando* **git checkout**.
+
+ - *Una vez realizado los cambios en la rama, estas deben fusionarse con* **git merge**.  
+  
+El merge ocurre en la rama en la que se está posicionado. Por lo tanto, la rama a fusionar se transforma en la principal.  
+  
+**Los merges también son commits.**  
+  
+Los merges pueden generar conflictos, esto aborta la acción y pide que soluciones el problema manualmente, aceptando o rechazando los cambios que vienen.  
+
+Repasa qué es un branch  
+<br>
+
+**Sección Práctica**
+
+**git checkout segunda** *falta lo que cargamos en master*
+
+**git merge master** *traemos los cambios desde la master y tenemos las dos ramas actualizadas*
+
+Ahora vamos a crear un conflicto para ver como salimos de el, vamos a cargar datos nuevos creando archivos html y css estando en la rama segunda, y también vamos a hacer lo mismo estando en la master y veremos como lo solucionamos.
+<br>
+
+*Abrimos el html y modificamos estando en la rama segunda *
+<br>
+
+*Luego commiteamos en la rama segunda y pasamos a la rama master, guardar y commitear, hacer un merge estando en master: pongo en orden los comandos abajo.*
+
+**ctrl + s** *Guardamos los cambios en la rama segunda, ponemos cambios en css*
+
+**git commit -am "Modifique el css y el color del texto"** *es un ejemplo*
+
+**git checkout master** *Modificamos el html, ponemos código y css ponemos texto blue*
+
+**ctrl + s** *Guardamos los cambios**
+
+**git commit -am "Agregue suscripción, cambie el código y puse todo azul en css"**
+
+**git merge segunda** *Hacemos un merge estando en master y veremos el conflicto*
+
+Para solucionar el conflicto podemos abrir el archivo con el editor de texto y modificar lo que nos este señalando y guardamos, esto en el css y en el html, lo podemos hacer desde VSC seleccionando: el cambio entrante.  
+
+Debemos ahora commitear estos cambios, abajo pongo los comandos.**
+
+**git status**
+
+**git commit -am "Solución de conflictos al mergear las ramas"**
+
+**git checkout segunda** *Seguiremos con la versión anterior, porque el merge fue en master*
+
+**git merge master** *Ahora pasamos los cambios a la rama segunda.*
+<br>
+
+#### PORTAFOLIO
+
+Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:
+
+- **Dante Nicolás Martinez**
+
+  - **[Introducción](https://drive.google.com/file/d/15gutGuCKr8CCeAdFBsqWHppWULZ3loI5/view?usp=drive_link "https://drive.google.com/file/d/15gutGuCKr8CCeAdFBsqWHppWULZ3loI5/view?usp=drive_link")**
+
+  - **[Práctica](https://drive.google.com/file/d/1w24NMvM0rNEbZNbTEvvQJ8pSqbPwLTf1/view?usp=drive_link "https://drive.google.com/file/d/1w24NMvM0rNEbZNbTEvvQJ8pSqbPwLTf1/view?usp=drive_link")**
+
+  - **[PDF](https://drive.google.com/file/d/1qC3_3021ygEk9hczRdzwku0prw3dhQl1/view?usp=drive_link "https://drive.google.com/file/d/1qC3_3021ygEk9hczRdzwku0prw3dhQl1/view?usp=drive_link")**
+<br>
+
+La tarea de hoy, agregar esta clase al README.md con el lenguaje de markdown, como lo hicimos en la clase pasada, luego deben hacer el commit correspondiente al cambio agregado.
+Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.
+
+**Profesor Ariel Betancud**
+
+---
+---
+
+## CLASE 12 MIÉRCOLES 19 DE JUNIO DEL 2024 - Portafolio 6
+
+**Cómo funcionan las llaves públicas y privadas parte 12**
+
+****Sección lectura**  
+**
+
+**Las llaves públicas y privadas, conocidas también como cifrado asimétrico de un solo camino, sirven para mandar mensajes privados entre varios nodos con la lógica de que firmas tu mensaje con una llave pública vinculada con una llave privada que puede leer el mensaje.  
+  
+Las llaves públicas y privadas nos ayudan a cifrar y descifrar nuestros archivos de forma que los podamos compartir sin correr el riesgo de que sean interceptados por personas con malas intenciones.  
+  
+Cómo funciona un mensaje cifrado con llaves públicas y privadas Ambas personas deben crear su llave pública y privada.  
+  
+Ambas personas pueden compartir su llave pública a las otras partes (recuerda que esta llave es pública, no hay problema si la “interceptan”).  
+  
+La persona que quiere compartir un mensaje puede usar la llave pública de la otra persona para cifrar los archivos y asegurarse que solo puedan ser descifrados con la llave privada de la persona con la que queremos compartir el mensaje.  
+  
+El mensaje está cifrado y puede ser enviado a la otra persona sin problemas en caso de que los archivos sean interceptados.  
+  
+La persona a la que enviamos el mensaje cifrado puede emplear su llave privada para descifrar el mensaje y ver los archivos.  
+  
+Nota: puedes compartir tu llave pública, pero nunca tu llave privada.  
+**
+
+******PORTAFOLIO******
+
+********Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:********
+
+********Dante Nicolás Martinez********
+
+********Parte 4:********
+
+********[Introducción](https://drive.google.com/file/d/1UhpS8jJ9dU5owgWkvXVGVVryosiEV5bJ/view?usp=drive_link "https://drive.google.com/file/d/1UhpS8jJ9dU5owgWkvXVGVVryosiEV5bJ/view?usp=drive_link")********
+
+********[Práctica](https://drive.google.com/file/d/1rIdJ-s3o4yvJ5WV1hTzKnn1w59DssFcV/view?usp=drive_link "https://drive.google.com/file/d/1rIdJ-s3o4yvJ5WV1hTzKnn1w59DssFcV/view?usp=drive_link")********
+
+********[PDF](https://drive.google.com/file/d/1NTGpKOXqoOG7VMwivEXkyY6BY6hUfc7b/view?usp=drive_link "https://drive.google.com/file/d/1NTGpKOXqoOG7VMwivEXkyY6BY6hUfc7b/view?usp=drive_link")********
+
+********La tarea de hoy, agregar esta clase al README.md con el lenguaje de markdown, como lo hicimos en la clase pasada, luego deben hacer el commit correspondiente al cambio agregado.********
+
+********Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.********
+
+********Profesor Ariel Betancud********
+
+---
+---
