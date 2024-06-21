@@ -1050,6 +1050,7 @@ Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:
 
 La tarea de hoy, agregar esta clase al README.md con el lenguaje de markdown, como lo hicimos en la clase pasada, luego deben hacer el commit correspondiente al cambio agregado.
 Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.
+<br>
 
 **Profesor Ariel Betancud**
 
@@ -1058,12 +1059,11 @@ Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requ
 
 ## CLASE 12 MIÉRCOLES 19 DE JUNIO DEL 2024 - Portafolio 6
 
-**Cómo funcionan las llaves públicas y privadas parte 12**
+#### Cómo funcionan las llaves públicas y privadas parte 12
 
-****Sección lectura**  
-**
+**Sección lectura**
 
-**Las llaves públicas y privadas, conocidas también como cifrado asimétrico de un solo camino, sirven para mandar mensajes privados entre varios nodos con la lógica de que firmas tu mensaje con una llave pública vinculada con una llave privada que puede leer el mensaje.  
+Las llaves públicas y privadas, conocidas también como cifrado asimétrico de un solo camino, sirven para mandar mensajes privados entre varios nodos con la lógica de que firmas tu mensaje con una llave pública vinculada con una llave privada que puede leer el mensaje.  
   
 Las llaves públicas y privadas nos ayudan a cifrar y descifrar nuestros archivos de forma que los podamos compartir sin correr el riesgo de que sean interceptados por personas con malas intenciones.  
   
@@ -1077,28 +1077,28 @@ El mensaje está cifrado y puede ser enviado a la otra persona sin problemas en 
   
 La persona a la que enviamos el mensaje cifrado puede emplear su llave privada para descifrar el mensaje y ver los archivos.  
   
-Nota: puedes compartir tu llave pública, pero nunca tu llave privada.  
-**
+>Nota: puedes compartir tu llave pública, pero nunca tu llave privada.
+  
+<br>
 
-******PORTAFOLIO******
+#### PORTAFOLIO
 
-********Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:********
+Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:
 
-********Dante Nicolás Martinez********
+- **Dante Nicolás Martinez**
 
-********Parte 4:********
+  - **[Introducción](https://drive.google.com/file/d/1UhpS8jJ9dU5owgWkvXVGVVryosiEV5bJ/view?usp=drive_link "https://drive.google.com/file/d/1UhpS8jJ9dU5owgWkvXVGVVryosiEV5bJ/view?usp=drive_link")**
 
-********[Introducción](https://drive.google.com/file/d/1UhpS8jJ9dU5owgWkvXVGVVryosiEV5bJ/view?usp=drive_link "https://drive.google.com/file/d/1UhpS8jJ9dU5owgWkvXVGVVryosiEV5bJ/view?usp=drive_link")********
+  - **[Práctica](https://drive.google.com/file/d/1rIdJ-s3o4yvJ5WV1hTzKnn1w59DssFcV/view?usp=drive_link "https://drive.google.com/file/d/1rIdJ-s3o4yvJ5WV1hTzKnn1w59DssFcV/view?usp=drive_link")**
 
-********[Práctica](https://drive.google.com/file/d/1rIdJ-s3o4yvJ5WV1hTzKnn1w59DssFcV/view?usp=drive_link "https://drive.google.com/file/d/1rIdJ-s3o4yvJ5WV1hTzKnn1w59DssFcV/view?usp=drive_link")********
+  - **[PDF](https://drive.google.com/file/d/1NTGpKOXqoOG7VMwivEXkyY6BY6hUfc7b/view?usp=drive_link "https://drive.google.com/file/d/1NTGpKOXqoOG7VMwivEXkyY6BY6hUfc7b/view?usp=drive_link")**
+<br>
 
-********[PDF](https://drive.google.com/file/d/1NTGpKOXqoOG7VMwivEXkyY6BY6hUfc7b/view?usp=drive_link "https://drive.google.com/file/d/1NTGpKOXqoOG7VMwivEXkyY6BY6hUfc7b/view?usp=drive_link")********
+La tarea de hoy, agregar esta clase al README.md con el lenguaje de markdown, como lo hicimos en la clase pasada, luego deben hacer el commit correspondiente al cambio agregado.
+Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.
+<br>
 
-********La tarea de hoy, agregar esta clase al README.md con el lenguaje de markdown, como lo hicimos en la clase pasada, luego deben hacer el commit correspondiente al cambio agregado.********
-
-********Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.********
-
-********Profesor Ariel Betancud********
+**Profesor Ariel Betancud**
 
 ---
 ---
