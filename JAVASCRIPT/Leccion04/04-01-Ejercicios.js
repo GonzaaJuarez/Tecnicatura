@@ -28,16 +28,16 @@ else{
 switch(mes){
     case 12: case 1: case 2: 
         console.log('La estación correspondiente al mes ' + mes + ', es VERANO');
-        break
+        break;
     case 3: case 4: case 5:
         console.log('La estación correspondiente al mes ' + mes + ', es OTOÑO');
-        break
+        break;
     case 6: case 7: case 8:
         console.log('La estación correspondiente al mes ' + mes + ', es INVIERNO');
-        break
+        break;
     case 9: case 10: case 11:
         console.log('La estación correspondiente al mes ' + mes + ', es PRIMAVERA');
-        break
+        break;
     default:
         console.log('EL valor ' + mes + ' NO corresponde a un mes del año');
 }

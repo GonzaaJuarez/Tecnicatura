@@ -1,3 +1,4 @@
+
 // Ampliamos el uso de var let y const
 
 /*
@@ -56,3 +57,48 @@ const fechaNacimiento = 2000;
 console.log(fechaNacimiento);
 //fechaNacimiento = 2020;
 //console.log(fechaNacimiento);
+
+
+// Evitar repetir tu código
+// Dry don't repeat yourself
+
+let days = 'Lunes';
+
+switch(days){
+    case 'Lunes': 
+        console.log('Hoy es ' + days);
+        break;
+    case 'Martes':
+        console.log('Hoy es ' + days);
+        break;
+    case 'Miércoles':
+        console.log('Hoy es ' + days);
+        break;
+    case 'Jueves':
+        console.log('Hoy es ' + days);
+        break;
+    case 'Viernes':
+        console.log('Hoy es ' + days);
+        break;
+    case 'Sábado':
+        console.log('Hoy es ' + days);
+        break;
+    case 'Domingo':
+        console.log('Hoy es ' + days);
+        break;
+    default:
+        console.log('Error al ingresar el día de semana');
+        break;
+}
+
+    //Opciión mejorada
+
+let days2 = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
+
+function getDay(n){
+    if(n < 1 || n > 7){
+        throw new Error('Out of range');
+    }
+    return days2[n-1];
+}
+console.log(getDay(5));
