@@ -23,7 +23,7 @@ Abrimos la terminal de Git Bash en Window o la terminal de Ubuntu, tambien la te
 
 *Usar la* **flecha hacía arriba** *nos muestra el último comando utilizado*
 
-**clear** *o* **ctrl + l** *Limpia la consola 
+**clear** *o* **ctrl + l** *Limpia la consola*
 
 **cd ..** *Nos devuelve a la carpeta anterior*
 
