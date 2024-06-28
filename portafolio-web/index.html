@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <!-- comentarios html-->
-<html lang="es">
+ <!--
+    Comentarios multiples
+ -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,41 +11,168 @@
     <meta name="keywords" content="portafolio, desarrollador web, the debugging dojo, gonzalo juarez, programador">
     <meta name="author" content="Gonzalo Juarez">
     <title>PortafolioWEB</title>
-    <link rel="stylesheet" href="/Css/style.css">
+    <link rel="stylesheet" href="./Css/style.css">
 </head>
 <body>
-    <header>
-        <h1 class="h1">Gonzalo Juarez</h1>
-        <img src="" alt=""> 
+    <header class="contenedorHeader">
+        <div class="imagen">
+            <img src="Assets/gonza.JPG" alt="Gonzalo Juarez">
+            <h1 class="h1">Gonzalo Juarez</h1>
+        </div>
         <nav>
             <ul class="navigation">
-                <li><a href="sobreMi">Sobre Mi</a></li>
-                <li><a href="Experiencia">Experiencia</a></li>
-                <li><a href="Estudios">Estudios</a></li>
-                <li><a href="Proyectos">Proyectos</a></li>
-                <li><a href="Contacto">Contacto</a></li>
+                <li><a href="#sobreMi">Sobre Mi</a></li>
+                <li><a href="#Experiencia">Experiencia</a></li>
+                <li><a href="#Estudios">Estudios</a></li>
+                <li><a href="#Proyectos">Proyectos</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="sobremi">
+    <main class="contenedorMain">
+        <section class="sobremi" id="sobreMi">
             <article class="container-sobremi">
                 <h2>Sobre Mi:</h2>
                 <h3>
-                    Soy un estudiante de la carrera tecnicatura en programación, dictada en la Universidad Tecnológica Nacional, Facultad Regional de San Rafael, Argentina (UTN-FRSR).
-                    Aunque estoy al comienzo de mi carrera, mi entusiasmo por la programación y mi deseo de aprender constantemente me impulsan a seguir creciendo y mejorando.
+                    Soy un estudiante de la carrera tecnicatura en programación, dictada en la Universidad
+                    Tecnológica Nacional, Facultad Regional de San Rafael,Argentina (UTN-FRSR).
+                    Aunque estoy al comienzo de mi carrera, mi entusiasmo por la programación
+                    y mi deseo de aprender constantemente me impulsan a seguir creciendo y mejorando.
                 </h3>
+                <div class="dojo">
+                    <h3>The Debugging Dojo</h3>
+                    <div class="logo"><img src="./assets/LogoTheDebuggingDojo.jpg" alt="The Debugging Dojo"></div>
+                    <h4>Grupo universitario conformado por nueve alumnos de la tecnicatura en programación</h4>
+                </div>
             </article>
         </section>
-        <section class="Experiencia">
+        <section class="Experiencia" id="Experiencia">
             <article class="container-experiencia">
                 <h2>Experiencia:</h2>
                 <h3>
-                    Soy un estudiante de la carrera tecnicatura en programación, dictada en la Universidad Tecnológica Nacional, Facultad Regional de San Rafael, Argentina (UTN-FRSR).
-                    Aunque estoy al comienzo de mi carrera, mi entusiasmo por la programación y mi deseo de aprender constantemente me impulsan a seguir creciendo y mejorando.
+                    Aunque recién estoy comenzando mi carrera como programador, ya he adquirido 
+                    valiosas experiencias y habilidades a través de mi curso de formación. 
+                    Durante este tiempo, he trabajado en equipo para realizar diversas actividades
+                    y un proyecto final, lo que me ha permitido desarrollar competencias colaborativas
+                    y técnicas. <br>
+                    Estoy aprendiendo a utilizar varios lenguajes de programación y
+                    herramientas esenciales en el ámbito del desarrollo de software, incluyendo:<br>
+                    <ul>
+                        <li>Java: Implementando conceptos básicos y avanzados en proyectos prácticos.</li>
+                        <li>JavaScript: Creando interactividad y dinámicas en aplicaciones web.</li>
+                        <li>Python: Desarrollando scripts y programas para automatización y análisis de datos.</li>
+                        <li>Git Bash y GitHub: Gestionando el control de versiones y colaborando en proyectos mediante plataformas de código compartido.</li>
+                        <li>HTML y CSS: Diseñando y estructurando páginas web, incluido el desarrollo de un portafolio personal.</li>
+                    </ul>
+                    Esta experiencia formativa me ha proporcionado una sólida base técnica y me ha
+                    preparado para afrontar desafíos en el campo de la programación con confianza y
+                    habilidad. Estoy emocionado por seguir aprendiendo y creciendo profesionalmente
+                    en este apasionante campo.
+        </ul>
                 </h3>
             </article>
         </section>
+        <section class="misEstudios" id="Estudios">
+            <article>
+                <h2>Mis Estudios: </h2>
+                <h3>
+                    Durante mi formación secundaria, asistí a la Escuela De Agricultura de la Universidad 
+                    Nacional de Cuyo (UNCUYO) ubicada en General Alvear, Mendoza, Argentina. Ingresé en el año 2014 y 
+                    finalicé mis estudios en 2019, obteniendo el título de Técnico en Producción Agropecuaria. 
+                    Esta formación me brindó una sólida base en técnicas agrícolas, producción sustentable 
+                    y manejo de recursos naturales, preparándome para enfrentar los desafíos del sector 
+                    agropecuario con conocimiento y habilidades prácticas.
+                </h3>
+                <div class="EA">
+                    <h3>Escuela de Agricultura</h3>
+                    <div class="logo"><img src="./assets/EA.PNG" alt="The Debugging Dojo"></div>
+                    <h4>Escuela de Agricultura de la Facultad Nacional de Cuyo (UNCUYO)</h4>
+                </div>
+                <div class="UTN">
+                    <h3>Tecnicatura Universitaria en Programación</h3>
+                    <div class="logo"><img src="./assets/UTN.PNG" alt="The Debugging Dojo"></div>
+                    <h4>Universidad Tecnológica Nacional - Facultad Regional de San Rafael</h4>
+                </div>
+            </article>
+        </section>
+        <section class="galeriaProyectos" id="proyectos">
+            <h2>Proyectos: </h2>
+            <br>
+            <div class="divProyecto">
+                <div class="proyectos">
+                    <img class="img__proyect" src="./Assets/Gestión de Tareas.jfif" alt="imagen proyecto">
+                    <h3>Aplicación de Gestión de Tareas</h3>
+                    <h4>Desarrollamos una aplicación de gestión de tareas utilizando React para el frontendy
+                        Node.js con Express para el backend. La aplicación permite a los usuarios crear, editar,
+                        eliminar y marcar tareas como completadas.
+                    </h4>
+                    <br>
+                    <a href="">Ver más</a>
+                    <a href="">GitHub</a>
+                    <a href="">Tecnologias</a>
+                </div>
+    
+                <div class="proyectos">
+                    <img class="img__proyect"  src="./assets/Recomendación de Películas.jfif" alt="imagen proyecto">
+                    <h3>Sistema de Recomendación de Películas</h3>
+                    <h4>Creamos un sistema de recomendación de películas utilizando Python y aprendizaje automático.
+                        Utilicé la biblioteca scikit-learn para desarrollar un modelo de filtrado colaborativo basado
+                        en datos de usuarios y sus calificaciones de películas. 
+                    </h4>
+                    <br>
+                    <a href="">Ver más</a>
+                    <a href="">GitHub</a>
+                    <a href="">Tecnologias</a>
+                </div>
+                <div class="proyectos">
+                    <img class="img__proyect" src="./assets/Comercio Electrónico.jfif" alt="imagen proyecto">
+                    <h3>Plataforma de comercio electrónico</h3>
+                    <h4>Desarrollamos una plataforma de comercio electrónico completa utilizando Django para el
+                        backend y Vue.js para el frontend. La plataforma incluye funcionalidades como gestión de
+                        productos, carritos de compra, pasarela de pago integrada con Stripe y autenticación de usuarios.
+                    </h4>
+                    <br>
+                    <a href="">Ver más</a>
+                    <a href="">GitHub</a>
+                    <a href="">Tecnologias</a>
+                </div>
+            </div>
+        </section>
+        <section class="contacto" id="Contacto">
+            <h2>Contacto: </h2>
+            <iframe class="encuesta" src="https://docs.google.com/forms/d/e/1FAIpQLSekVdDlXR2D27j17XUUT-FpBrPgXA0fHp9etgxYNvKYRO3-xw/viewform?embedded=true" width="1240" height="1289" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        </section>
     </main>
 </body>
+<footer class="footer">
+    <div class="footerSocial">
+        <a class="redes" href="https://www.instagram.com/gonzaa_juarez/" target="_blank" aria-label="Instagram">
+            <!-- Ícono SVG de Intagram -->
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g>
+            </svg>
+        </a>
+        <a class="redes" href="https://github.com/GonzaaJuarez" target="_blank" aria-label="GitHub">
+            <!-- Ícono SVG de GitHub -->
+            <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g>
+            </svg>
+        </a>
+        <a class="redesL" href="https://www.linkedin.com/in/gonzalo-ariel-juarez-4b876a264" target="_blank" aria-label="Linkedin">
+            <!-- Ícono de SVG de Linkedin -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="#000000"></path> </g>
+            </svg>
+        </a>
+        <a class="redes" href="https://www.facebook.com/gonzaloariel.juarez?mibextid=ZbWKwL" target="_blank" aria-label="Facebook">
+            <!-- ícono de SVG de Facebook -->
+            <svg viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Facebook-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Color-" transform="translate(-200.000000, -160.000000)" fill="#4460A0"> <path d="M225.638355,208 L202.649232,208 C201.185673,208 200,206.813592 200,205.350603 L200,162.649211 C200,161.18585 201.185859,160 202.649232,160 L245.350955,160 C246.813955,160 248,161.18585 248,162.649211 L248,205.350603 C248,206.813778 246.813769,208 245.350955,208 L233.119305,208 L233.119305,189.411755 L239.358521,189.411755 L240.292755,182.167586 L233.119305,182.167586 L233.119305,177.542641 C233.119305,175.445287 233.701712,174.01601 236.70929,174.01601 L240.545311,174.014333 L240.545311,167.535091 C239.881886,167.446808 237.604784,167.24957 234.955552,167.24957 C229.424834,167.24957 225.638355,170.625526 225.638355,176.825209 L225.638355,182.167586 L219.383122,182.167586 L219.383122,189.411755 L225.638355,189.411755 L225.638355,208 L225.638355,208 Z" id="Facebook"> </path> </g> </g> </g>
+            </svg>
+        </a>
+    </div>
+    <div class="footerContainer">
+        <p>&copy; 2024 Gonzalo Juarez. Todos los derechos reservados</p>
+    </div>
+</footer>
 </html>

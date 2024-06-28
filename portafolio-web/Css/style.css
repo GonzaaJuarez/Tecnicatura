@@ -1,92 +1,333 @@
-/* Comentarios CSS*/
+/* Comentarios CSS */
+
+
+/*   Estilos generales   */
 body {
-    font-family: Arial, sans-serif;
-    color: #333333;
-    background-color: #f4f4f9;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-}
-header {
-    background-color: #2c3e50;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-.h1 {
-    margin: 1;
-}
-.navigation {
-    list-style: none;
-    padding: 0;
-    
+    background-color: #fae69d;
+    color: #333;
 }
 
-.navigation li {
-    display: inline;
-    margin: 0 10px;
+h2 {
+    display: flex;
+    justify-content: center;
+}
+/*   Estilo HEADER    */
+
+.contenedorHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #675083;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedorHeader h1 {
+    font-size: 35px;
+}
+
+.imagen img {
+    border-radius: 50%;
+    width: 20%;
+    border: 3px solid #fae69d;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.navigation {
+    list-style: none;
+    font-size: 125%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .navigation li a {
-    color: #ffffff;
     text-decoration: none;
+    color: white;
+    border-radius: 34px;
+    padding: 8px 10px 8px 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    
 }
 
 .navigation li a:hover {
-    text-decoration: underline;
+    /*border: 3px solid #fae69d;*/
+    /*box-sizing: border-box;*/
+    text-decoration: underline 3px #fae69d;
+    text-underline-offset: 4px;
 }
 
+/*    Estilo general MAIN    */
 
-main {
+.contenedorMain {
     padding: 20px;
-    margin: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.container-sobremi{
+
+.contenedorMain section {
+    margin-bottom: 40px;
+}
+
+/*    Estilo secciones MAIN   */
+
+/* coloco las secciones como en bloques */
+.container-sobremi, .container-experiencia, .misEstudios, .galeriaProyectos, .contacto {
+    background-color: #fcecb3; /*color de fondo*/
+    padding: 20px; /*como un exceso para que no quede pegado el borde al texto*/
+    border-radius: 20px; /*contorno redondeado del bloque*/
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.1); /*sombra para el bloque*/
+}
+
+
+.logo {     
+    /*centrar el contenedor de las imagenes*/
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/*    The Debugging Dojo    */
+.dojo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+.dojo img{
+    width: 300px;
+    border-radius: 20px;
+}
+
+/*    EA    */
+
+.EA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px;
+}
+
+.EA img{
+    width: 500px;
+    border-radius: 10px;
+}
+
+
+/*    UTN    */
+
+.UTN {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px;
+}
+
+.UTN img{
+    width: 300px;
+    border-radius: 10px;
+}
+
+/*    Estilo PROYECTO    */
+
+.galeriaProyectos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divProyecto {
+    display: flex;
+    gap: 30px;
+    margin: 10px;
+    justify-content: center;
+}
+
+.proyectos{
+    flex-grow: 1;
+    border: 2px solid #675083;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.proyectos img{
+    
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 0.5px solid #675083;
+    border-radius: 10px;
+}
+.proyectos h3{
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.proyectos h4{
+    font-size: 16px;
+    text-align: center;
+}
+
+.proyectos a{
+    text-decoration: none;
+    font-size: 16px;
     color: black;
+    margin: 5px;
+
 }
-.container-experiencia{
-    color: black;
+
+.proyectos a:hover {
+    text-decoration: underline #675083;
 }
+
+
+/*    Estilo CONTACTO y ENCUESTA    */
+/* mantengo la estructura de las secciones colocandola como en un bloque */
+
+.encuesta {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+/*    Estilo FOOTER    */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #675083; /*color del fondo, como en header*/
+    text-align: center;
+    padding: 10px 0;
+    margin: 30px 0px 0px 0px;
+}
+
+.footerSocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes {
+    width: 30px;
+}
+.redesL {
+    width: 40px;
+    margin-top: -4px;
+}
+
+.footerContainer {
+    color: #fff; /*color del texto*/
+}
+
+
 
 /* Responsividad */
 /* Celular (Pantallas pequeñas, hasta 767px) */
 @media (max-width: 767px) {
-    .titulo {
-        justify-content: center;
+    .imagen img {
+        width: 80px;
+    }
+    .dojo h3, .EA, h3 .UTN h3 {
+        text-align: center;
+    }
+    .dojo, .EA, .UTN {
+        margin: 20px;
+    }
+    .dojo img, .EA img {
+        width: 100%;
+    }
+    .UTN img {
+        width: 70%;
     }
     .navigation {
         flex-direction: column;
-        gap: 1rem;
         align-items: center;
     }
-    .container-sobremi {
+    .encuesta {
         width: 100%;
-        padding: 1;
-        margin-top: 1rem;
-        line-height: 2.5rem;
-        font-size: small;
+        height: 800px;
+    }
+    .divProyecto {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+    }
+    .proyectos {
+        flex-grow: 1;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+    }
+    .footerSocial {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+    .redesL{
+        margin-left: -5px;
     }
 }
 
 /* Tableta (Pantallas medianas, entre 768px y 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .titulo {
-        justify-content: center;
+    .imagen img {
+        width: 20%;
     }
     .navigation {
-        gap: 2rem;
         justify-content: center;
+    }
+    .encuesta {
+        width: 100%;
+        height: 800px;
+    }
+    .divProyecto {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 }
 
 /* Escritorio (Pantallas anchas, 1024px y superiores) */
 @media (min-width: 1024px) {
-    .titulo {
-        justify-content: flex-start;
+    .imagen img {
+        width: 20%;
     }
     .navigation {
-        gap: 3rem;
         justify-content: flex-end;
         margin: 0 3rem;
     }
+    .encuesta {
+        width: 100%;
+        height: 800px;
+    }
+    .divProyecto {
+        width: 100%;
+        height: auto;
+    }
 }
+
+

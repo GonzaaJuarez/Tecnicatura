@@ -1,0 +1,149 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Estilos del header */
+.contenedorHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #675083;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedorHeader img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo MAIN */
+.contenedorMain {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenedorMain section {
+    margin-bottom: 40px;
+}
+
+/* Estilos de las secciones */
+.container-sobremi, .container-experiencia, .misEstudios {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de la galería de proyectos */
+.galeriaProyectos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centrar los contenedores de los proyectos */
+}
+
+.proyectos {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    text-align: center; /* Asegurar que el contenido dentro del contenedor esté centrado */
+}
+
+.proyectos img {
+    max-width: 100%;
+    width: 300px; /* Tamaño fijo para las imágenes */
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto 10px; /* Centrando la imagen horizontalmente y añadiendo margen inferior */
+    display: block;
+}
+
+.proyectos h3 {
+    margin-top: 0;
+}
+
+.proyectos p {
+    margin-bottom: 10px;
+}
+
+.proyectos a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.proyectos a:hover {
+    text-decoration: underline;
+}
+/* Estilos del footer */
+footer {
+    background-color: #6c63ff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .galeriaProyectos {
+        flex-direction: column;
+    }
+
+    .proyectos {
+        flex: 1 1 100%;
+    }
+}
