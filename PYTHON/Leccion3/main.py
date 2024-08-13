@@ -42,6 +42,7 @@ for letra in 'alemania':
 else:
     print("Fin del ciclo for")
 '''
+'''
 # Palabra reservada CONTINUE
 for i in range(6):
     if i % 2 == 0:
@@ -51,3 +52,6 @@ for i in range(6):
     if i % 2 != 0:
         continue
     print(f'Valor: {i}')
+'''
+# Segundo semestre
+
