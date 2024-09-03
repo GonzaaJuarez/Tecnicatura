@@ -232,3 +232,125 @@ print(4 in tupla) # respuesta booleana (True)
 
 # En las tuplas podemos usar index, count, lean
 # En las tuplas se puede conertir de tupla a lista y de lista a tupla
+
+
+# REPASO SET O CONJUNTO
+# definir o iniciar un conjunto
+conjunto1 = set() # vacío
+conjunto2 = {'bye',} # con las llaves no se puede inicializar un conjunto
+conjunto1.add(7)
+conjunto1.add('Hola')
+print(conjunto1)
+conjunto2.add('Hola')
+print(conjunto2)
+print(3 not in conjunto2) # boolean (true)
+# Igualdad de conjuntos
+print(conjunto2 == conjunto1) # boolean (False)
+
+# Operaciones en conjuntos
+conjunto3 = conjunto2| conjunto1 # la linea une los conjuntos
+print(conjunto3)
+# los mismos elementos los escribe una sola vez
+
+# Elementos en comun
+conjunto3 = conjunto2 & conjunto1
+print(conjunto3)
+
+#Valores que estan el el conjunto2 y no en el conjunto1
+conjunto3 = conjunto2 - conjunto1
+print(conjunto3)
+conjunto3 = conjunto1 - conjunto2
+print(conjunto3)
+
+# Valores que no tienen en comun
+conjunto3 = conjunto2 ^ conjunto1
+print(conjunto3)
+
+# Saber si un conjunto esta incluido en otro
+conjunto3 = conjunto2| conjunto1
+#El conjunto 1 es subconjunto del conjunto 3?
+print(conjunto1.issubset(conjunto3)) # boolean (True)
+#El conjunto 2 es subconjunto del conjunto 3?
+print(conjunto2.issubset(conjunto3)) # boolean (True)
+#El conjunto 3 es subconjunto del conjunto 1?
+print(conjunto3.issubset(conjunto1)) # boolean (False)
+#El conjunto 3 es subconjunto del conjunto 2?
+print(conjunto3.issubset(conjunto2)) # boolean (False)
+
+#Elementos del conjunto 1 están incluidos en conjunto 3?
+print(conjunto3.issuperset(conjunto1)) # boolean (True)
+#Elementos del conjunto 2 están incluidos en conjunto 3?
+print(conjunto3.issuperset(conjunto2)) # boolean (True)
+#Elementos del conjunto 3 están incluidos en conjunto 1?
+print(conjunto1.issuperset(conjunto3)) # boolean (False)
+#Elementos del conjunto 3 están incluidos en conjunto 2?
+print(conjunto2.issuperset(conjunto3)) # boolean (False)
+
+# Saber si un conjunto es DISCONEXO
+# no comparten ningun elemento
+print(conjunto1.isdisjoint(conjunto2)) # boolean (False)
+
+# Convertir un conjunto en INMUTABLE
+conjunto1 = frozenset
+# no se pueden agregar, modificar ni eliminar elementos del conjunto
+
+
+# REPASO DICCIONARIOS
+diccionarioNuevo = {'Azul':'Blue','Rojo':'Red','Verde':'Green','Amarillo':'Yellow'}
+print(diccionarioNuevo)
+
+# Eliminar elemento
+del(diccionarioNuevo['Azul'])
+print(diccionarioNuevo)
+
+# Se pueden agregar diferentes tipos de datos:
+diccionario2 = {
+    'Gonzalo': {'Edad': 24, 'Altura': 1.68},
+    'Franco': [23, 1.73],
+    'Santiago': [26, 1.70]
+}
+print(diccionario2)
+
+# Ejercicio de la SeleccionArgentina creado en otro archivo
+
+# PILAS usando listas
+pila = [1, 2, 3]
+print(pila)
+
+# Agregar elementos al final a la pila
+pila.append(4)
+pila.append(5)
+print(pila)
+
+# Eliminar el ultimo elemento de una pila
+# pila.pop()
+# Eliminar el ultimo elemento y lo guardo en una variable
+elementoBorrado = pila.pop()
+print(f'Eliminamos el elemento {elementoBorrado} y la pila queda así {pila}')
+
+
+# COLAS con listas
+# Estructura de datos de tipo fifo (first input / first output)
+cola = ['Gonzalo','Martin','Franco','Valentin']
+print(cola)
+
+# Agregamos elementos al final de la cola
+cola.append('Santiago')
+cola.append('Daniel')
+print(cola)
+
+# Eliminar el primer elemento de una cola
+# cola.pop(0)
+# Eliminar el ultimo elemento y lo guardo en una variable
+elementoRetirado = cola.pop(0)
+print(f'Atendido el cliente {elementoRetirado} y la cola queda: {cola}')
+elementoRetirado = cola.pop(0)
+print(f'Atendido el cliente {elementoRetirado} y la cola queda: {cola}')
+elementoRetirado = cola.pop(0)
+print(f'Atendido el cliente {elementoRetirado} y la cola queda: {cola}')
+elementoRetirado = cola.pop(0)
+print(f'Atendido el cliente {elementoRetirado} y la cola queda: {cola}')
+elementoRetirado = cola.pop(0)
+print(f'Atendido el cliente {elementoRetirado} y la cola queda: {cola}')
+elementoRetirado = cola.pop(0)
+
