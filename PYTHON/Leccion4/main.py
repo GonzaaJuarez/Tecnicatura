@@ -92,3 +92,19 @@ print(cocina)
 del cocina
 # print(cocina) # ya no existe, por lo que da error
 
+# Tipo SET
+planetas = {"Marte","Júpiter","Venus"}
+print(planetas) # se imprimen en orden aleatorio
+print(len(planetas)) # para saver el largo
+
+# Revisar si un elemento existe dentro del set
+print("Marte" in planetas) # not in o in, para saber si está o no
+
+# Agregar un elemento
+planetas.add("Tierra")
+planetas.add("Tierra") # no se pueden agregar elementos duplicados
+print(planetas)
+
+# Eliminar elemento
+planetas.remove("Júpiter")
+print(planetas)
