@@ -1,8 +1,11 @@
+# COLECCIONES EN PYTHON
+
 # LISTAS
 '''
 listas = Gonzalo, Santiago, Leonel, Franco
 puedo tener cualquier tipo de elemento en un lista y a cada elemento de la misma
 se le asigna un valor, comenzando por el cero.
+En otros lenguajes se las conoce como ARREGLOS o VECTORES
 '''
 nombres = ['Leonel', 'Gonzalo','Franco', 'Orlando']
 print(nombres)
@@ -32,6 +35,13 @@ print(len(nombres)) # comienza desde 1, por ende tiene 4 valores
 
 # Agregar un elemento
 nombres.append('Valentín') # se agrega al final
+'''
+nombres.append([1, 2, 3]) # se pueden agregar listas
+nombres.append(True) # se pueden agregar booleanos
+nombres.append(10.45) # se pueden agregar floats
+nombres.append([4, 5])
+nombres.append(7) # se pueden agregar enteros
+'''
 print(nombres)
 
 # Agregar un elemento en un índice específico
@@ -106,5 +116,119 @@ planetas.add("Tierra") # no se pueden agregar elementos duplicados
 print(planetas)
 
 # Eliminar elemento
-planetas.remove("Júpiter")
+planetas.remove("Júpiter") # al escribir mal el codigo se rompe
 print(planetas)
+planetas.discard("Tierra") # al escribir mal no pasa nada
+print(planetas)
+
+# Limpiar set
+planetas.clear()
+print(planetas)
+
+# Eliminar set
+del planetas
+#print(planetas) #ocurre un error
+
+# DICCIONARIO
+# Compuesto por 2 elementos
+# una llave y un valor
+# 'MARADONA' : 10
+# dict(key,value)
+diccionario = {
+    'IDE' : 'Integrated Development Environment',
+    'POO' : 'Programación Orientada a Objetos',
+    'SABD' : 'Sistema de Administración de Base de Datos'
+}
+# Verificar la cantidad de elementos
+print(len(diccionario))
+print(diccionario)
+
+# Acceder al diccionario con la llave(key)
+print(diccionario['IDE'])
+# Otra forma
+print(diccionario.get('POO'))
+print(diccionario.get('SABD'))
+
+# Modificar los elementos del diccionario
+diccionario['IDE'] = 'Entorno de Desarrollo Integrado'
+print(diccionario)
+
+# Recorrer los elemento del diccionario
+# muestra solo las llaves
+for termino in diccionario:
+    print(termino)
+# muestra llaves y elementos
+for termino,valor in diccionario.items():
+    print(termino,valor)
+# Otras formas de acceder al diccionario
+# muestra solo las llaves
+for termino in diccionario.keys():
+    print(termino)
+# muestra solo las valores
+for valor in diccionario.values():
+    print(valor)
+
+# Comprobar la existencia de un elementos
+print('IDE' in diccionario) # booleano (TRUE)
+print('GRJZ' in diccionario) # booleano (FALSE)
+
+# Agregar un elemento
+diccionario['PK'] = 'Primary key'
+print(diccionario)
+
+# Eliminar un elemento
+diccionario.pop('SABD')
+print(diccionario)
+
+# Vaciar un diccionario
+diccionario.clear()
+print(diccionario)
+
+# Eliminar un diccionario
+del diccionario
+# print(diccionario) # sale error porque no existe
+
+
+# REPASO LISTAS
+# Concatenamos listas
+lista1 = [1, 2, 3, 1]
+lista2 = [4, 5, 6, 1]
+lista3 = lista1 + lista2
+print(lista3)
+
+lista3.extend([7, 8, 9, 1]) # agrega varios elementos a la lista
+print(lista3)
+
+# Indica el indice en el que se encuentra un elemento
+print(lista3.index(5)) # elemento 5 esta en la posición 5
+# si no existe el valor tira error
+# si esta repetido slo nombra el indice del primero
+
+# Como saber cuantos valores repetidos hay en un lista
+print(lista3.count(1))
+
+# Poner una lista al reves
+lista3.reverse()
+print(lista3)
+
+# PAra que una lista se multiplique, repitiendo sus elementos
+lista3 = lista3 * 2
+print(lista3)
+
+# Metodos de ordenamiento
+lista3.sort() # Orden ascendente
+print(lista3)
+lista3.sort(reverse=True) # Orden Descendente
+print(lista3)
+
+# REPASO TUPLAS
+# las tuplas pueden contener varios tipos de elementos
+tupla = (4, 'Hola', True, 6.78, [1, 2, 78], 4, 'Hola')
+lista3.sort() # Orden ascendente
+print(tupla)
+
+# Saber si hay un elemento
+print(4 in tupla) # respuesta booleana (True)
+
+# En las tuplas podemos usar index, count, lean
+# En las tuplas se puede conertir de tupla a lista y de lista a tupla
