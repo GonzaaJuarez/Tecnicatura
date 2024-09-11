@@ -263,7 +263,7 @@ Sustituye con un identificador semántico que refleje el estado del repositorio 
 #### Listado de etiquetas
 Para obtener una lista de etiquetas en el repositorio, ejecuta el siguiente comando:
 
-[](https://github.com/GonzaaJuarez/Tecnicatura/blob/main/CLASS-GIT/IMAGE/imagen1.jpg)
+![](https://github.com/GonzaaJuarez/Tecnicatura/blob/main/CLASS-GIT/IMAGE/imagen1.jpg)
 
 
 Para crear una etiqueta, ejecuta el siguiente comando:  
