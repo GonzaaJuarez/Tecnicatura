@@ -9,6 +9,19 @@ public class Aritmetica {
     // METODO
     public void sumarNumeros(){
         int resultado = a + b;
-        System.out.println("resultado = " + resultado);
+        System.out.println("Resultado = " + resultado);
+    }
+    
+    public int sumarConRetorno(){
+        //int resultado = a + b;
+        //return resultado;
+        return a + b;
+    }
+    
+    public int sumarConArgumentos(int a, int b){
+        this.a = a; // el argumento a se asigna el atributo this.a
+        this.b = b; // el uso del this. es opcional
+        //return a + b;
+        return this.sumarConRetorno();
     }
 }
