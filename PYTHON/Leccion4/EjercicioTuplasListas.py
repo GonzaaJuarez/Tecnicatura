@@ -23,3 +23,15 @@ for elemento in tupla:
         listaProfe.append(elemento)
 
 print(listaProfe)
+
+
+'''
+    Ejercicio con Matemáticas y la clase math
+    Sacar la raíz cuadrada de un número positivo
+'''
+import math
+num = int(input('Digite un número positivo: '))
+while(num < 0):
+    print(f'El número ingresado ({num}) no es positivo')
+    num = int(input('Digite un número positivo: '))
+print(f'\nSu raíz cuadrada es: {math.sqrt(num):.2f}')

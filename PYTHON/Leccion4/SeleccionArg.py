@@ -34,3 +34,8 @@ while num != 0:
         print('Valor fuera de rango')
     num = int(input('Ingrese cero(0) para salir o ingrese otro número: '))
 print('Finaliza el programa')
+
+
+# Recorrer el diccionario:
+for i in SeleccionArgentina:
+    print(f'{i} -> {SeleccionArgentina[i]}')
