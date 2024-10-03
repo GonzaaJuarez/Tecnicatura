@@ -24,6 +24,15 @@ class Persona{ // Clase padre
     set edad(edad) {
         this._edad = edad;
     }
+    nombreCompletoEdad(){
+        return this._nombre + ' ' + this._apellido + ', ' + this._edad + ' años';
+    }
+    // Sobreescribiendo el método de la clase padre
+    toString(){ // Regresa un string
+        // se aplica polirmorfismo que significa = multiples formas en tiempo de ejecución
+        // El método que se ejecuta depende si es una referencia de tipo padre o hija
+        return this.nombreCompletoEdad();
+    }
 }
 
 class Empleado extends Persona{ // Clase hija
@@ -37,7 +46,10 @@ class Empleado extends Persona{ // Clase hija
     set departamento(departamento){
         this._departamento = departamento;
     }
-        
+    // Sobrescritura
+    nombreCompletoEdad(){
+        return super.nombreCompletoEdad() + ', ' + this._departamento;
+    }   
 }
 
 
@@ -81,9 +93,17 @@ console.log(persona2.edad);
 
 
 
-departamento1 = new Empleado("Valentín", "Gimenez", 24, "Sistemas");
-console.log(departamento1);
-console.log(departamento1.nombre);
-console.log(departamento1.apellido);
-console.log(departamento1.edad);
-console.log(departamento1.departamento);
+let empleado1 = new Empleado("Valentín", "Gimenez", 24, "Sistemas");
+console.log(empleado1);
+console.log(empleado1.nombreCompletoEdad());
+/*
+console.log(empleado1.nombre);
+console.log(empleado1.apellido);
+console.log(empleado1.edad);
+console.log(empleado1.departamento);
+*/
+
+// Object.prototype.toString  // Esta es la manera de acceder a tributos y métodos de manera dinámica
+console.log(empleado1.toString());
+console.log(persona1.toString());
+console.log(persona2.toString());
