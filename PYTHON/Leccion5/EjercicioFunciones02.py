@@ -12,4 +12,4 @@ def multiplicar(*args):  # Parámetros indefinidos.
         resultado *= valor
     return resultado
 
-print(f'La suma de los números es: {multiplicar(2,3,4,5)}')
+print(f'El resultado de la multiplicación de los números es: {multiplicar(2,3,4,5)}')
