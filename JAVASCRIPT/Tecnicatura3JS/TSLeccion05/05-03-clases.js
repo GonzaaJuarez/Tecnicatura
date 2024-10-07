@@ -1,10 +1,25 @@
 //let persona3 = new Persona('Agustín','Lucero',34) // No se puede crear antes de la clase
 
 class Persona{ // Clase padre
+
+    static contadorPersonas = 0;// Atributo estático
+    //email = 'valor default email'; // Atributo no estático
+
+    static get MAX_OBJ(){ // Este método simula una constante
+        return 5;
+    }
+
     constructor(nombre, apellido, edad){
         this._nombre = nombre;
         this._apellido = apellido;
         this._edad = edad;
+        if(Persona.contadorPersonas < Persona.MAX_OBJ){
+            this.idPersona = ++Persona.contadorPersonas;
+        }
+        else{
+            console.log('Se ha superado el máximo de objetos permitidos');
+        }
+        //console.log('Se creó un objeto ' + Persona.contadorObjetosPersona);
     }
     get nombre(){
         return this._nombre;
@@ -25,13 +40,19 @@ class Persona{ // Clase padre
         this._edad = edad;
     }
     nombreCompletoEdad(){
-        return this._nombre + ' ' + this._apellido + ', ' + this._edad + ' años';
+        return this.idPersona + ' - ' + this._nombre + ' ' + this._apellido + ', ' + this._edad + ' años';
     }
     // Sobreescribiendo el método de la clase padre
     toString(){ // Regresa un string
         // se aplica polirmorfismo que significa = multiples formas en tiempo de ejecución
         // El método que se ejecuta depende si es una referencia de tipo padre o hija
         return this.nombreCompletoEdad();
+    }
+    static saludar(){ // Método estático
+        console.log("Saludos desde el método static");
+    }
+    static saludar2(Persona){ // Método estático
+        console.log("Saludos a " + Persona.nombre + " " + Persona.apellido + " desde el método static");
     }
 }
 
@@ -107,3 +128,37 @@ console.log(empleado1.departamento);
 console.log(empleado1.toString());
 console.log(persona1.toString());
 console.log(persona2.toString());
+
+// MÉTODO STATIC
+// persona1.saludar() // No se puede utilizar desde un objeto
+Persona.saludar() // Se puede utilizar desde la clase
+Persona.saludar2(persona1);
+
+Empleado.saludar();
+Empleado.saludar2(empleado1);
+
+// console.log(persona1.contadorObjetosPersona); // no se puede acceder a un atributo estático
+console.log(Persona.contadorPersonas);
+console.log(Empleado.contadorPersonas);
+
+console.log(persona1.email); // email comentado
+console.log(empleado1.email); // email comentado
+// console.log(Persona.email); // no se puede acceder desde la clase
+
+console.log(persona1.toString());
+console.log(persona2.toString());
+console.log(empleado1.toString());
+console.log(Persona.contadorPersonas);
+
+let persona3 = new Persona('Paula', 'Gallardo', 29);
+console.log(persona3.toString());
+console.log(Persona.contadorPersonas);
+
+console.log(Persona.MAX_OBJ);
+Persona.MAX_OBJ = 10; // no se puede modificar, ni alterar
+console.log(Persona.MAX_OBJ);
+
+let persona4 = new Persona('Daniel', 'Martinez', 14);
+console.log(persona4.toString());
+let persona5 = new Persona('Florencia', 'Muños', 26);
+console.log(persona5.toString());
