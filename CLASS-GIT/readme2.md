@@ -263,7 +263,7 @@ Sustituye con un identificador semántico que refleje el estado del repositorio 
 #### Listado de etiquetas
 Para obtener una lista de etiquetas en el repositorio, ejecuta el siguiente comando:
 
-![](https://github.com/GonzaaJuarez/Tecnicatura/blob/main/CLASS-GIT/IMAGE/imagen1.jpg)
+![imagen1](https://github.com/GonzaaJuarez/Tecnicatura/blob/main/CLASS-GIT/IMAGE/imagen1.jpg)
 
 
 Para crear una etiqueta, ejecuta el siguiente comando:  
@@ -446,7 +446,7 @@ Solo debemos entrar a la configuración de colaboradores de nuestro proyecto. Se
 
 Ahí, debemos añadir el email o username de los nuevos colaboradores.
   
-![imagen9](https://github.com/GonzaaJuarez/Tecnicatura/blob/main/CLASS-GIT/IMAGE/imagen9.jpg)  
+![imagen9](https://github.com/GonzaaJuarez/Tecnicatura/blob/main/CLASS-GIT/IMAGE/imagen9.png)  
 
 Si, como colaborador, agregaste erróneamente el mensaje del commit, lo puedes cambiar de la siguiente manera: 
 
