@@ -547,3 +547,38 @@ Segundo Semestre Parte 8:
 Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.
 
 **Profesor Ariel Betancud**
+
+# CLASE 10 MIÉRCOLES 16 DE OCTUBRE DEL 2024 - Portafolio 10
+
+## GITHUB
+
+#### Flujo de trabajo profesional
+
+Haciendo *merge* de ramas de desarrollo a *main*
+
+Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un flujo de trabajo profesional, que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores.
+
+#### Una buena práctica de flujo de trabajo sería la siguiente:  
+1.  **Crear ramas**
+2.  **Asignar una rama a cada programador**
+3.  **El programador baja el repositorio con git pull origin master**
+4.  **El programador cambia de rama**
+5.  **El programador trabaja en esa rama y hace commits**
+6.  **El programador sube su trabajo con git push origin #nombre_rama**
+7.  **El encargado de organizar el proyecto baja, revisa y unifica todos los cambios**
+
+## PORTAFOLIO
+
+Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:
+
+**Dante Nicolás Martinez**
+
+Segundo Semestre Parte 8:
+
+[***Video Capitulo 9***](https://drive.google.com/file/d/1Z80SxVKmkzhzVY5hIxTDtWjHfryHgt1J/view?usp=drive_link)
+
+[***PDF***](https://drive.google.com/file/d/1SwPO2PrveW0DRGXyfzKD9yYWeKJUlCkm/view?usp=drive_link)
+
+Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.********
+
+**Profesor Ariel Betancud**
