@@ -1,0 +1,42 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>250</x><y>10</y><w>210</w><h>230</h></coordinates><panel_attributes>&lt;&lt;Persona&gt;&gt;
+--
+_IdPersona: number
+_nombre: string
+_apellido: string
+_edad: number
+_contadorPersonas_
+--
+/getPersona: number/
+/getNombre(): string/
+/setNombre(string)/
+/getApellido(): string/
+/setApellido(string): void/
+/getEdad(): number/
+/setEdad(string)/
+/toString()/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>330</y><w>210</w><h>130</h></coordinates><panel_attributes>&lt;&lt;Empleado&gt;&gt;
+--
+_idEmpleado: long
+_sueldo: number
+--
+/getIdEmpleado(): number/
+/getSueldo(): number/
+/setSueldo(number)/
+/toString/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>330</y><w>210</w><h>130</h></coordinates><panel_attributes>&lt;&lt;Cliente&gt;&gt;
+--
+_idCliente: numer
+_fechaRegistro: Date
+--
+/getCliente()/
+/getFechaRegistro(): Date/
+/setFechaRegistro(Date)/
+/toString/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>150</x><y>280</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>280</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+
+</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>270</y><w>230</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;Extends&gt;&gt;</panel_attributes><additional_attributes>17;22;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>150</x><y>270</y><w>230</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+&lt;&lt;Extends&gt;&gt;</panel_attributes><additional_attributes>207;22;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>230</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+
+</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element></diagram>
