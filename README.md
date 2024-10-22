@@ -5,4 +5,5 @@ Contenido:
  - Java
  - Javascript
  - Portafolio Personal
- - contenido de las clases de GIT-BASH
+ - Portafolio Personal con VUE
+ - Contenido de las clases de GITBASH / GITHUB
