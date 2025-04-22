@@ -19,8 +19,6 @@ this.Raton = Raton;
 }
 
 toString() {
-    return `${this.idComputadora}, ${this.nombre}, ${this.Monitor}, ${this.Teclado}, ${this.Raton}`;
-
+    return `Computadora [ID: ${this.idComputadora}, Nombre: ${this.nombre}]\n  ${this.Monitor.mostrarDetalle()}\n  ${this.Teclado.mostrarDetalle()}\n  ${this.Raton.mostrarDetalle()}`;
 }
-
 }

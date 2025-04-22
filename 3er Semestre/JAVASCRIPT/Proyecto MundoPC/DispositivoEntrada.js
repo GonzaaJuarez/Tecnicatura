@@ -19,6 +19,9 @@ constructor(tipoDeEntrada, marca) {
      this.marca = marca;
     }
 
+    mostrarDetalle(){
+        return `Tipo: ${this.tipoDeEntrada}, Marca: ${this.marca}`;
+    }
 
 
 }

@@ -9,5 +9,10 @@ constructor(tipoEntrada,Marca){
     this.idRaton = ++Raton.contadorRaton;
 }
 toString() {
-  return `Raton [ID: ${this.idRaton}, Marca: ${this.marca}];`}
+  return `Raton [ID: ${this.idRaton}, Marca: ${this.marca}];`
+}
+
+mostrarDetalle() {
+  return `Raton [ID: ${this.idRaton}, ${super.mostrarDetalle()}]`;
+}
 }

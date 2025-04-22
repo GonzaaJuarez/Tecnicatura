@@ -9,8 +9,11 @@ constructor(marca) {
     this.idTeclado = ++Teclado.contadorTeclado;
 }
 
-    toString() {
-        return `Teclado [ID: ${this.idTeclado}, Marca: ${this.marca}];`
-    }
+toString() {
+    return `Teclado [ID: ${this.idTeclado}, Marca: ${this.marca}];`
+}
 
+mostrarDetalle() {
+    return `Teclado [ID: ${this.idTeclado}, ${super.mostrarDetalle()}]`;
+}
 }

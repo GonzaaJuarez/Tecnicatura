@@ -16,4 +16,8 @@ export class Monitor  {
         return `Monitor [ID: ${this.idMonitor}, Marca: ${this.marca}, Tamaño  ${this.tamanio}];`
     }
 
+    mostrarDetalle() {
+        return `Monitor [ID: ${this.idMonitor}, Marca: ${this.marca}, Tamaño: ${this.tamaño}]`;
+    }    
+
 }
