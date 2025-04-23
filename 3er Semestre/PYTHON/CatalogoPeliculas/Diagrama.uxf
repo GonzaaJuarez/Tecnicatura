@@ -1,0 +1,26 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>60</x><y>90</y><w>700</w><h>480</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>60</y><w>150</w><h>30</h></coordinates><panel_attributes>catalogo_peliculas</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>150</y><w>260</w><h>190</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>180</y><w>210</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Pelicula&gt;&gt;
+--
+nombre: str
+--
+/+__str__()/
+--
+Responsabilidades:
+-- Representa un objeto pelicula</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>120</y><w>100</w><h>30</h></coordinates><panel_attributes>dominio</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>150</y><w>260</w><h>190</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>120</y><w>100</w><h>30</h></coordinates><panel_attributes>servicio</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>170</y><w>210</w><h>150</h></coordinates><panel_attributes>&lt;&lt;CatalogoPeliculas&gt;&gt;
+--
+ruta_archivo: str &lt;&lt;static&gt;&gt;
+--
+/+agregar_pelicula(Pelicula) &lt;&lt;static&gt;&gt;/
+/+listar_peliculas() &lt;&lt;static&gt;&gt;/
+/+eliminar() &lt;&lt;static&gt;&gt;/
+--
+Responsabilidades:
+-- Realizar las operaciones sobre
+el archivo de peliculas.txt</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>380</y><w>250</w><h>130</h></coordinates><panel_attributes>&lt;&lt;test_catalogo_peliculas&gt;&gt;
+--
+Responsabilidades:
+-- Contiene el menu con cuatro opciones:
+    1) Agregar pelicula
+    2) Listar peliculas
+    3) Eliminar archivo de peliculas
+    4) Salir</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>220</y><w>210</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+&lt;&lt;Agrega&gt;&gt;</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element></diagram>
