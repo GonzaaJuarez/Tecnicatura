@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, papel y tijera</title>
+    <script>
+        // 1 = piedra
+        // 2 = papel
+        // 3 = tijera
+
+        function generarNumeroAleatorio(max, min) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        let jugador = 0;
+        let max = 3;
+        let min = 1;
+        //let pc = math.floor(Math.random()*(max-min+1)+min);
+        let pc = generarNumeroAleatorio(max, min);
+
+        jugador = prompt("Elije una opcion: \n1 = Piedra \n2 = Papel \n3 = Tijera")
+        // alert("Elige el jugador"+jugador)
+        
+        // Mostrar elección
+        if(jugador == 1){
+            alert("Elegiste PIEDRA")
+        }
+        else if(jugador == 2){
+            alert("Elegiste PAPEL")
+        }
+        else if(jugador == 3){
+            alert("Elegiste TIJERA")
+        }
+        else{
+            alert("Elegiste perder")
+        }
+
+        // Mostrar elección de pc
+        if(pc == 1){
+            alert("PC elegió PIEDRA")
+        }
+        else if(pc == 2){
+            alert("PC elegió PAPEL")
+        }
+        else if(pc == 3){
+            alert("PC elegió TIJERA")
+        }
+        else{
+            alert("Algo salio mal...")
+        }
+
+        // COMBATE
+
+        if(jugador == pc){
+            alert("¡¡EMPATE!!")
+        }
+        else if(jugador == 1 && pc == 3){
+            alert("¡¡GANASTE!!\nPiedra le gana a Tijera")
+        }
+        else if(jugador == 2 && pc == 1){
+            alert("¡¡GANASTE!!\nPapel le gana a Piedra")
+        }
+        else if(jugador == 3 && pc == 2){
+            alert("¡¡GANASTE!!\nTijera le gana a Papel")
+        }
+        else{
+            alert("PERDISTE :(\n¡¡Más suerte para la próxima!!")
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Piedra, Papel y Tijeras</h1>
+</body>
+</html>
