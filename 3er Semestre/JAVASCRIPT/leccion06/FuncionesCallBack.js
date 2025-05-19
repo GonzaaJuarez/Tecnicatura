@@ -39,4 +39,4 @@ let reloj = () => {
 }
 
 //  nos va a mostrar la hora cada un segundo
-setInterval(reloj, 60000);
+setInterval(reloj, 1000);
