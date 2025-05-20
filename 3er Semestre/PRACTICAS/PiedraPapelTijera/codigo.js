@@ -1,106 +1,142 @@
-// 1 = piedra
-// 2 = papel
-// 3 = tijera
+const OPCIONES = {
+        1: { name: "Piedra 🪨", icon: "🪨" },
+        2: { name: "Papel 📄", icon: "📄" },
+        3: { name: "Tijera ✂️", icon: "✂️" }
+    };
+    /******************** INICIO FONDO E ICONOS  ********************/
+    const FONDOS = [
+        'images/background1.png',
+        'images/background2.png',
+        'images/background3.png',
+        'images/background4.png',
+        'images/background5.png'
+    ];
+    const FAVICONS = [
+        'images/favicon1.ico',
+        'images/favicon2.ico',
+        'images/favicon3.ico'
+    ];
+    /********************  FIN FONDO E ICONOS   ********************/
 
-function generarNumeroAleatorio(max, min) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function eleccion(jugada) {
-    let resultado = "";
-    if (jugada == 1) {
-        resultado = "Piedra 🪨";
-    } else if (jugada == 2) {
-        resultado = "Papel 📄";
-    } else if (jugada == 3) {
-        resultado = "Tijera ✂️";
-    } else {
-        resultado = "Opción no válida";
-    }
-    return resultado;
-}
-
-function jugar() {
-    let jugador = 0;
-    let pc = 0;
     let triunfos = 0;
     let perdidas = 0;
+    const botones = document.querySelectorAll('#botones button');
+    const choicesDiv = document.getElementById('choices');
+    const resultadoDiv = document.getElementById('resultado');
+    const marcadorDiv = document.getElementById('marcador');
+    const reiniciarBtn = document.getElementById('reiniciar');
+    const favicon = document.getElementById('favicon');
 
-    while (triunfos < 3 && perdidas < 3) {
-        pc = generarNumeroAleatorio(3, 1);
-        let inputJugador = prompt("Elije una opcion: \n1 = Piedra \n2 = Papel \n3 = Tijera");
-        jugador = parseInt(inputJugador); // Convertir a número para la comparación
+    /********************  INICO FONDO E ICONOS  ********************/
+    function elegirFondoAleatorio() {
+        const indiceAleatorio = Math.floor(Math.random() * FONDOS.length);
+        return FONDOS[indiceAleatorio];
+    }
+    function elegirFaviconAleatorio() {
+        const indiceAleatorio = Math.floor(Math.random() * FAVICONS.length);
+        favicon.href = FAVICONS[indiceAleatorio];
+    }
+    /********************   FIN FONDO E ICONOS   ********************/
 
-        // Verificar que se ingreso un valor que corresponda(1, 2 ó 3)
-        
-        if (isNaN(jugador) || jugador < 1 || jugador > 3) {
-            alert("¡Opción no válida! Por favor, elige 1, 2 o 3.");
-            continue; // Volver al inicio del bucle
+    function aplicarFondo() {
+        try {
+            document.body.style.backgroundImage = `url('${elegirFondoAleatorio()}')`;
+        } catch (e) {
+            console.warn('Error al cargar el fondo:', e);
+            document.body.style.backgroundColor = '#f0f0f0';
         }
-
-        // Mostrar elección
-        //alert("Elegiste: " + eleccion(jugador));
-        //alert("PC elige: " + eleccion(pc));
-        alert("Elegiste: " + eleccion(jugador)+"\n"+"PC elige: " + eleccion(pc));
-
-        // Combate con if
-        /*
-        if(jugador == pc){
-            alert("¡¡EMPATE!! 🤝\n Ambos eligieron " + eleccion(jugador));
-        } 
-        else if(jugador == 1 && pc == 3 || jugador == 2 && pc == 1 ||jugador == 3 && pc == 2){
-            alert("¡¡GANASTE!! 🎉\n¡¡" + eleccion(jugador) + " le gana a " + eleccion(pc) + "!!");
-        }
-        else{
-            alert("PERDISTE 😞\n¡¡" + eleccion(pc) + " le gana a " + eleccion(jugador) + "!!\n¡Más suerte para la próxima!");
-        }
-        */
-
-        // COMBATE con switch
-        let resultadoCombate = jugador + "-" + pc;
-
-        switch (resultadoCombate) {
-            case "1-1":
-            case "2-2":
-            case "3-3":
-                alert("¡¡EMPATE!! 🤝");
-                break;
-            case "1-3":
-                alert("¡¡GANASTE!! 🎉\nPiedra 🪨 le gana a Tijera ✂️");
-                triunfos++;
-                break;
-            case "2-1":
-                alert("¡¡GANASTE!! 🎉\nPapel 📄 le gana a Piedra 🪨");
-                triunfos++;
-                break;
-            case "3-2":
-                alert("¡¡GANASTE!! 🎉\nTijera ✂️ le gana a Papel 📄");
-                triunfos++;
-                break;
-            default:
-                alert("PERDISTE 😞\n¡¡" + eleccion(pc) + " le gana a " + eleccion(jugador) + "!!\n¡Más suerte para la próxima!");
-                perdidas++;
-        }
-
-        alert("Marcador: Tú " + triunfos + " - PC " + perdidas);
     }
 
-    if (triunfos > perdidas) {
-        alert("¡¡FELICIDADES!! ¡Ganaste el juego! 🏆");
-    } else {
-        alert("¡La PC ganó el juego! 🤖");
+    function generarJugadaPC() {
+        return Math.floor(Math.random() * 3) + 1;
     }
 
-    alert("¡Fin de la partida!\n hasta la próxima...");
-
-    let jugarNuevamente = confirm("¿Quieres volver a jugar?");
-    if (jugarNuevamente) {
-        jugar(); // Llamar a la función para reiniciar el juego
-    } else {
-        alert("¡Gracias por jugar!");
+    function determinarGanador(jugador, pc) {
+        if (jugador === pc) return "EMPATE";
+        const reglas = {
+            1: 3,
+            2: 1,
+            3: 2
+        };
+        if (reglas[jugador] === pc) {
+            triunfos++;
+            return "VICTORIA";
+        } else {
+            perdidas++;
+            return "PERDISTE";
+        }
     }
-}
 
-// Iniciar el juego por primera vez
-jugar();
+    function mostrarElecciones(jugador, pc) {
+        choicesDiv.innerHTML = `
+            <div class="choice">${OPCIONES[jugador].icon} Tú</div>
+            <div class="choice">${OPCIONES[pc].icon} PC</div>
+        `;
+    }
 
+    function mostrarResultado(jugador, pc, resultado) {
+        mostrarElecciones(jugador, pc);
+        resultadoDiv.textContent = resultado;
+        resultadoDiv.classList.remove('ganaste', 'perdiste', 'empate');
+        if (resultado === "EMPATE") {
+            resultadoDiv.classList.add('empate');
+        } else if (resultado === "VICTORIA") {
+            resultadoDiv.classList.add('ganaste');
+        } else {
+            resultadoDiv.classList.add('perdiste');
+        }
+        actualizarMarcador();
+    }
+
+    function actualizarMarcador() {
+        const diferencia = triunfos - perdidas;
+        marcadorDiv.innerHTML = `👤 Tú ${triunfos} - ${perdidas} 🤖 PC`;
+        if (diferencia > 0) {
+            marcadorDiv.classList.remove('marcador-pc-lead', 'marcador-tie');
+            marcadorDiv.classList.add('marcador-you-lead');
+        } else if (diferencia < 0) {
+            marcadorDiv.classList.remove('marcador-you-lead', 'marcador-tie');
+            marcadorDiv.classList.add('marcador-pc-lead');
+        } else {
+            marcadorDiv.classList.remove('marcador-you-lead', 'marcador-pc-lead');
+            marcadorDiv.classList.add('marcador-tie');
+        }
+    }
+
+    function finalizarJuego() {
+        resultadoDiv.textContent = triunfos > perdidas ? "¡VICTORIA FINAL! 🏆" : "¡DERROTA FINAL! 🤖";
+        if (triunfos > perdidas) resultadoDiv.classList.add('ganaste');
+        else resultadoDiv.classList.add('perdiste');
+        botones.forEach(boton => boton.disabled = true);
+        reiniciarBtn.style.display = 'block';
+    }
+
+    botones.forEach(boton => {
+        boton.addEventListener('click', function() {
+            const jugador = parseInt(this.dataset.opcion);
+            const pc = generarJugadaPC();
+            const resultado = determinarGanador(jugador, pc);
+            mostrarResultado(jugador, pc, resultado);
+            if (triunfos === 3 || perdidas === 3) {
+                finalizarJuego();
+            }
+        });
+    });
+
+    reiniciarBtn.addEventListener('click', function() {
+        triunfos = 0;
+        perdidas = 0;
+        actualizarMarcador();
+        resultadoDiv.textContent = "";
+        choicesDiv.innerHTML = "";
+        botones.forEach(boton => boton.disabled = false);
+        reiniciarBtn.style.display = 'none';
+        aplicarFondo();
+        elegirFaviconAleatorio(); // Cambia el favicon al reiniciar
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        aplicarFondo();
+        actualizarMarcador();
+        elegirFaviconAleatorio(); // Establece un favicon aleatorio al cargar
+    });
