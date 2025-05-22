@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La leyenda de Aang</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <h1><img src="./assets/fuego.png" alt="Fuego" class="element-icon"> <img src="./assets/agua.png" alt="Agua" class="element-icon"> AVATAR <img src="./assets/aire.png" alt="Aire" class="element-icon"> <img src="./assets/tierra.png" alt="Tierra" class="element-icon"></h1>
+    <section id="seleccionar-personaje">
+        <h2>Elige tu personaje</h2>
+        <div class="personajes-fila">
+            <div class="personaje-container" onclick="seleccionarPersonaje('zuko')">
+                <img src="./assets/zuko.png" alt="Zuko">
+                <p>Zuko <img src="./assets/fuego.png" alt="Fuego" class="element-icon"></p>
+            </div>
+            <div class="personaje-container" onclick="seleccionarPersonaje('katara')">
+                <img src="./assets/katara.png" alt="Katara">
+                <p>Katara <img src="./assets/agua.png" alt="Agua" class="element-icon"></p>
+            </div>
+            <div class="personaje-container" onclick="seleccionarPersonaje('aang')">
+                <img src="./assets/aang.png" alt="Aang">
+                <p>Aang <img src="./assets/aire.png" alt="Aire" class="element-icon"></p>
+            </div>
+            <div class="personaje-container" onclick="seleccionarPersonaje('toph')">
+                <img src="./assets/toph.png" alt="Toph">
+                <p>Toph <img src="./assets/tierra.png" alt="Tierra" class="element-icon"></p>
+            </div>
+        </div>
+    </section>
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque</h2>
+        <p>Tu personaje tiene <span>3</span> vidas</p>
+        <p>El personaje enemigo tiene <span>3</span> vidas</p>
+        <p>
+            <button id="ataque-fuego">Fuego <img src="./assets/fuego.png" alt="Fuego" class="element-icon"></button>
+            <button id="ataque-agua">Agua <img src="./assets/agua.png" alt="Agua" class="element-icon"></button>
+            <button id="ataque-tierra">Tierra <img src="./assets/tierra.png" alt="Tierra" class="element-icon"></button>
+            <button id="ataque-aire">Aire <img src="./assets/aire.png" alt="Aire" class="element-icon"></button>
+        </p>
+    </section>
+    <section id="mensajes">
+        <p id="mensaje-personaje">Por favor, selecciona un personaje.</p>
+        <img id="imagen-personaje" src="" alt="" style="display: none;">
+    </section>
+    <section id="reiniciar">
+        <button id="boton-reiniciar">Reiniciar</button>
+    </section>
+
+    <footer>
+        <p><a href="https://github.com/orgs/PowerSystem2024/teams/thedebuggingdojo" target="_blank">The Debugging Dojo ©</a> <img src="./assets/the-debugging-dojo-logo.jpg" alt="Debugging Dojo Logo" class="footer-logo"></p>
+        <p>"Mastering code, one bug at a time"</p>
+    </footer>
+
+    <script src="./js/avatar.js"></script>
+</body>
+</html>

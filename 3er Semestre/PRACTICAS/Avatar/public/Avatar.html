@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La leyenda de Aang</title>
+    
+</head>
+<body>
+    <h1>AVATAR 🔥💧🌪️🌱</h1>
+    <section id="seleccionar-personaje">
+        
+        <h2>Elige tu personaje</h2>
+        <label for="zuko">Zuko</label>
+        <input type="radio" name="personaje" id="zuko"/>
+        <label for="katara">Katara</label>
+        <input type="radio" name="personaje" id="katara"/>
+        <label for="aang">Aang</label>
+        <input type="radio" name="personaje" id="aang"/>
+        <label for="toph">Toph</label>
+        <input type="radio" name="personaje" id="toph"/>
+        <button id="boton-personaje">Seleccionar</button>
+    </section>
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque</h2>
+        <p>Tu personaje tiene <span>3</span> vidas</p>
+        <p>El personaje enemigo tiene <span>3</span> vidas</p>
+        <p>
+            <button id="ataque-fuego">Fuego 🔥</button>
+            <button id="ataque-agua">Agua 💧</button>
+            <button id="ataque-tierra">Tierra 🌱</button>
+            <button id="ataque-aire">Aire 🌪️</button>
+        </p>
+    </section>
+    <section id="mensajes">
+        <p>Tu personaje atacó con todo el poder del FUEGO, el personaje enemigo atacó con medio poder de TIERRA - GANASTE🎉</p>
+    </section>
+    <section id="reiniciar">
+        <button id="boton-reiniciars">Reiniciar</button>
+    </section>
+
+    <script src="./js/avatar.js"></script> <!-- Siempre al final, para que se cargen los botones antes de ejecutar el js -->
+</body>
+</html>
