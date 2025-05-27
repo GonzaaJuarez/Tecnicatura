@@ -1,0 +1,569 @@
+:root {
+    --bg-primary: #1e1e2e;
+    --bg-secondary: #282a36;
+    --text-color: #f8f8f2;
+    --accent-color: #bd93f9;
+    --button-bg: #50fa7b;
+    --button-hover: #4cdb71;
+    --button-reset: #ff5555;
+    --button-reset-hover: #e64444;
+    --board-light: #44475a;
+    --board-dark: #282a36;
+    --visited-cell: #8be9fd;
+    --current-cell: #ff79c6;
+    --start-cell: #f1fa8c;
+    --error-color: #ff5555;
+    --notification-bg: rgba(255, 85, 85, 0.2);
+    --notification-success-bg: rgba(80, 250, 123, 0.2);
+    --start-cell: #f1fa8c; /* Color de la celda de inicio */
+    --first-move-number-color: #333; /* Un color oscuro para el número 1, que contraste con el amarillo */
+    --first-move-number-bg: #ecf39b; /* Un fondo semitransparente para el número 1 */
+    --animation-speed: 100ms; /* Asegúrate de que esta variable esté definida */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    line-height: 1.4;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: var(--accent-color);
+    margin-bottom: 8px;
+    font-size: 1.3em;
+}
+
+p {
+    color: var(--text-color);
+    margin: 3px 0;
+    font-size: 0.9em;
+}
+
+#startMessage {
+    color: var(--error-color);
+    font-weight: bold;
+    margin: 8px 0;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--error-color);
+    background-color: var(--notification-bg);
+    font-size: 0.85em;
+    animation: pulse 2s infinite alternate;
+}
+
+.notification {
+    color: var(--error-color);
+    font-weight: bold;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--error-color);
+    background-color: var(--notification-bg);
+    font-size: 0.85em;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.success {
+    color: var(--button-bg);
+    border: 1px solid var(--button-bg);
+    background-color: var(--notification-success-bg);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.01);
+        opacity: 0.95;
+    }
+}
+
+.controls, .start-position, .animation-controls {
+    margin-bottom: 12px;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.controls label, .start-position label, .animation-controls label {
+    margin-right: 6px;
+    font-weight: 600;
+    color: var(--text-color);
+    white-space: nowrap;
+    font-size: 0.9em;
+}
+
+input[type="number"], select, input[type="range"] {
+    padding: 6px 8px;
+    border: 1px solid var(--board-light);
+    border-radius: 4px;
+    background-color: var(--board-light);
+    color: var(--text-color);
+    font-size: 0.85em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus, input[type="range"]:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(189, 147, 249, 0.3);
+}
+
+input[type="number"].invalid-input {
+    border-color: var(--error-color);
+    box-shadow: 0 0 0 2px rgba(255, 85, 85, 0.3);
+}
+
+input[type="range"] {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: var(--board-dark);
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--button-bg);
+    cursor: grab;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    cursor: grabbing;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--button-bg);
+    cursor: grab;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-moz-range-thumb:active {
+    cursor: grabbing;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: var(--button-bg);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+    background-color: #6a6a6a;
+    color: #b0b0b0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#resetBoard {
+    background-color: var(--button-reset);
+}
+
+#resetBoard:hover {
+    background-color: var(--button-reset-hover);
+}
+
+#chessboard-container {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.chessboard {
+    display: grid;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 8px rgba(189, 147, 249, 0.2);
+    transition: transform 0.5s ease-out;
+    width: 100%;
+    grid-template-columns: repeat(var(--board-size), 1fr);
+    grid-template-rows: repeat(var(--board-size), 1fr);
+}
+
+/* Estilos para el icono del caballo */
+.horse-icon {
+    position: absolute; /* O 'relative' si la celda es flex-direction: column y quieres que el icono se mueva en el flujo */
+    font-size: 1.5em; /* Tamaño del icono del caballo */
+    color: var(--bg-primary); /* Color del icono del caballo */
+    transition: all var(--animation-speed) ease-in-out; /* Transición suave para el movimiento */
+    pointer-events: none; /* Asegura que no interfiera con los clics en la celda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Asegura que el caballo esté debajo del número si el número está centrado */
+}
+
+.cell {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    flex-direction: column; /* Añadido para alinear texto e icono verticalmente */
+    position: relative; /* Importante para que .horse-icon y .move-number se posicionen correctamente */
+    overflow: hidden; /* Para asegurar que el caballo no se salga de la celda durante la transición */
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background-color: rgba(189, 147, 249, 0.1);
+}
+
+.cell span.move-number {
+    position: absolute; /* Para que el número se posicione dentro de la celda */
+    bottom: 5px; /* Ajusta la posición del número */
+    right: 5px; /* Ajusta la posición del número */
+    font-size: 0.8em; /* Un poco más pequeño para no chocar */
+    color: var(--bg-primary); /* Color por defecto del número */
+    z-index: 2; /* Para que el número esté por encima del icono si es necesario */
+    padding: 2px 4px; /* Un poco de padding para que se vea mejor */
+    border-radius: 3px; /* Bordes redondeados */
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para el número */
+    min-width: 15px; /* Asegura un ancho mínimo para centrar bien */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Nuevo estilo para el número 1 en la celda de inicio */
+.cell.start .move-number.first-move {
+    color: var(--first-move-number-color); /* Color distintivo */
+    background-color: var(--first-move-number-bg); /* Fondo distintivo */
+    font-size: 1.3em; /* Más grande para que destaque */
+    font-weight: bold; /* Negrita */
+    border: 1px solid var(--first-move-number-color); /* Borde para el número */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino para centrar */
+    width: auto; /* Para que el padding y el contenido definan el ancho */
+    height: auto; /* Para que el padding y el contenido definan el alto */
+    padding: 5px 8px; /* Más padding para el número grande */
+    border-radius: 50%; /* Para que sea un círculo */
+    min-width: 30px; /* Asegura un ancho mínimo para el círculo */
+    min-height: 30px; /* Asegura un alto mínimo para el círculo */
+    display: flex; /* Usar flexbox para centrar el número dentro del span */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para que resalte más */
+}
+
+.light {
+    background-color: var(--board-light);
+    color: var(--text-color);
+}
+
+.dark {
+    background-color: var(--board-dark);
+    color: var(--text-color);
+}
+
+.visited {
+    background-color: var(--visited-cell);
+    color: var(--bg-primary);
+    animation: cell-visited 0.5s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes cell-visited {
+    from {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.current {
+    background-color: var(--current-cell);
+    color: var(--bg-primary);
+    border: 2px solid var(--start-cell);
+    animation: cell-current 0.6s infinite alternate;
+    box-shadow: 0 0 8px var(--current-cell);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Añadido para alinear texto e icono verticalmente */
+}
+
+/* Elimina o modifica estas reglas si ya no quieres el icono CSS ::before */
+.current::before, .start::before {
+    /* content: '♘'; */ /* Quita o comenta esta línea */
+    /* font-size: 1.5em; */
+    /* color: var(--bg-primary); */
+    /* margin-bottom: 2px; */
+    display: none; /* Asegúrate de que no aparezca el ::before si ya tienes un elemento div */
+}
+
+@keyframes cell-current {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 6px var(--current-cell);
+    }
+    to {
+        transform: scale(1.02);
+        box-shadow: 0 0 10px var(--current-cell);
+    }
+}
+
+.start {
+    background-color: var(--start-cell); /* Color de la celda de inicio */
+    color: var(--bg-primary); /* El color del texto dentro de la celda de inicio */
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 8px var(--start-cell);
+    animation: cell-start 1s infinite alternate; /* Mantenemos la animación si te gusta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes cell-start {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.01);
+        opacity: 0.95;
+    }
+}
+
+.log-container {
+    margin-top: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    background-color: var(--bg-secondary);
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#moveLog {
+    list-style-type: none;
+    padding: 0;
+    overflow-y: visible;
+    text-align: left;
+    margin-top: 8px;
+    border-top: 1px solid var(--board-light);
+    padding-top: 8px;
+}
+
+#moveLog li {
+    padding: 4px 0;
+    color: var(--text-color);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+}
+
+#moveLog li:last-child {
+    border-bottom: none;
+}
+
+#moveLog li:hover {
+    background-color: rgba(189, 147, 249, 0.05);
+}
+
+#moveLog::-webkit-scrollbar {
+    width: 5px;
+}
+
+#moveLog::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+    border-radius: 10px;
+}
+
+#moveLog::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    border: 1px solid var(--bg-primary);
+}
+
+#moveLog::-webkit-scrollbar-thumb:hover {
+    background-color: var(--button-bg);
+}
+
+.animation-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#speedValue {
+    font-size: 0.85em;
+    color: var(--accent-color);
+    margin-left: 6px;
+    font-weight: bold;
+}
+
+/* SPINERdeCARGA */
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--accent-color);
+    animation: pulse 1.5s infinite ease-in-out; /* Reutilizamos la animación pulse o creamos una nueva */
+    text-shadow: 0 0 5px rgba(189, 147, 249, 0.5);
+}
+/* spinner más visual */
+.loading-spinner::before {
+    content: '';
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Responsividad*/
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .controls, .start-position, .animation-controls, .log-container {
+        padding: 8px;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .cell {
+        font-size: 0.85em;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 6px;
+        padding: 6px 12px;
+    }
+
+    input[type="number"], input[type="range"] {
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: 0;
+        padding: 5px 6px;
+    }
+
+    #startMessage, .notification {
+        font-size: 0.8em;
+        padding: 5px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .cell {
+        font-size: 0.75em;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 0.85em;
+    }
+
+    .controls, .start-position, .animation-controls, .log-container {
+        padding: 6px;
+        max-width: 300px;
+    }
+
+    #chessboard-container {
+        max-width: 300px;
+    }
+}
