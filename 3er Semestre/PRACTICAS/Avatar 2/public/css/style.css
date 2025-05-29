@@ -153,6 +153,35 @@ button:disabled {
     color: #333;
 }
 
+#mensajes .versus-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+#mensajes .personaje-jugador, #mensajes .personaje-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+}
+
+#mensajes .personaje-jugador img, #mensajes .personaje-enemigo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 150px;
+    display: none; /* Se mostrará cuando se seleccione un personaje */
+}
+
+#mensajes .versus-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5a3e2b;
+}
+
 #imagen-personaje, #imagen-enemigo {
     max-width: 100%;
     height: auto;
@@ -267,6 +296,19 @@ footer a:hover {
         gap: 5px;
     }
 
+    #mensajes .versus-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #mensajes .versus-text {
+        font-size: 20px;
+    }
+
+    #mensajes .personaje-jugador img, #mensajes .personaje-enemigo img {
+        max-height: 120px;
+    }
+
     footer {
         padding: 10px;
         font-size: 12px;
@@ -311,6 +353,14 @@ footer a:hover {
     .element-icon {
         width: 14px;
         height: 14px;
+    }
+
+    #mensajes .versus-text {
+        font-size: 16px;
+    }
+
+    #mensajes .personaje-jugador img, #mensajes .personaje-enemigo img {
+        max-height: 100px;
     }
 
     footer {

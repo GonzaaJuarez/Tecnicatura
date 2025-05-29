@@ -32,8 +32,8 @@
     </section>
     <section id="seleccionar-ataque">
         <h2>Elige tu ataque</h2>
-        <p>Tu personaje tiene <span>3</span> vidas</p>
-        <p>El personaje enemigo tiene <span>3</span> vidas</p>
+        <p>Tu personaje <span id="personajeJugador">...</span> tiene <span id="vidas-jugador">3</span> vidas</p>
+        <p>El personaje enemigo <span id="personajeEnemigo">...</span> tiene <span id="vidas-enemigo">3</span> vidas</p>
         <p>
             <button id="ataque-fuego">Fuego <img src="./assets/fuego.png" alt="Fuego" class="element-icon"></button>
             <button id="ataque-agua">Agua <img src="./assets/agua.png" alt="Agua" class="element-icon"></button>
@@ -43,7 +43,15 @@
     </section>
     <section id="mensajes">
         <p id="mensaje-personaje">Por favor, selecciona un personaje.</p>
-        <img id="imagen-personaje" src="" alt="" style="display: none;">
+        <div class="versus-container">
+        <div class="personaje-jugador">
+            <img id="imagen-personaje" alt="Personaje del jugador">
+        </div>
+        <div class="versus-text">vs</div>
+        <div class="personaje-enemigo">
+            <img id="imagen-enemigo" alt="Personaje enemigo">
+        </div>
+    </div>
     </section>
     <section id="reiniciar">
         <button id="boton-reiniciar">Reiniciar</button>
