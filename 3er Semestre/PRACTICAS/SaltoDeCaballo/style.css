@@ -1,587 +1,729 @@
 :root {
-    --bg-primary: #1e1e2e;
-    --bg-secondary: #282a36;
-    --text-color: #f8f8f2;
-    --accent-color: #bd93f9;
-    --button-bg: #50fa7b;
-    --button-hover: #4cdb71;
-    --button-reset: #ff5555;
-    --button-reset-hover: #e64444;
-    --board-light: #44475a;
-    --board-dark: #282a36;
-    --visited-cell: #8be9fd;
-    --current-cell: #ff79c6;
-    --start-cell: #f1fa8c;
-    --error-color: #ff5555;
-    --notification-bg: rgba(255, 85, 85, 0.2);
-    --notification-success-bg: rgba(80, 250, 123, 0.2);
-    --start-cell: #f1fa8c; /* Color de la celda de inicio */
-    --first-move-number-color: #333; /* Un color oscuro para el número 1, que contraste con el amarillo */
-    --first-move-number-bg: #ecf39b; /* Un fondo semitransparente para el número 1 */
-    --animation-speed: 100ms; /* Asegúrate de que esta variable esté definida */
+  --bg-primary: #1e1e2e; /* Color de fondo principal (oscuro) */
+  --bg-secondary: #282a36; /* Color de fondo secundario (más oscuro que el principal) */
+  --text-color: #f8f8f2; /* Color de texto general (claro) */
+  --accent-color: #bd93f9; /* Color de acento (púrpura) */
+  --button-bg: #50fa7b; /* Color de fondo de botones (verde brillante) */
+  --button-hover: #4cdb71; /* Color de fondo de botones al pasar el ratón */
+  --button-reset: #ff5555; /* Color de fondo del botón de reset (rojo) */
+  --button-reset-hover: #e64444; /* Color de fondo del botón de reset al pasar el ratón */
+  --board-light: #44475a; /* Color de las celdas claras del tablero */
+  --board-dark: #282a36; /* Color de las celdas oscuras del tablero */
+  --visited-cell: #8be9fd; /* Color de las celdas visitadas (azul claro) */
+  --current-cell: #ff79c6; /* Color de la celda actual del caballo (rosa) */
+  --start-cell: #f1fa8c; /* Color de la celda de inicio (amarillo claro) */
+  --error-color: #ff5555; /* Color para mensajes de error (rojo) */
+  --notification-bg: rgba(255, 85, 85, 0.2); /* Fondo de notificación de error (rojo semitransparente) */
+  --notification-success-bg: rgba(80, 250, 123, 0.2); /* Fondo de notificación de éxito (verde semitransparente) */
+  --first-move-number-color: #333; /* Color del número del primer movimiento */
+  --first-move-number-bg: #ecf39b; /* Fondo del número del primer movimiento */
+  --animation-speed: 100ms; /* Velocidad base de la animación del caballo, se puede sobrescribir con JS */
 }
 
+/* Estilos para el cuerpo de la página:
+   Define la fuente, el diseño flexbox para centrar contenido,
+   márgenes, padding, color de fondo y de texto, altura mínima, etc. */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 10px;
-    background-color: var(--bg-primary);
-    color: var(--text-color);
-    line-height: 1.4;
-    min-height: 100vh;
-    box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex; /* Usa flexbox para alinear los elementos */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  margin: 0; /* Sin margen exterior */
+  padding: 10px; /* Padding interior */
+  background-color: var(--bg-primary); /* Color de fondo definido en las variables */
+  color: var(--text-color); /* Color de texto definido en las variables */
+  line-height: 1.4; /* Altura de línea */
+  min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+  box-sizing: border-box; /* El padding y el borde se incluyen en el tamaño total del elemento */
 }
 
+/* Estilos para el encabezado principal (h1) */
 h1 {
-    color: var(--accent-color);
-    margin-bottom: 10px;
-    font-size: 1.8em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  color: var(--accent-color); /* Color de acento para el título */
+  margin-bottom: 10px; /* Margen inferior */
+  font-size: 1.8em; /* Tamaño de fuente relativo */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra de texto para mejorar la visibilidad */
 }
 
+/* Estilos para subencabezados (h2) */
 h2 {
-    color: var(--accent-color);
-    margin-bottom: 8px;
-    font-size: 1.3em;
+  color: var(--accent-color); /* Color de acento */
+  margin-bottom: 8px; /* Margen inferior */
+  font-size: 1.3em; /* Tamaño de fuente */
 }
 
+/* Estilos para párrafos (p) */
 p {
-    color: var(--text-color);
-    margin: 3px 0;
-    font-size: 0.9em;
+  color: var(--text-color); /* Color de texto general */
+  margin: 3px 0; /* Margen vertical */
+  font-size: 0.9em; /* Tamaño de fuente */
 }
 
+/* Estilos para el mensaje inicial del tablero (startMessage) */
 #startMessage {
-    color: var(--error-color);
-    font-weight: bold;
-    margin: 8px 0;
-    padding: 6px 10px;
-    border-radius: 5px;
-    border: 1px solid var(--error-color);
-    background-color: var(--notification-bg);
-    font-size: 0.85em;
-    animation: pulse 2s infinite alternate;
+  color: var(--error-color); /* Color de texto de error */
+  font-weight: bold; /* Texto en negrita */
+  margin: 8px 0; /* Margen vertical */
+  padding: 6px 10px; /* Padding interior */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 1px solid var(--error-color); /* Borde con color de error */
+  background-color: var(--notification-bg); /* Fondo de notificación de error */
+  font-size: 0.85em; /* Tamaño de fuente */
+  animation: pulse 2s infinite alternate; /* Animación de pulsación */
 }
 
+/* Estilos generales para notificaciones */
 .notification {
-    color: var(--error-color);
-    font-weight: bold;
-    margin: 8px 0;
-    padding: 8px 12px;
-    border-radius: 5px;
-    border: 1px solid var(--error-color);
-    background-color: var(--notification-bg);
-    font-size: 0.85em;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  color: var(--error-color); /* Color de texto de error */
+  font-weight: bold; /* Texto en negrita */
+  margin: 8px 0; /* Margen vertical */
+  padding: 8px 12px; /* Padding interior */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 1px solid var(--error-color); /* Borde con color de error */
+  background-color: var(--notification-bg); /* Fondo de notificación de error */
+  font-size: 0.85em; /* Tamaño de fuente */
+  text-align: center; /* Texto centrado */
+  max-width: 400px; /* Ancho máximo */
+  width: 90%; /* Ancho responsivo */
+  opacity: 0; /* Inicialmente transparente (oculto) */
+  transform: translateY(-10px); /* Ligeramente desplazado hacia arriba (para la animación) */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves para mostrar/ocultar */
 }
 
+/* Estado de la notificación cuando está visible */
 .notification.show {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1; /* Completamente visible */
+  transform: translateY(0); /* Vuelve a su posición original */
 }
 
+/* Estilos para notificaciones de éxito */
 .notification.success {
-    color: var(--button-bg);
-    border: 1px solid var(--button-bg);
-    background-color: var(--notification-success-bg);
+  color: var(--button-bg); /* Color de texto de botón (verde) */
+  border: 1px solid var(--button-bg); /* Borde con color de botón */
+  background-color: var(--notification-success-bg); /* Fondo de notificación de éxito */
 }
 
+/* Animación de pulsación */
 @keyframes pulse {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(1.01);
-        opacity: 0.95;
-    }
+  from {
+    transform: scale(1); /* Escala normal */
+    opacity: 1; /* Opacidad completa */
+  }
+  to {
+    transform: scale(1.01); /* Ligeramente más grande */
+    opacity: 0.95; /* Ligeramente menos opaco */
+  }
 }
 
-.controls, .start-position, .animation-controls {
-    margin-bottom: 12px;
-    padding: 8px;
-    border: none;
-    border-radius: 6px;
-    background-color: var(--bg-secondary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    max-width: 400px;
+/* Estilos para los contenedores de controles (tamaño, inicio, animación) */
+.controls,
+.start-position,
+.animation-controls {
+  margin-bottom: 12px; /* Margen inferior */
+  padding: 8px; /* Padding interior */
+  border: none; /* Sin borde */
+  border-radius: 6px; /* Bordes redondeados */
+  background-color: var(--bg-secondary); /* Color de fondo secundario */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra de caja */
+  display: flex; /* Usa flexbox para alinear elementos */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en la siguiente línea */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 8px; /* Espacio entre elementos flex */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 400px; /* Ancho máximo */
 }
 
-.controls label, .start-position label, .animation-controls label {
-    margin-right: 6px;
-    font-weight: 600;
-    color: var(--text-color);
-    white-space: nowrap;
-    font-size: 0.9em;
+/* Estilos para etiquetas dentro de los controles */
+.controls label,
+.start-position label,
+.animation-controls label {
+  margin-right: 6px; /* Margen derecho */
+  font-weight: 600; /* Negrita */
+  color: var(--text-color); /* Color de texto */
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  font-size: 0.9em; /* Tamaño de fuente */
 }
 
-input[type="number"], select, input[type="range"] {
-    padding: 6px 8px;
-    border: 1px solid var(--board-light);
-    border-radius: 4px;
-    background-color: var(--board-light);
-    color: var(--text-color);
-    font-size: 0.85em;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input[type="number"]:focus, input[type="range"]:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(189, 147, 249, 0.3);
-}
-
-input[type="number"].invalid-input {
-    border-color: var(--error-color);
-    box-shadow: 0 0 0 2px rgba(255, 85, 85, 0.3);
-}
-
+/* Estilos para inputs numéricos, select y rangos */
+input[type="number"],
+select,
 input[type="range"] {
-    flex-grow: 1;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 5px;
-    background: var(--board-dark);
-    outline: none;
-    opacity: 0.9;
-    transition: opacity .2s;
-    border-radius: 5px;
+  padding: 6px 8px; /* Padding interior */
+  border: 1px solid var(--board-light); /* Borde */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: var(--board-light); /* Fondo */
+  color: var(--text-color); /* Color de texto */
+  font-size: 0.85em; /* Tamaño de fuente */
+  outline: none; /* Sin contorno al enfocar */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
 }
 
+/* Estilos al enfocar inputs numéricos y rangos */
+input[type="number"]:focus,
+input[type="range"]:focus {
+  border-color: var(--accent-color); /* Color del borde de acento */
+  box-shadow: 0 0 0 2px rgba(189, 147, 249, 0.3); /* Sombra de enfoque */
+}
+
+/* Estilos para input numérico con entrada inválida */
+input[type="number"].invalid-input {
+  border-color: var(--error-color); /* Borde rojo */
+  box-shadow: 0 0 0 2px rgba(255, 85, 85, 0.3); /* Sombra roja */
+}
+
+/* Estilos específicos para el input de rango (slider) */
+input[type="range"] {
+  flex-grow: 1; /* Permite que el elemento crezca para ocupar espacio disponible */
+  -webkit-appearance: none; /* Elimina estilos por defecto de navegador Webkit */
+  appearance: none; /* Elimina estilos por defecto */
+  height: 5px; /* Altura del track del slider */
+  background: var(--board-dark); /* Color de fondo del track */
+  outline: none; /* Sin contorno */
+  opacity: 0.9; /* Ligeramente transparente */
+  transition: opacity .2s; /* Transición de opacidad */
+  border-radius: 5px; /* Bordes redondeados del track */
+}
+
+/* Estilos para el "pulgar" (thumb) del slider en Webkit */
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--button-bg);
-    cursor: grab;
-    transition: background 0.3s ease;
+  -webkit-appearance: none; /* Elimina estilos por defecto */
+  appearance: none; /* Elimina estilos por defecto */
+  width: 14px; /* Ancho del pulgar */
+  height: 14px; /* Alto del pulgar */
+  border-radius: 50%; /* Forma circular */
+  background: var(--button-bg); /* Color de fondo del botón */
+  cursor: grab; /* Cursor de "agarre" */
+  transition: background 0.3s ease; /* Transición de color de fondo */
 }
 
+/* Estilos del pulgar del slider cuando se está arrastrando en Webkit */
 input[type="range"]::-webkit-slider-thumb:active {
-    cursor: grabbing;
+  cursor: grabbing; /* Cursor de "agarrando" */
 }
 
+/* Estilos para el "pulgar" (thumb) del slider en Firefox */
 input[type="range"]::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--button-bg);
-    cursor: grab;
-    transition: background 0.3s ease;
+  width: 14px; /* Ancho del pulgar */
+  height: 14px; /* Alto del pulgar */
+  border-radius: 50%; /* Forma circular */
+  background: var(--button-bg); /* Color de fondo del botón */
+  cursor: grab; /* Cursor de "agarre" */
+  transition: background 0.3s ease; /* Transición de color de fondo */
 }
 
+/* Estilos del pulgar del slider cuando se está arrastrando en Firefox */
 input[type="range"]::-moz-range-thumb:active {
-    cursor: grabbing;
+  cursor: grabbing; /* Cursor de "agarrando" */
 }
 
+/* Estilos generales para botones */
 button {
-    padding: 8px 15px;
-    background-color: var(--button-bg);
-    color: var(--bg-primary);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 8px 15px; /* Padding interior */
+  background-color: var(--button-bg); /* Color de fondo del botón */
+  color: var(--bg-primary); /* Color de texto del botón (oscuro) */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de puntero */
+  font-size: 0.9em; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 0.5px; /* Espaciado entre letras */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra de caja */
 }
 
+/* Estilos de botones al pasar el ratón */
 button:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--button-hover); /* Color de fondo de hover */
+  transform: translateY(-1px); /* Ligeramente desplazado hacia arriba */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Sombra de caja más pronunciada */
 }
 
+/* Estilos de botones deshabilitados */
 button:disabled {
-    background-color: #6a6a6a;
-    color: #b0b0b0;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
+  background-color: #6a6a6a; /* Fondo gris */
+  color: #b0b0b0; /* Texto gris claro */
+  cursor: not-allowed; /* Cursor de "no permitido" */
+  transform: none; /* Sin transformación */
+  box-shadow: none; /* Sin sombra */
 }
 
+/* Estilos específicos para el botón de reset */
 #resetBoard {
-    background-color: var(--button-reset);
+  background-color: var(--button-reset); /* Color de fondo de reset */
 }
 
+/* Estilos del botón de reset al pasar el ratón */
 #resetBoard:hover {
-    background-color: var(--button-reset-hover);
+  background-color: var(--button-reset-hover); /* Color de fondo de reset al pasar el ratón */
 }
 
+/* CONTENEDOR PRINCIPAL DEL TABLERO */
 #chessboard-container {
-    margin: 15px 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
-    overflow: hidden;
+  margin: 15px 0; /* Margen vertical */
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  width: 100%; /* Ocupa todo el ancho */
+  max-width: 400px; /* Ancho máximo */
+  height: 400px; /* Altura fija */
+  position: relative; /* Posicionamiento relativo para hijos absolutos (SVG) */
+  overflow: visible; /* Contenido desbordado es visible */
 }
 
+/* Estilos para el tablero de ajedrez (grid) */
 .chessboard {
-    display: grid;
-    border: 1px solid var(--accent-color);
-    box-shadow: 0 0 8px rgba(189, 147, 249, 0.2);
-    transition: transform 0.5s ease-out;
-    width: 100%;
-    grid-template-columns: repeat(var(--board-size), 1fr);
-    grid-template-rows: repeat(var(--board-size), 1fr);
+  display: grid; /* Usa CSS Grid para las celdas */
+  border: 1px solid var(--accent-color); /* Borde de acento */
+  box-shadow: 0 0 8px rgba(189, 147, 249, 0.2); /* Sombra de caja sutil */
+  transition: transform 0.5s ease-out; /* Transición de transformación */
+  width: 100%; /* Ocupa el 100% del contenedor */
+  height: 100%; /* Ocupa el 100% del contenedor */
+  grid-template-columns: repeat(var(--board-size), 1fr); /* Columnas del grid, tamaño definido por JS */
+  grid-template-rows: repeat(var(--board-size), 1fr); /* Filas del grid, tamaño definido por JS */
+  position: relative; /* Posicionamiento relativo */
+  z-index: 1; /* Capa z para asegurar que esté debajo de las flechas */
+  box-sizing: border-box; /* Incluye padding y borde en el tamaño */
+}
+
+/* SVG DE FLECHAS - POSICIONAMIENTO ABSOLUTO SOBRE EL TABLERO */
+#arrowsSvg {
+  position: absolute; /* Posicionamiento absoluto */
+  top: 0; /* Arriba del contenedor */
+  left: 0; /* Izquierda del contenedor */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 100%; /* Ocupa toda la altura del contenedor */
+  pointer-events: none; /* Ignora eventos del ratón para no bloquear clics en las celdas */
+  z-index: 10; /* Capa z superior para que las flechas se vean encima del tablero */
+  overflow: visible; /* Contenido desbordado es visible */
+}
+
+/* Estilos para las líneas de las flechas SVG */
+.arrow {
+  stroke: #ff79c6; /* Color del trazo (rosa) */
+  stroke-width: 3; /* Ancho del trazo */
+  opacity: 0.9; /* Opacidad */
+}
+
+/* Estilos para la cabeza de las flechas SVG (polígono) */
+.arrow-head {
+  fill: #ff79c6; /* Color de relleno (rosa) */
+  opacity: 0.9; /* Opacidad */
 }
 
 /* Estilos para el icono del caballo */
 .horse-icon {
-    position: absolute; /* O 'relative' si la celda es flex-direction: column y quieres que el icono se mueva en el flujo */
-    font-size: 1.5em; /* Tamaño del icono del caballo */
-    color: var(--bg-primary); /* Color del icono del caballo */
-    transition: all var(--animation-speed) ease-in-out; /* Transición suave para el movimiento */
-    pointer-events: none; /* Asegura que no interfiera con los clics en la celda */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Asegura que el caballo esté debajo del número si el número está centrado */
+  position: absolute; /* Posicionamiento absoluto dentro de la celda */
+  font-size: 1.5em; /* Tamaño de fuente del icono */
+  color: var(--bg-primary); /* Color del icono (oscuro) */
+  transition: all var(--animation-speed) ease-in-out; /* Transición suave para el movimiento */
+  pointer-events: none; /* Ignora eventos del ratón */
+  display: flex; /* Usa flexbox para centrar el icono dentro de la celda */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  width: 100%; /* Ocupa todo el ancho de la celda */
+  height: 100%; /* Ocupa toda la altura de la celda */
+  top: 0; /* Arriba */
+  left: 0; /* Izquierda */
+  z-index: 1; /* Capa z para estar encima del número de movimiento */
 }
 
+/* Estilos para cada celda del tablero */
 .cell {
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    font-size: 0.9em;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    position: relative;
-    flex-direction: column; /* Añadido para alinear texto e icono verticalmente */
-    position: relative; /* Importante para que .horse-icon y .move-number se posicionen correctamente */
-    overflow: hidden; /* Para asegurar que el caballo no se salga de la celda durante la transición */
+  width: 100%; /* Ocupa el 100% del ancho de su columna en el grid */
+  display: flex; /* Usa flexbox para centrar contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  font-weight: 600; /* Negrita */
+  font-size: 0.9em; /* Tamaño de fuente */
+  box-sizing: border-box; /* Incluye padding y borde en el tamaño */
+  cursor: pointer; /* Cursor de puntero al pasar el ratón */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Transiciones suaves */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
+  position: relative; /* Posicionamiento relativo para el número de movimiento */
+  flex-direction: column; /* Apila elementos verticalmente si hay más de uno */
+  overflow: hidden; /* Oculta contenido que se desborde */
 }
 
+/* Estilos de la celda al pasar el ratón */
 .cell:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    background-color: rgba(189, 147, 249, 0.1);
+  transform: scale(1.1); /* Se agranda ligeramente */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra brillante */
+  background-color: rgba(189, 147, 249, 0.1); /* Fondo púrpura semitransparente */
 }
 
+/* Estilos para el número de movimiento dentro de la celda */
 .cell span.move-number {
-    position: absolute; /* Para que el número se posicione dentro de la celda */
-    bottom: 5px; /* Ajusta la posición del número */
-    right: 5px; /* Ajusta la posición del número */
-    font-size: 0.8em; /* Un poco más pequeño para no chocar */
-    color: var(--bg-primary); /* Color por defecto del número */
-    z-index: 2; /* Para que el número esté por encima del icono si es necesario */
-    padding: 2px 4px; /* Un poco de padding para que se vea mejor */
-    border-radius: 3px; /* Bordes redondeados */
-    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para el número */
-    min-width: 15px; /* Asegura un ancho mínimo para centrar bien */
-    text-align: center;
-    box-sizing: border-box;
+  position: absolute; /* Posicionamiento absoluto */
+  bottom: 5px; /* A 5px del borde inferior */
+  right: 5px; /* A 5px del borde derecho */
+  font-size: 0.8em; /* Tamaño de fuente */
+  color: var(--bg-primary); /* Color de texto (oscuro) */
+  z-index: 2; /* Capa z superior al caballo */
+  padding: 2px 4px; /* Padding */
+  border-radius: 3px; /* Bordes redondeados */
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente oscuro */
+  min-width: 15px; /* Ancho mínimo */
+  text-align: center; /* Texto centrado */
+  box-sizing: border-box; /* Incluye padding y borde en el tamaño */
 }
 
-/* Nuevo estilo para el número 1 en la celda de inicio */
+/* Estilos especiales para el número del primer movimiento en la celda de inicio */
 .cell.start .move-number.first-move {
-    color: var(--first-move-number-color); /* Color distintivo */
-    background-color: var(--first-move-number-bg); /* Fondo distintivo */
-    font-size: 1.3em; /* Más grande para que destaque */
-    font-weight: bold; /* Negrita */
-    border: 1px solid var(--first-move-number-color); /* Borde para el número */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-    top: 50%; /* Centrar verticalmente */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translate(-50%, -50%); /* Ajuste fino para centrar */
-    width: auto; /* Para que el padding y el contenido definan el ancho */
-    height: auto; /* Para que el padding y el contenido definan el alto */
-    padding: 5px 8px; /* Más padding para el número grande */
-    border-radius: 50%; /* Para que sea un círculo */
-    min-width: 30px; /* Asegura un ancho mínimo para el círculo */
-    min-height: 30px; /* Asegura un alto mínimo para el círculo */
-    display: flex; /* Usar flexbox para centrar el número dentro del span */
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para que resalte más */
+  color: var(--first-move-number-color); /* Color de texto específico para el primer movimiento */
+  background-color: var(--first-move-number-bg); /* Fondo específico para el primer movimiento */
+  font-size: 1.3em; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Negrita */
+  border: 1px solid var(--first-move-number-color); /* Borde con color de texto del primer movimiento */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Sombra de texto */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para el centrado exacto */
+  width: auto; /* Ancho automático */
+  height: auto; /* Altura automática */
+  padding: 5px 8px; /* Padding */
+  border-radius: 50%; /* Forma circular */
+  min-width: 30px; /* Ancho mínimo */
+  min-height: 30px; /* Altura mínima */
+  display: flex; /* Usa flexbox para centrar el número */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra de caja */
 }
 
+/* Estilos para celdas claras del tablero */
 .light {
-    background-color: var(--board-light);
-    color: var(--text-color);
+  background-color: var(--board-light); /* Color de celda clara */
+  color: var(--text-color); /* Color de texto */
 }
 
+/* Estilos para celdas oscuras del tablero */
 .dark {
-    background-color: var(--board-dark);
-    color: var(--text-color);
+  background-color: var(--board-dark); /* Color de celda oscura */
+  color: var(--text-color); /* Color de texto */
 }
 
+/* Estilos para celdas visitadas */
 .visited {
-    background-color: var(--visited-cell); /* Fallback por si no se asigna par/impar */
-    color: var(--bg-primary);
-    animation: cell-visited 0.5s ease-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--visited-cell); /* Color de celda visitada */
+  color: var(--bg-primary); /* Color de texto oscuro */
+  animation: cell-visited 0.5s ease-out; /* Animación al ser visitada */
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
 
+/* Estilos para celdas visitadas con número de movimiento impar */
 .visited-odd {
-    background-color: #8be9fd; /* Celeste claro para movimientos impares */
-    color: var(--bg-primary);
-    animation: cell-visited 0.5s ease-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #8be9fd; /* Azul claro */
+  color: var(--bg-primary);
+  animation: cell-visited 0.5s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Estilos para celdas visitadas con número de movimiento par */
 .visited-even {
-    background-color: #6acae0; /* Celeste más oscuro para movimientos pares */
-    color: var(--bg-primary);
-    animation: cell-visited 0.5s ease-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #6acae0; /* Azul ligeramente más oscuro */
+  color: var(--bg-primary);
+  animation: cell-visited 0.5s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Animación cuando una celda es visitada */
 @keyframes cell-visited {
-    from {
-        transform: scale(0.8);
-        opacity: 0.5;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+  from {
+    transform: scale(0.8); /* Empieza más pequeña */
+    opacity: 0.5; /* Empieza semitransparente */
+  }
+  to {
+    transform: scale(1); /* Vuelve a tamaño normal */
+    opacity: 1; /* Opacidad completa */
+  }
 }
 
+/* Estilos para la celda actual del caballo */
 .current {
-    background-color: var(--current-cell);
-    color: var(--bg-primary);
-    border: 2px solid var(--start-cell);
-    animation: cell-current 0.6s infinite alternate;
-    box-shadow: 0 0 8px var(--current-cell);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Añadido para alinear texto e icono verticalmente */
+  background-color: var(--current-cell); /* Color de la celda actual (rosa) */
+  color: var(--bg-primary); /* Color de texto oscuro */
+  border: 2px solid var(--start-cell); /* Borde con color de celda de inicio */
+  animation: cell-current 0.6s infinite alternate; /* Animación de pulsación */
+  box-shadow: 0 0 8px var(--current-cell); /* Sombra de caja */
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Apila elementos verticalmente */
 }
 
-/* Elimina o modifica estas reglas si ya no quieres el icono CSS ::before */
-.current::before, .start::before {
-    /* content: '♘'; */ /* Quita o comenta esta línea */
-    /* font-size: 1.5em; */
-    /* color: var(--bg-primary); */
-    /* margin-bottom: 2px; */
-    display: none; /* Asegúrate de que no aparezca el ::before si ya tienes un elemento div */
+/* Oculta los pseudo-elementos ::before para las celdas 'current' y 'start' */
+.current::before,
+.start::before {
+  display: none;
 }
 
+/* Animación para la celda actual */
 @keyframes cell-current {
-    from {
-        transform: scale(1);
-        box-shadow: 0 0 6px var(--current-cell);
-    }
-    to {
-        transform: scale(1.02);
-        box-shadow: 0 0 10px var(--current-cell);
-    }
+  from {
+    transform: scale(1); /* Tamaño normal */
+    box-shadow: 0 0 6px var(--current-cell); /* Sombra más pequeña */
+  }
+  to {
+    transform: scale(1.02); /* Ligeramente más grande */
+    box-shadow: 0 0 10px var(--current-cell); /* Sombra más pronunciada */
+  }
 }
 
+/* Estilos para la celda de inicio seleccionada */
 .start {
-    background-color: var(--start-cell); /* Color de la celda de inicio */
-    color: var(--bg-primary); /* El color del texto dentro de la celda de inicio */
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 0 8px var(--start-cell);
-    animation: cell-start 1s infinite alternate; /* Mantenemos la animación si te gusta */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  background-color: var(--start-cell); /* Color de la celda de inicio (amarillo) */
+  color: var(--bg-primary); /* Color de texto oscuro */
+  border: 2px solid var(--accent-color); /* Borde con color de acento */
+  box-shadow: 0 0 8px var(--start-cell); /* Sombra de caja */
+  animation: cell-start 1s infinite alternate; /* Animación de pulsación */
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Apila elementos verticalmente */
 }
 
+/* Animación para la celda de inicio */
 @keyframes cell-start {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(1.01);
-        opacity: 0.95;
-    }
+  from {
+    transform: scale(1); /* Tamaño normal */
+    opacity: 1; /* Opacidad completa */
+  }
+  to {
+    transform: scale(1.01); /* Ligeramente más grande */
+    opacity: 0.95; /* Ligeramente menos opaca */
+  }
 }
 
+/* Contenedor del log de movimientos */
 .log-container {
-    margin-top: 15px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    background-color: var(--bg-secondary);
-    padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 15px; /* Margen superior */
+  width: 90%; /* Ancho responsivo */
+  max-width: 400px; /* Ancho máximo */
+  text-align: center; /* Texto centrado */
+  background-color: var(--bg-secondary); /* Fondo secundario */
+  padding: 10px; /* Padding interior */
+  border-radius: 6px; /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra de caja */
 }
 
+/* Controles de navegación (anterior/siguiente) */
+.navigation-controls {
+  margin-top: 10px; /* Margen superior */
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 10px; /* Espacio entre botones */
+  width: 100%; /* Ocupa todo el ancho */
+  max-width: 400px; /* Ancho máximo */
+}
+
+/* Estilos para los botones de navegación */
+#prevStep,
+#nextStep {
+  padding: 8px 15px; /* Padding interior */
+  background-color: var(--accent-color); /* Color de acento */
+  color: var(--bg-primary); /* Color de texto oscuro */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de puntero */
+  font-size: 0.9em; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 0.5px; /* Espaciado entre letras */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra de caja */
+}
+
+/* Estilos de botones de navegación al pasar el ratón */
+#prevStep:hover,
+#nextStep:hover {
+  background-color: #a77ee6; /* Color de acento ligeramente más oscuro */
+  transform: translateY(-1px); /* Ligeramente desplazado hacia arriba */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Sombra de caja más pronunciada */
+}
+
+/* Estilos de botones de navegación deshabilitados */
+#prevStep:disabled,
+#nextStep:disabled {
+  background-color: #6a6a6a; /* Fondo gris */
+  color: #b0b0b0; /* Texto gris claro */
+  cursor: not-allowed; /* Cursor de "no permitido" */
+  transform: none; /* Sin transformación */
+  box-shadow: none; /* Sin sombra */
+}
+
+/* Lista de movimientos en el log */
 #moveLog {
-    list-style-type: none;
-    padding: 0;
-    overflow-y: visible;
-    text-align: left;
-    margin-top: 8px;
-    border-top: 1px solid var(--board-light);
-    padding-top: 8px;
+  list-style-type: none; /* Sin viñetas de lista */
+  padding: 0; /* Sin padding */
+  overflow-y: visible; /* Permite desplazamiento vertical si el contenido es muy largo */
+  text-align: left; /* Alineación de texto a la izquierda */
+  margin-top: 8px; /* Margen superior */
+  border-top: 1px solid var(--board-light); /* Borde superior */
+  padding-top: 8px; /* Padding superior */
 }
 
+/* Elementos de la lista de movimientos */
 #moveLog li {
-    padding: 4px 0;
-    color: var(--text-color);
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-    font-size: 0.85em;
-    transition: background-color 0.2s ease;
+  padding: 4px 0; /* Padding vertical */
+  color: var(--text-color); /* Color de texto */
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1); /* Borde inferior punteado */
+  font-size: 0.85em; /* Tamaño de fuente */
+  transition: background-color 0.2s ease; /* Transición de color de fondo */
 }
 
+/* Elimina el borde inferior del último elemento de la lista */
 #moveLog li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
+/* Estilos de los elementos de la lista al pasar el ratón */
 #moveLog li:hover {
-    background-color: rgba(189, 147, 249, 0.05);
+  background-color: rgba(189, 147, 249, 0.05); /* Fondo púrpura muy suave */
 }
 
+/* Estilos de la barra de desplazamiento para el log de movimientos (Webkit) */
 #moveLog::-webkit-scrollbar {
-    width: 5px;
+  width: 5px; /* Ancho de la barra */
 }
 
 #moveLog::-webkit-scrollbar-track {
-    background: var(--bg-primary);
-    border-radius: 10px;
+  background: var(--bg-primary); /* Fondo del track de la barra */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
 #moveLog::-webkit-scrollbar-thumb {
-    background-color: var(--accent-color);
-    border-radius: 10px;
-    border: 1px solid var(--bg-primary);
+  background-color: var(--accent-color); /* Color del "pulgar" de la barra */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 1px solid var(--bg-primary); /* Borde del pulgar */
 }
 
 #moveLog::-webkit-scrollbar-thumb:hover {
-    background-color: var(--button-bg);
+  background-color: var(--button-bg); /* Color del pulgar al pasar el ratón */
 }
 
+/* Controles de animación */
 .animation-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex; /* Usa flexbox */
+  align-items: center; /* Alinea elementos verticalmente */
+  justify-content: center; /* Centra horizontalmente */
 }
 
+/* Valor de velocidad de animación */
 #speedValue {
-    font-size: 0.85em;
-    color: var(--accent-color);
-    margin-left: 6px;
-    font-weight: bold;
+  font-size: 0.85em; /* Tamaño de fuente */
+  color: var(--accent-color); /* Color de acento */
+  margin-left: 6px; /* Margen izquierdo */
+  font-weight: bold; /* Negrita */
 }
 
-/* SPINERdeCARGA */
+/* Spinner de carga */
 .loading-spinner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 15px 0;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: var(--accent-color);
-    animation: pulse 1.5s infinite ease-in-out; /* Reutilizamos la animación pulse o creamos una nueva */
-    text-shadow: 0 0 5px rgba(189, 147, 249, 0.5);
+  display: flex; /* Usa flexbox para alinear el icono y el texto */
+  align-items: center; /* Alinea verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  margin: 15px 0; /* Margen vertical */
+  font-size: 1.1em; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  color: var(--accent-color); /* Color de acento */
+  animation: pulse 1.5s infinite ease-in-out; /* Animación de pulsación */
+  text-shadow: 0 0 5px rgba(189, 147, 249, 0.5); /* Sombra de texto */
 }
-/* spinner más visual */
+
+/* Pseudo-elemento ::before para el icono del spinner */
 .loading-spinner::before {
-    content: '';
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top: 3px solid var(--accent-color);
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    animation: spin 1s linear infinite;
-    margin-right: 10px;
+  content: ""; /* Contenido vacío para crear la forma */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Borde semitransparente */
+  border-top: 3px solid var(--accent-color); /* Parte superior del borde con color de acento */
+  border-radius: 50%; /* Forma circular */
+  width: 20px; /* Ancho */
+  height: 20px; /* Alto */
+  animation: spin 1s linear infinite; /* Animación de giro */
+  margin-right: 10px; /* Margen derecho */
 }
+
+/* Animación de giro del spinner */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg); /* Empieza sin rotación */
+  }
+  100% {
+    transform: rotate(360deg); /* Gira 360 grados */
+  }
 }
 
-/*Responsividad*/
-
+/* Media Queries para diseño responsivo:
+   Ajusta los estilos para pantallas con ancho máximo de 768px (tablets y móviles). */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 1.6em;
-    }
+  h1 {
+    font-size: 1.6em; /* Reduce el tamaño del título */
+  }
 
-    .controls, .start-position, .animation-controls, .log-container {
-        padding: 8px;
-        flex-direction: column;
-        gap: 6px;
-    }
+  .controls,
+  .start-position,
+  .animation-controls,
+  .log-container {
+    padding: 8px; /* Reduce el padding */
+    flex-direction: column; /* Apila los elementos en columnas */
+    gap: 6px; /* Reduce el espacio entre elementos */
+  }
 
-    .cell {
-        font-size: 0.85em;
-    }
+  .cell {
+    font-size: 0.85em; /* Reduce el tamaño de fuente de las celdas */
+  }
 
-    button {
-        width: 100%;
-        margin-top: 6px;
-        padding: 6px 12px;
-    }
+  button {
+    width: 100%; /* Botones ocupan todo el ancho */
+    margin-top: 6px; /* Margen superior */
+    padding: 6px 12px; /* Reduce el padding de los botones */
+  }
 
-    input[type="number"], input[type="range"] {
-        width: 100%;
-        box-sizing: border-box;
-        margin-right: 0;
-        padding: 5px 6px;
-    }
+  input[type="number"],
+  input[type="range"] {
+    width: 100%; /* Inputs ocupan todo el ancho */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño */
+    margin-right: 0; /* Elimina margen derecho */
+    padding: 5px 6px; /* Reduce el padding de los inputs */
+  }
 
-    #startMessage, .notification {
-        font-size: 0.8em;
-        padding: 5px 8px;
-    }
+  #startMessage,
+  .notification {
+    font-size: 0.8em; /* Reduce el tamaño de fuente de mensajes */
+    padding: 5px 8px; /* Reduce el padding de mensajes */
+  }
 }
 
+/* Media Queries para pantallas más pequeñas:
+   Ajusta los estilos para pantallas con ancho máximo de 480px (móviles). */
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.3em;
-    }
+  h1 {
+    font-size: 1.3em; /* Reduce aún más el tamaño del título */
+  }
 
-    .cell {
-        font-size: 0.75em;
-    }
+  .cell {
+    font-size: 0.75em; /* Reduce aún más el tamaño de fuente de las celdas */
+  }
 
-    button {
-        padding: 5px 10px;
-        font-size: 0.85em;
-    }
+  button {
+    padding: 5px 10px; /* Reduce aún más el padding de los botones */
+    font-size: 0.85em; /* Reduce aún más el tamaño de fuente de los botones */
+  }
 
-    .controls, .start-position, .animation-controls, .log-container {
-        padding: 6px;
-        max-width: 300px;
-    }
+  .controls,
+  .start-position,
+  .animation-controls,
+  .log-container {
+    padding: 6px; /* Reduce aún más el padding */
+    max-width: 300px; /* Reduce el ancho máximo */
+  }
 
-    #chessboard-container {
-        max-width: 300px;
-    }
+  #chessboard-container {
+    max-width: 300px; /* Reduce el ancho máximo del contenedor del tablero */
+  }
 }

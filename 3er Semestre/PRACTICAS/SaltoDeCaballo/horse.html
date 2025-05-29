@@ -3,41 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
     <link rel="icon" href="./assets/horse.ico" type="image/x-icon" />
+    <!-- título pestaña -->
     <title>Salto del Caballo - Knight's Tour</title>
+    <!-- style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- título -->
     <h1>Salto del Caballo - Knight's Tour</h1>
 
+    <!-- tamaño del tablero -->
     <div class="controls">
         <label for="boardSize">Tamaño del tablero (n x n):</label>
         <input type="number" id="boardSize" min="3" max="10" value="8">
         <button id="createBoard">Crear Tablero</button>
     </div>
 
+    <!-- velocidad de animación -->
     <div class="animation-controls">
         <label for="animationSpeed">Velocidad de animación (ms):</label>
         <input type="range" id="animationSpeed" min="0" max="100" step="10" value="100">
         <span id="speedValue">100 ms</span>
     </div>
 
+    <!-- botones para iniciar y reiniciar -->
     <div class="controls">
         <button id="startTour">Iniciar Recorrido</button>
         <button id="resetBoard">Reiniciar</button>
     </div>
 
+    <!-- notificaciones -->
     <p id="startMessage">Haz clic en una casilla para elegir el punto de inicio.</p>
     <div id="notification" class="notification" style="display: none;"></div>
-    <div id="loadingSpinner" class="loading-spinner" style="display: none;">Buscando solución...</div> <div id="chessboard-container" class="start-position">
-        <p>Seleccione una celda para empezar</p>
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">Buscando solución...</div>
+    
+    <!-- Contenedor principal del tablero con SVG superpuesto -->
+    <div id="chessboard-container">
+        <!-- El tablero se creará aquí dinámicamente -->        
     </div>
 
+    <!-- botones para navegar por los movimientos -->
+    <div class="navigation-controls">
+        <button id="prevStep">Retroceder</button>
+        <button id="nextStep">Avanzar</button>
+    </div>
+
+    <!-- contenedor con el registro de movimientos -->
     <div class="log-container">
         <h2>Registro de Movimientos</h2>
         <ul id="moveLog"></ul>
     </div>
 
+    <!-- horse.js -->
+    <!-- Archivo JavaScript que contiene la lógica y la manipulación del DOM -->
     <script src="horse.js"></script>
-</body>
 </html>
