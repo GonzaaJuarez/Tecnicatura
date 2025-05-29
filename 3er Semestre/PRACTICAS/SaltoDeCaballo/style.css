@@ -337,7 +337,25 @@ button:disabled {
 }
 
 .visited {
-    background-color: var(--visited-cell);
+    background-color: var(--visited-cell); /* Fallback por si no se asigna par/impar */
+    color: var(--bg-primary);
+    animation: cell-visited 0.5s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visited-odd {
+    background-color: #8be9fd; /* Celeste claro para movimientos impares */
+    color: var(--bg-primary);
+    animation: cell-visited 0.5s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visited-even {
+    background-color: #6acae0; /* Celeste más oscuro para movimientos pares */
     color: var(--bg-primary);
     animation: cell-visited 0.5s ease-out;
     display: flex;

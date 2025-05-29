@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Limpiar tablero antes de iniciar el recorrido
         document.querySelectorAll('.cell').forEach(cell => {
-            // cell.textContent = ''; // Ya no limpiamos textContent directamente
+            cell.textContent = ''; // limpiar textContent directamente
             cell.classList.remove('visited', 'current'); // Quitar clases de recorrido
             // Quitar cualquier horse-icon existente en las celdas
             const existingHorse = cell.querySelector('.horse-icon');
@@ -284,71 +284,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return count;
     }
 
-    async function updateBoardDisplay(row, col, moveNumber) {
-        const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`); //
-        if (cell) {
-            // Quitar la clase 'current' de todas las celdas
-            document.querySelectorAll('.cell.current').forEach(c => {
-                c.classList.remove('current');
-            });
-
-            // Si el movimiento es válido (no -1), mover el caballo y marcar la celda
-            if (moveNumber !== -1) {
-                // Mover el elemento del caballo a la nueva celda
-                if (currentHorseElement) {
-                    cell.appendChild(currentHorseElement);
-                } else { // Esto debería suceder solo en el primer movimiento
-                    currentHorseElement = document.createElement('div');
-                    currentHorseElement.classList.add('horse-icon');
-                    currentHorseElement.textContent = '♘';
-                    cell.appendChild(currentHorseElement);
-                }
-
-                cell.classList.add('visited'); //
-                cell.classList.add('current'); // Marcar la celda actual
-
-                let moveNumberSpan = cell.querySelector('.move-number');
-                if (!moveNumberSpan) {
-                    moveNumberSpan = document.createElement('span');
-                    moveNumberSpan.classList.add('move-number');
-                    cell.appendChild(moveNumberSpan);
-                }
-                moveNumberSpan.textContent = moveNumber + 1; //
-                
-                // Añadir la clase 'first-move' solo al número 1 en la celda de inicio
-                if (moveNumber === 0) { // Si es el primer movimiento (índice 0)
-                    moveNumberSpan.classList.add('first-move');
-                    // Asegúrate de que la celda de inicio ya tenga la clase 'start' aquí
-                    // (debería tenerla desde el click inicial)
-                } else {
-                    moveNumberSpan.classList.remove('first-move'); // Quitar para los demás números
-                }
-
-                cell.setAttribute('aria-label', `Celda visitada en fila ${row}, columna ${col}, movimiento ${moveNumber + 1}`); //
-            } else {
-                // Si moveNumber es -1 (backtracking), quitar el número y las clases
-                cell.classList.remove('visited');
-                cell.classList.remove('current');
-
-                const moveNumberSpan = cell.querySelector('.move-number');
-                if (moveNumberSpan && moveNumberSpan.classList.contains('first-move')) {
-                    // Si es el número 1 y se hace backtracking, se mantiene, pero se limpia el caballo
-                    // No removemos el span del número 1, solo las demás clases.
-                    // El caballo se habrá movido a otra celda, así que no hay necesidad de quitarlo de aquí.
-                } else if (moveNumberSpan) {
-                    moveNumberSpan.remove(); // Remover el span si no es el número 1
-                }
-
-                cell.setAttribute('aria-label', `Celda en fila ${row}, columna ${col}`);
-            }
-            await new Promise(resolve => setTimeout(resolve, parseInt(animationSpeedInput.value))); //
-        }
-    }
+gi
 
     function displayPath() {
         for (let r = 0; r < N; r++) {
             for (let c = 0; c < N; c++) {
-                const cell = document.querySelector(`.cell[data-row="${r}"][data-col="${c}"]`); //
+                const cell = document.querySelector(`.cell[data-row="${r}"][data-col="${c}"]`);
                 if (cell) {
                     cell.classList.remove('current'); // Asegurarse de que no haya current al finalizar
 
@@ -357,7 +298,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         cell.classList.remove('start'); // Quitar 'start' de las otras celdas
                     }
 
-                    cell.classList.add('visited'); //
+                    // Asignar clase según paridad del número de movimiento
+                    cell.classList.remove('visited', 'visited-even', 'visited-odd'); // Limpiar clases previas
+                    if (path[r][c] % 2 === 0) {
+                        cell.classList.add('visited', 'visited-even'); // Movimientos pares
+                    } else {
+                        cell.classList.add('visited', 'visited-odd'); // Movimientos impares
+                    }
 
                     let moveNumberSpan = cell.querySelector('.move-number');
                     if (!moveNumberSpan) {
@@ -365,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         moveNumberSpan.classList.add('move-number');
                         cell.appendChild(moveNumberSpan);
                     }
-                    moveNumberSpan.textContent = path[r][c] + 1; //
+                    moveNumberSpan.textContent = path[r][c] + 1;
 
                     // Asegurar que el número 1 mantenga la clase 'first-move'
                     if (path[r][c] === 0) {
@@ -374,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         moveNumberSpan.classList.remove('first-move');
                     }
 
-                    cell.setAttribute('aria-label', `Celda visitada en fila ${r}, columna ${c}, movimiento ${path[r][c] + 1}`); //
+                    cell.setAttribute('aria-label', `Celda visitada en fila ${r}, columna ${c}, movimiento ${path[r][c] + 1}`);
                 }
             }
         }
@@ -399,12 +346,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-
-        const completionMessage = document.createElement('li'); //
-        completionMessage.textContent = '¡Recorrido completado!'; //
-        completionMessage.style.fontWeight = 'bold'; //
-        completionMessage.style.color = '#50fa7b'; //
-        moveLog.appendChild(completionMessage); //
-        moveLog.scrollTop = moveLog.scrollHeight; //
+        const completionMessage = document.createElement('li');
+        completionMessage.textContent = '¡Recorrido completado!';
+        completionMessage.style.fontWeight = 'bold';
+        completionMessage.style.color = '#50fa7b';
+        moveLog.appendChild(completionMessage);
+        moveLog.scrollTop = moveLog.scrollHeight;
     }
 });
