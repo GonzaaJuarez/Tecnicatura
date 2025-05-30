@@ -64,7 +64,7 @@ Nos da como resultado el mensaje: `La suma de 10 + 20 es: 1020`.
 
 `Math.random()`
 
-- [x]  a. Devuelve un número aleatorio entre 0 y 1
+ - [x]  a. Devuelve un número aleatorio entre 0 y 1
 - [ ]  b. No devuelve nada porque lo estamos ejecutando mal. Debemos enviarle como argumento el rango de números entre los que puede sacar uno aleatorio: `Math.random(1,3)`
 - [ ]  c. Devuelve un número aleatorio entre 10000 y 10000
 - [ ]  d. Devuelve un número aleatorio entre infinito e infinito
@@ -123,3 +123,44 @@ Nos da como resultado el mensaje: `La suma de 10 + 20 es: 1020`.
 - [ ] c. Acepta acentos  
 - [ ] d. Acepta caracteres especiales  
 - [x] e. Todas las respuestas
+
+## Quiz de hoy: Miércoles 28 de mayo del 2025
+
+**1.Selecciona cuál de las opciones es una etiqueta estática que NO cambia en HTML:**
+
+- [ ] a. 
+	```
+		<title>Tu Gran sitio Web</title>
+	</head>
+	<body>
+		<h1>Ideas web</h1>
+		<section id="seleccionar-producto">
+			<h2>Elige tus productos</h2>
+	```
+- [ ] b. 
+	```
+	<section id="seleccionar-comprar">
+		<h2>Ir a pagar</h2>
+		<p>Tu compra tiene <span>3</span> productos</p>
+	```
+- [x] c. Todas las respuestas
+- [ ] d. Ninguna de las respuestas
+- [ ] e. Esto planteado NO sucede nunca en HTML
+
+**2. ¿Qué debemos recordar cuando creamos un botón en HTML para asociarlo en JS a la hora de utilizar este botón?**
+
+- [ ] a. La línea de código donde esta creado el botón en HTML
+- [ ] b. Todas las respuestas
+- [x] c. El id que ponemos en HTML, para luego en Js utilizar el mismo nombre
+- [ ] d. Ninguna de las respuestas
+- [ ] e. No hay nada que recordar, solo hay que empezar a trabajar con JS y listo
+
+**3. ¿Dónde debemos ubicar el script que referencia el archivo Js?**
+
+- [ ] a. Va al comienzo del body
+- [ ] b. Se abre una etiqueta script y se pone todo allí
+- [ ] c. NO hace falta poner un script para tal archivo
+- [ ] d. Todas las respuestas
+- [x] e. La respuesta No esta en las opciones: Si es así escribe tu respuesta...
+
+>respuesta: generalmente se coloca dentro de una etiqueta script al final del body. 
