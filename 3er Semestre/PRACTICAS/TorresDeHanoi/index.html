@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="./assets/brain.ico" type="image/x-icon" />
+  <title>Torres de Hanoi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧠 Torres de Hanoi</h1>
+    <p class="subtitle">Algoritmo recursivo en JavaScript | Facultad - 2025</p>
+  </header>
+
+  <main>
+    <section class="hanoi-container">
+      <div id="A" class="tower" data-label="A"></div>
+      <div id="B" class="tower" data-label="B"></div>
+      <div id="C" class="tower" data-label="C"></div>
+    </section>
+
+    <div class="controls">
+      <div class="slider-group"> <label for="numDisks">Cantidad de Discos:</label>
+        <input type="range" id="numDisks" min="3" max="8" value="3" oninput="this.nextElementSibling.value = this.value">
+        <output for="numDisks" id="numDisksValue">3</output>
+      </div>
+      <div class="button-group">
+        <button onclick="startHanoi()"><img src="./assets/play.png" alt="Iniciar" class="button-icon"> Iniciar</button>
+        <button onclick="reset()"><img src="./assets/reload.png" alt="Reiniciar" class="button-icon"> Reiniciar</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Hecho con ❤️ por The Debugging Dojo – UTN 2025
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
