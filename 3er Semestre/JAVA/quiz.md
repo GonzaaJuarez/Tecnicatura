@@ -164,3 +164,26 @@ Nos da como resultado el mensaje: `La suma de 10 + 20 es: 1020`.
 - [x] e. La respuesta No esta en las opciones: Si es así escribe tu respuesta...
 
 >respuesta: generalmente se coloca dentro de una etiqueta script al final del body. 
+
+## Quiz de hoy: Miércoles 4 de junio del 2025
+
+**1. ¿Cuál es el significado de la palabra checked?**
+- [ ] a. Su significado es chequeado
+- [ ] b. Su significado NO es importante
+- [ ] c. Ninguna de las respuestas
+- [x] d. Su significado es seleccionado
+- [ ] e. No se sabe porque viene del inglés
+
+**2. En el juego de La leyenda de Aang: El Avatar ¿Para que utilizamos la función de `innerHTML`?**
+- [ ] a. La utilizamos para mostrar resultados numéricos
+- [ ] b. La utilizamos para mostrar objetos de Python
+- [ ] c. Es una propiedad de Java
+- [x] d. La utilizamos en Js para mostrar un String
+- [ ] e. Todas las respuestas
+
+**3. ¿Esta recomendado dentro de las buenas prácticas introducir `document.getElementById('katara').checked` dentro de una estructura if else y que sea la condición que gatille una elección?**
+- [ ] a. Si totalmente recomendable
+- [ ] b. Es una buena opción
+- [ ] c. Todas las respuestas
+- [x] d. Como buenas prácticas se recomienda crear variables a las que se le asigne este código y que NO vayan a ningún condicional de esta forma.
+- [ ] e. Como buenas prácticas se aconseja que siempre se debe aprovechar líneas de código y esto hace que eso resulte.
