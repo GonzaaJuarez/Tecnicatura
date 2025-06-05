@@ -1,9 +1,15 @@
+/* ---------------------------------------------- */
+/*  Reset general para márgenes y cajas flexibles */
+/* ---------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ---------------------------------------------- */
+/*      Estilos base del cuerpo de la página      */
+/* ---------------------------------------------- */
 body {
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
@@ -15,12 +21,16 @@ body {
   padding: 20px;
 }
 
+/* Animación para el fondo en movimiento */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* ---------------------------------------------- */
+/*                  Encabezado                    */
+/* ---------------------------------------------- */
 header {
   margin-bottom: 30px;
 }
@@ -35,15 +45,18 @@ h1 {
   color: #555;
 }
 
+/* ---------------------------------------------- */
+/*       Contenedor principal de las torres       */
+/* ---------------------------------------------- */
 .hanoi-container {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  /* OR change to align-items: flex-start; if you want towers to expand downwards */
   margin: 50px auto;
   max-width: 900px;
 }
 
+/* Estilo individual de cada torre */
 .tower {
   background: rgba(255, 255, 255, 0.3);
   border: 2px solid #444;
@@ -56,9 +69,10 @@ h1 {
   position: relative;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: background 0.3s;
-  min-height: 300px; /* Add a min-height to ensure a base visual structure */
+  min-height: 300px;
 }
 
+/* Etiqueta encima de cada torre (A, B, C) */
 .tower::before {
   content: attr(data-label);
   position: absolute;
@@ -68,10 +82,12 @@ h1 {
   color: #222;
 }
 
-/* DISK ESTILIZADAS */
+/* --------------------------------------------- */
+/*            Estilos para los discos            */
+/* --------------------------------------------- */
 .disk {
   border-radius: 6px;
-  margin: 2px 0; /* Adjust this value to control spacing between disks */
+  margin: 2px 0;
   color: white;
   text-align: center;
   font-weight: bold;
@@ -80,6 +96,7 @@ h1 {
   transition: all 0.3s ease;
 }
 
+/* Discos con tamaños y colores distintos */
 .disk1 {
   width: 60px;
   height: 20px;
@@ -136,44 +153,47 @@ h1 {
   border: 2px solid #993d2b;
 }
 
+/* Animación para el movimiento del disco */
 @keyframes slideUpDown {
   0% { transform: translateY(-20px); opacity: 0.5; }
   50% { transform: translateY(-10px); opacity: 1; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
+/* --------------------------------------------- */
+/*          Controles (slider y botones)         */
+/* --------------------------------------------- */
 .controls {
   margin-top: 30px;
-  display: flex; /* Usamos flexbox para organizar los grupos */
-  flex-direction: column; /* Colocamos los grupos en columna */
-  align-items: center; /* Centramos los elementos horizontalmente */
-  gap: 20px; /* Espacio entre el grupo del slider y el grupo de botones */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Estilos para el grupo del slider */
+/* Contenedor del slider */
 .slider-group {
-  background-color: rgba(255, 255, 255, 0.4); /* Fondo translúcido similar a las torres */
+  background-color: rgba(255, 255, 255, 0.4);
   padding: 15px 25px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  gap: 15px; /* Espacio entre la etiqueta, el slider y el valor */
+  gap: 15px;
 }
 
+/* Etiqueta del slider */
 .slider-group label {
   font-weight: bold;
   color: #333;
 }
 
-/* Estilos para el input range */
+/* Estilo personalizado del input tipo range */
 input[type="range"] {
-  -webkit-appearance: none; /* Eliminar estilos predeterminados del navegador */
-  -moz-appearance: none;    /* Para Mozilla Firefox */
-  appearance: none;         /* La propiedad estándar para el futuro y otros navegadores */
-  width: 200px; /* Ancho del slider */
-  height: 10px; /* Altura de la barra del slider */
-  background: linear-gradient(to right, #a18cd1, #ff9a9e); /* Un gradiente que combine con el fondo */
+  appearance: none;
+  width: 200px;
+  height: 10px;
+  background: linear-gradient(to right, #a18cd1, #ff9a9e);
   border-radius: 5px;
   outline: none;
   transition: opacity .2s;
@@ -181,42 +201,44 @@ input[type="range"] {
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
 }
 
+/* Estilo del mango del slider */
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
   appearance: none;
-  width: 25px; /* Tamaño del "mango" del slider */
+  width: 25px;
   height: 25px;
-  border-radius: 50%; /* Forma circular */
-  background: #6c5ce7; /* Color del "mango" */
-  border: 2px solid white; /* Borde blanco alrededor del mango */
+  border-radius: 50%;
+  background: #6c5ce7;
+  border: 2px solid white;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: background 0.3s ease;
 }
 
+/* Efecto hover sobre el mango del slider */
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: #8e7dff; /* Cambio de color al pasar el mouse */
+  background: #8e7dff;
 }
 
-/* Estilos para el valor del output */
+/* Estilo del número que muestra la cantidad de discos */
 output {
   font-weight: bold;
   font-size: 1.1rem;
   color: #2d3436;
-  min-width: 20px; /* Asegura un ancho mínimo para que no se mueva */
+  min-width: 20px;
   text-align: left;
 }
 
-/* Estilos para el grupo de botones */
+/* Contenedor de los botones */
 .button-group {
   display: flex;
-  gap: 20px; /* Espacio entre los botones */
-  background-color: rgba(255, 255, 255, 0.4); /* Fondo translúcido similar a las torres */
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
   padding: 15px 25px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Estilo base de los botones */
 button {
   background-color: #fbc3ea;
   color: black;
@@ -228,17 +250,22 @@ button {
   transition: background 0.3s ease;
 }
 
+/* Cambio de color al pasar el mouse */
 button:hover {
   background-color: #636e72;
 }
 
+/* Icono dentro del botón */
 .button-icon {
-  width: 20px; /* Adjust as needed */
-  height: 20px; /* Adjust as needed */
-  vertical-align: middle; /* Aligns the image with the text */
-  margin-right: 8px; /* Adds some space between the image and the text */
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 
+/* --------------------------------------------- */
+/*             Pie de página animado             */
+/* --------------------------------------------- */
 footer {
   margin-top: 60px;
   font-size: 1.6rem;
@@ -247,6 +274,7 @@ footer {
   animation: colorShift 6s linear infinite;
 }
 
+/* Animación de cambio de color del texto */
 @keyframes colorShift {
   0% { color: #e17055; }
   25% { color: #00cec9; }
@@ -254,5 +282,3 @@ footer {
   75% { color: #fd79a8; }
   100% { color: #e17055; }
 }
-
-
