@@ -148,6 +148,8 @@ button:disabled {
     font-weight: bold;
 }
 
+
+
 #mensajes {
     font-weight: bold;
     color: #333;
@@ -182,6 +184,58 @@ button:disabled {
     color: #5a3e2b;
 }
 
+#mensaje-personaje.victoria-final {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: green;
+    font-size: 18px;
+    border: 2px solid green;
+    padding: 10px;
+    border-radius: 8px;
+    animation: pulse-victory 1s ease-in-out infinite alternate;
+}
+
+#mensaje-personaje.derrota-final {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: darkred;
+    font-size: 18px;
+    border: 2px solid darkred;
+    padding: 10px;
+    border-radius: 8px;
+    animation: shake-lose 0.5s ease-in-out 3;
+}
+
+@keyframes pulse-victory {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+@keyframes shake-lose {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+#mensaje-personaje {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    /* ... otros estilos existentes ... */
+}
+
+#mensaje-personaje.win {
+    color: green;
+    transform: scale(1.1);
+}
+
+#mensaje-personaje.lose {
+    color: red;
+    transform: scale(1.1);
+}
+
+#mensaje-personaje.tie {
+    color: orange;
+    transform: scale(1.1);
+}
+
 #imagen-personaje, #imagen-enemigo {
     max-width: 100%;
     height: auto;
@@ -196,6 +250,31 @@ button:disabled {
     height: 20px;
     vertical-align: middle;
     margin-left: 5px;
+}
+
+.vida-icon {
+    width: 25px; /* Ajusta el tamaño */
+    height: 25px;
+    margin: 0 2px;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.vida-icon.lost {
+    opacity: 0;
+    transform: scale(0.5);
+    /* O podrías usar display: none; después de una pequeña animación si prefieres */
+}
+
+.personaje-jugador img, .personaje-enemigo img {
+    transition: transform 0.2s ease-out; /* Transición para la animación de ataque */
+}
+
+.personaje-jugador img.attacking {
+    transform: translateX(10px) rotate(5deg); /* Ejemplo de ataque de jugador */
+}
+
+.personaje-enemigo img.attacking {
+    transform: translateX(-10px) rotate(-5deg); /* Ejemplo de ataque de enemigo */
 }
 
 footer {

@@ -12,33 +12,40 @@
     <section id="seleccionar-personaje">
         <h2>Elige tu personaje</h2>
         <div class="personajes-fila">
-            <div class="personaje-container" onclick="seleccionarPersonaje('zuko')">
-                <img src="./assets/zuko.png" alt="Zuko">
+            <div class="personaje-container" id="zuko" onclick="seleccionarPersonaje('zuko')"> <img src="./assets/zuko.png" alt="Zuko">
                 <p>Zuko <img src="./assets/fuego.png" alt="Fuego" class="element-icon"></p>
             </div>
-            <div class="personaje-container" onclick="seleccionarPersonaje('katara')">
-                <img src="./assets/katara.png" alt="Katara">
+            <div class="personaje-container" id="katara" onclick="seleccionarPersonaje('katara')"> <img src="./assets/katara.png" alt="Katara">
                 <p>Katara <img src="./assets/agua.png" alt="Agua" class="element-icon"></p>
             </div>
-            <div class="personaje-container" onclick="seleccionarPersonaje('aang')">
-                <img src="./assets/aang.png" alt="Aang">
+            <div class="personaje-container" id="aang" onclick="seleccionarPersonaje('aang')"> <img src="./assets/aang.png" alt="Aang">
                 <p>Aang <img src="./assets/aire.png" alt="Aire" class="element-icon"></p>
             </div>
-            <div class="personaje-container" onclick="seleccionarPersonaje('toph')">
-                <img src="./assets/toph.png" alt="Toph">
+            <div class="personaje-container" id="toph" onclick="seleccionarPersonaje('toph')"> <img src="./assets/toph.png" alt="Toph">
                 <p>Toph <img src="./assets/tierra.png" alt="Tierra" class="element-icon"></p>
             </div>
         </div>
     </section>
     <section id="seleccionar-ataque">
         <h2>Elige tu ataque</h2>
-        <p>Tu personaje <span id="personajeJugador">...</span> tiene <span id="vidas-jugador">3</span> vidas</p>
-        <p>El personaje enemigo <span id="personajeEnemigo">...</span> tiene <span id="vidas-enemigo">3</span> vidas</p>
+        <p>Tu personaje <span id="personajeJugador">...</span> tiene 
+            <span id="vidas-jugador-display">
+                <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-1">
+                <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-2">
+                <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-3">
+            </span> vidas
+        </p>
+        <p>El personaje enemigo <span id="personajeEnemigo">...</span> tiene 
+            <span id="vidas-enemigo-display">
+                <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-1">
+                <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-2">
+                <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-3">
+            </span> vidas
+        </p>
         <p>
-            <button id="ataque-fuego">Fuego <img src="./assets/fuego.png" alt="Fuego" class="element-icon"></button>
-            <button id="ataque-agua">Agua <img src="./assets/agua.png" alt="Agua" class="element-icon"></button>
-            <button id="ataque-tierra">Tierra <img src="./assets/tierra.png" alt="Tierra" class="element-icon"></button>
-            <button id="ataque-aire">Aire <img src="./assets/aire.png" alt="Aire" class="element-icon"></button>
+            <button id="ataque-punch">Puño <img src="./assets/punch.png" alt="Puño" class="element-icon"></button>
+            <button id="ataque-kick">Patada <img src="./assets/kick.png" alt="Patada" class="element-icon"></button>
+            <button id="ataque-sweep">Barrida <img src="./assets/sweep.png" alt="Barrida" class="element-icon"></button>
         </p>
     </section>
     <section id="mensajes">
