@@ -186,6 +186,7 @@ function atacar(ataqueJugador) {
     if (vidasJugador <= 0) {
         const frase = frasesDerrota[Math.floor(Math.random() * frasesDerrota.length)];
         mensaje.innerHTML = `💀 <strong>${personajeEnemigo}</strong> ha ganado el combate<br><em>${frase}</em>`;
+        mensaje.classList.remove('neutro-inicial');
         mensaje.classList.add('derrota-final');
         document.querySelector('.versus-text').style.display = 'none';
         document.querySelector('.personaje-jugador img').style.display = 'none';
@@ -194,6 +195,7 @@ function atacar(ataqueJugador) {
     } else if (vidasEnemigo <= 0) {
         const frase = frasesVictoria[Math.floor(Math.random() * frasesVictoria.length)];
         mensaje.innerHTML = `🎉 <strong>${personajeJugador}</strong> ha ganado el combate 🎉<br><em>${frase}</em>`;
+        mensaje.classList.remove('neutro-inicial');
         mensaje.classList.add('victoria-final');
         document.querySelector('.versus-text').style.display = 'none';
         document.querySelector('.personaje-enemigo img').style.display = 'none';
@@ -207,7 +209,13 @@ function reiniciarJuego() {
     vidasEnemigo = 3;
     vidasJugadorAnterior = 3;
     vidasEnemigoAnterior = 3;
-    document.getElementById('mensaje-personaje').textContent = 'Por favor, selecciona un personaje.';
+
+    const mensaje = document.getElementById('mensaje-personaje');
+    mensaje.textContent = 'Por favor, selecciona un personaje.';
+    mensaje.classList.remove('victoria-final', 'derrota-final', 'win', 'lose', 'tie');
+    mensaje.classList.add('neutro-inicial');
+    mensaje.style.transform = 'scale(1)'; // resetea cualquier escalado
+
     document.getElementById('imagen-personaje').style.display = 'none';
     document.getElementById('imagen-enemigo').style.display = 'none';
     document.getElementById('personajeJugador').textContent = '...';
@@ -215,8 +223,8 @@ function reiniciarJuego() {
     document.getElementById('seleccionar-ataque').classList.add('oculto');
     document.getElementById('mensajes').classList.add('oculto');
     document.getElementById('reiniciar').classList.add('oculto');
-    document.getElementById('seleccionar-personaje').classList.remove('oculto');
 
+    document.querySelector('.versus-text').style.display = 'block';
     deshabilitarBotonesAtaque();
     actualizarVidas();
 }
@@ -243,12 +251,35 @@ function iniciarJuego() {
         botonReiniciar.addEventListener('click', reiniciarJuego);
     }
 
+    document.getElementById('mensaje-personaje').classList.add('neutro-inicial');
     document.getElementById('seleccionar-ataque').classList.add('oculto');
     document.getElementById('mensajes').classList.add('oculto');
     document.getElementById('reiniciar').classList.add('oculto');
 
     actualizarVidas();
     deshabilitarBotonesAtaque();
+
+
+    // Sección de reglas de juego (modal)
+    const btn = document.getElementById("btnInstrucciones");
+    const modal = document.getElementById("modalInstrucciones");
+    const span = document.querySelector(".close");
+
+    if (btn && modal && span) {
+        btn.addEventListener("click", () => {
+            modal.classList.add("mostrar-modal");
+        });
+
+        span.addEventListener("click", () => {
+            modal.classList.remove("mostrar-modal");
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.classList.remove("mostrar-modal");
+            }
+        });
+    }
 }
 
 window.addEventListener('load', iniciarJuego);

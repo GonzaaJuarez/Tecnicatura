@@ -175,7 +175,7 @@ button:disabled {
     height: auto;
     border-radius: 10px;
     max-height: 150px;
-    display: none; /* Se mostrará cuando se seleccione un personaje */
+    display: none;
 }
 
 #mensajes .versus-text {
@@ -218,7 +218,6 @@ button:disabled {
 
 #mensaje-personaje {
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    /* ... otros estilos existentes ... */
 }
 
 #mensaje-personaje.win {
@@ -245,6 +244,17 @@ button:disabled {
     display: none;
 }
 
+#mensaje-personaje.neutro-inicial {
+    background-color: rgba(250, 235, 200, 0.4);
+    color: #5a3e2b;
+    border: 2px dashed #BAA88B;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(90, 62, 43, 0.3);
+}
+
 .element-icon {
     width: 20px;
     height: 20px;
@@ -262,7 +272,6 @@ button:disabled {
 .vida-icon.lost {
     opacity: 0;
     transform: scale(0.5);
-    /* O podrías usar display: none; después de una pequeña animación si prefieres */
 }
 
 .personaje-jugador img, .personaje-enemigo img {
@@ -275,6 +284,84 @@ button:disabled {
 
 .personaje-enemigo img.attacking {
     transform: translateX(-10px) rotate(-5deg); /* Ejemplo de ataque de enemigo */
+}
+
+/* boton con las reglas de juego */
+.instrucciones-container {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.instrucciones-container button {
+    background-color: #BAA88B;
+    color: #5a3e2b;
+    border: 2px solid #5a3e2b;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.instrucciones-container button:hover {
+    background-color: #5a3e2b;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.mostrar-modal {
+  display: block;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: rgba(250, 235, 200, 0.95);
+  background-size: cover;
+  border: 3px solid #5a3e2b;
+  margin: 10% auto;
+  padding: 25px 30px;
+  border-radius: 15px;
+  width: 85%;
+  max-width: 500px;
+  box-shadow: 0 0 15px #000;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #3e2f1c;
+}
+
+.lista-reglas {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.lista-reglas li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.lista-reglas img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
 }
 
 footer {
