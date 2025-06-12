@@ -187,3 +187,30 @@ Nos da como resultado el mensaje: `La suma de 10 + 20 es: 1020`.
 - [ ] c. Todas las respuestas
 - [x] d. Como buenas prácticas se recomienda crear variables a las que se le asigne este código y que NO vayan a ningún condicional de esta forma.
 - [ ] e. Como buenas prácticas se aconseja que siempre se debe aprovechar líneas de código y esto hace que eso resulte.
+
+## Quiz de hoy: Miércoles 11 de junio del 2025
+
+**1. ¿Cuántas veces se puede utilizar la función de nuestro juego aleatorio()?**
+- [ ] a. Se puede utilizar solo 2 o 3 veces No más.
+- [ ] b. Se puede utilizar con algunos límites
+- [x] c. Se puede utilizar siempre, las veces necesarias.
+- [ ] d. Se puede crear y utilizar solo una vez.
+- [ ] e. Ninguna de las respuestas.
+
+**2. Cuando necesitamos probar nuestro código, ¿Cómo podemos ir viendo o haciendo prueba error?**
+
+- [ ] a. Dentro de las buenas prácticas sería bueno abrir el navegador y trabajar desde la consola.
+- [x] b. Dentro de las buenas prácticas utilizar el Quokka en VSC
+- [ ] c. Dentro de las buenas prácticas revisando el código paso a paso y línea por línea
+- [ ] d. Dentro de las buenas prácticas se utiliza un ojo clínico y muy analítico
+- [ ] e. Ninguna de las respuestas.
+
+  
+
+**3. Las variables creadas en las funciones tienen la capacidad de ser utilizadas en todo el código libremente:**
+
+- [ ] a. Totalmente, es algo que todo programador debería saber.
+- [x] b. De ninguna manera, esto es una locura, ya que las únicas variables que pueden hacer esto son las globales.
+- [ ] c. Este tema es muy amplio ya que en algunas ocasiones puede suceder algo parecido
+- [ ] d. Todas las respuestas.
+- [ ] e. Ninguna de las respuestas
