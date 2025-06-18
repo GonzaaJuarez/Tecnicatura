@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif; /* Fuente base del sitio */
+    font-family: 'Papyrus', 'Georgia', serif; /* Fuente base del sitio */
     text-align: center; /* Centrado de texto por defecto */
     background-image: url('../assets/background.png'); /* Imagen de fondo */
     background-size: cover; /* La imagen cubre todo el fondo */
@@ -51,6 +51,43 @@ section h2 {
 section p {
     color: #333; /* Color gris oscuro */
     font-weight: 500; /* Negrita media */
+}
+
+#seccion-inicio {
+    display: flex; /* Convierte el contenedor en un flex container */
+    flex-direction: column; /* Organiza los ítems hijos en una columna */
+    align-items: center; /* Centra los ítems hijos horizontalmente */
+    justify-content: center; /* Centra los ítems hijos verticalmente */
+}
+
+.avatar-icon {
+    width: 550px; /* Ancho fijo para el icono */
+    max-width: 80%; /* Ancho máximo, ajustándose al 80% del contenedor padre */
+    margin-bottom: 20px; /* Margen inferior para separación */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+#boton-jugar {
+    background-color: #7e5e48; /* Fondo principal: Marrón Tierra Oscuro, más impacto */
+    color: #BAA88B; /* Texto: Beige Dorado, buen contraste */
+    border: 3px solid #5a3e2b; /* Borde más oscuro y definido */
+    font-family: 'Papyrus', 'Georgia', serif; /* Usamos la fuente definida en el body */
+    font-size: 20px; /* Un poco más grande para destacar */
+    font-weight: bold; /* Pone el texto en negrita */
+    padding: 14px 28px; /* Un poco más de relleno para que sea más "gordo" */
+    letter-spacing: 2px; /* Más espaciado para un aspecto más épico */
+    border-radius: 8px; /* Bordes ligeramente menos redondeados, más robustos */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), inset 0 0 0 3px rgba(255, 255, 255, 0.1); /* Sombra más pronunciada y un "borde interior" sutil */
+    transition: all 0.3s ease; /* Aplica una transición suave a todos los cambios */
+    cursor: pointer; /* Asegura el cursor de mano */
+}
+
+#boton-jugar:hover {
+    background-color: #5a3e2b; /* Al pasar el ratón, un marrón aún más oscuro */
+    color: #fff; /* El texto se vuelve blanco para un contraste nítido */
+    transform: scale(1.09); /* Un poco más de crecimiento */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.2); /* Sombra más grande y borde interior más pronunciado */
 }
 
 #seleccionar-personaje {
@@ -358,6 +395,10 @@ button:disabled {
     width: 24px; /* Ancho de la imagen de la lista */
     height: 24px; /* Alto de la imagen de la lista */
     vertical-align: middle; /* Alinea la imagen verticalmente al centro con el texto adyacente */
+}
+
+.oculto {
+    display: none !important; /* Oculta completamente el elemento, eliminándolo del flujo del documento */
 }
 
 footer {

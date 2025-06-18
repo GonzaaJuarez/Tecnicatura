@@ -65,6 +65,16 @@ function seleccionarPersonaje(personaje) {
         document.getElementById('mensajes').classList.remove('oculto');
         document.getElementById('reiniciar').classList.remove('oculto');
         document.getElementById('seleccionar-personaje').classList.add('oculto');
+
+        // Mostrar pantalla de combate
+        document.getElementById('pantalla-personaje').classList.add('oculto');
+        document.getElementById('pantalla-combate').classList.remove('oculto');
+        // Asigna el evento al botón Reiniciar y asegura que el evento ocurra una sola vez
+        const botonReiniciar = document.getElementById('boton-reiniciar');
+        if (botonReiniciar && !botonReiniciar.dataset.listenerAdded) {
+            botonReiniciar.addEventListener('click', reiniciarJuego);
+            botonReiniciar.dataset.listenerAdded = "true"; // Marca que ya tiene el listener
+        }
     } else {
         // Si el personaje no existe
         mensaje.textContent = '¡Personaje no válido!';
@@ -222,38 +232,91 @@ function atacar(ataqueJugador) {
 
 // Función para reiniciar el juego
 function reiniciarJuego() {
+    // Reiniciar vidas y variables
     vidasJugador = 3;
     vidasEnemigo = 3;
     vidasJugadorAnterior = 3;
     vidasEnemigoAnterior = 3;
 
+    // Resetear mensaje
     const mensaje = document.getElementById('mensaje-personaje');
     mensaje.textContent = 'Por favor, selecciona un personaje.';
     mensaje.classList.remove('victoria-final', 'derrota-final', 'win', 'lose', 'tie');
     mensaje.classList.add('neutro-inicial');
-    mensaje.style.transform = 'scale(1)'; // resetea cualquier escalado
+    mensaje.style.transform = 'scale(1)';
 
+    // Ocultar imágenes
+    document.getElementById('imagen-personaje').style.display = 'none';
+    document.getElementById('imagen-enemigo').style.display = 'none';
+    // Resetear nombres de personajes
+    document.getElementById('personajeJugador').textContent = '...';
+    document.getElementById('personajeEnemigo').textContent = '...';
+    // Mostrar la pantalla de selección de personaje y ocultar la de combate
+    document.getElementById('pantalla-combate').classList.add('oculto');
+    document.getElementById('pantalla-personaje').classList.remove('oculto');
+    document.getElementById('seleccionar-personaje').classList.remove('oculto');
+    // Mostrar el texto "vs" nuevamente
+    document.querySelector('.versus-text').style.display = 'block';
+    // Deshabilitar botones de ataque y actualizar vidas visuales
+    deshabilitarBotonesAtaque();
+    actualizarVidas();
+}
+
+// Función para volver al inicio
+function volverAlInicio() {
+    // Reiniciar variables y vidas
+    vidasJugador = 3;
+    vidasEnemigo = 3;
+    vidasJugadorAnterior = 3;
+    vidasEnemigoAnterior = 3;
+
+    // Resetear mensaje y clases
+    const mensaje = document.getElementById('mensaje-personaje');
+    mensaje.textContent = 'Por favor, selecciona un personaje.';
+    mensaje.className = '';
+    mensaje.classList.add('neutro-inicial');
+    mensaje.style.transform = 'scale(1)';
+
+    // Ocultar todo lo demás y mostrar solo la pantalla de inicio
+    document.getElementById('pantalla-combate').classList.add('oculto');
+    document.getElementById('pantalla-personaje').classList.add('oculto');
+    document.getElementById('pantalla-inicio').classList.remove('oculto');
+
+    // Ocultar imágenes y nombres
     document.getElementById('imagen-personaje').style.display = 'none';
     document.getElementById('imagen-enemigo').style.display = 'none';
     document.getElementById('personajeJugador').textContent = '...';
     document.getElementById('personajeEnemigo').textContent = '...';
-    document.getElementById('seleccionar-ataque').classList.add('oculto');
-    document.getElementById('mensajes').classList.add('oculto');
-    document.getElementById('reiniciar').classList.add('oculto');
-
     document.querySelector('.versus-text').style.display = 'block';
+
+    // Resetear vidas e interfaz
     deshabilitarBotonesAtaque();
     actualizarVidas();
 }
 
 // Función de inicialización del juego
 function iniciarJuego() {
+    // Botón para comenzar el juego
+    const botonJugar = document.getElementById('boton-jugar');
+    botonJugar.addEventListener('click', () => {
+        document.getElementById('pantalla-inicio').classList.add('oculto');
+        document.getElementById('pantalla-combate').classList.add('oculto');
+        document.getElementById('pantalla-personaje').classList.remove('oculto');
+        document.getElementById('seleccionar-personaje').classList.remove('oculto');
+        document.getElementById('mensaje-personaje').textContent = 'Por favor, selecciona un personaje.';
+        document.getElementById('mensaje-personaje').className = 'neutro-inicial';
+    });
+
     // Eventos para seleccionar personaje
     const botonesPersonaje = document.querySelectorAll('.personaje-container');
     botonesPersonaje.forEach(boton => {
         boton.addEventListener('click', () => {
             const personaje = boton.id.toLowerCase();
             seleccionarPersonaje(personaje);
+
+            // Cambiar de pantalla al combate
+            document.getElementById('pantalla-personaje').classList.add('oculto');
+            document.getElementById('pantalla-combate').classList.remove('oculto');
         });
     });
 
@@ -266,12 +329,6 @@ function iniciarJuego() {
         });
     });
 
-    // Evento para reiniciar juego
-    const botonReiniciar = document.getElementById('boton-reiniciar');
-    if (botonReiniciar) {
-        botonReiniciar.addEventListener('click', reiniciarJuego);
-    }
-
     // Ocultar elementos al iniciar
     document.getElementById('mensaje-personaje').classList.add('neutro-inicial');
     document.getElementById('seleccionar-ataque').classList.add('oculto');
@@ -281,6 +338,11 @@ function iniciarJuego() {
     actualizarVidas();
     deshabilitarBotonesAtaque();
 
+    // Evento para el botón "Volver al inicio"
+    const botonInicio = document.getElementById('boton-inicio');
+    if (botonInicio) {
+        botonInicio.addEventListener('click', volverAlInicio);
+    }
 
     // Sección de reglas de juego (modal)
     const btn = document.getElementById("btnInstrucciones");

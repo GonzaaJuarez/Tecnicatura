@@ -72,13 +72,34 @@ La estructura del proyecto es la siguiente:
 - Se añadió un botón "Instrucciones" en la interfaz. Al hacer clic, se abre un modal con las reglas del juego (Patada vence a Puño, Puño vence a Barrida, Barrida vence a Patada).
 - El modal es responsive y se cierra al hacer clic fuera de él o en el botón de cerrar.
 
+### 10. Separación en pantallas
+- Se rediseñó la estructura visual del proyecto en **tres pantallas principales**:
+  - `pantalla-inicio`: muestra el título, el botón “Instrucciones” y el botón “Iniciar”.
+  - `pantalla-personaje`: permite seleccionar un personaje.
+  - `pantalla-combate`: muestra la pelea, botones de ataque, mensaje de resultado y botón de reinicio.
+- Esto permite una navegación más clara y progresiva por el juego, como si fueran "escenas".
+- Cada pantalla se oculta o muestra dinámicamente utilizando la clase `.oculto` de CSS.
+
+### 11. Botón "Iniciar" y flujo de navegación
+- Se implementó el botón **Iniciar** en la pantalla inicial, que al hacer clic:
+  - Oculta la sección de inicio.
+  - Muestra la pantalla de selección de personajes.
+
+### 12. Botón "Volver al inicio"
+- Se agregó un nuevo botón "Volver al inicio" junto al botón de reinicio.
+- Este botón permite volver directamente a la pantalla principal.
+- Se reinician todas las variables, vidas, clases y se ocultan las pantallas de selección y combate.
+
 ## Resultado de momento
 
 - Puedes seleccionar entre **Zuko**, **Katara**, **Aang** o **Toph**.
 - El sistema escoge un enemigo automáticamente (que no sea el mismo que el jugador).
 - Aparecen las imágenes correspondientes y se muestran las vidas.
-- Hay botones para elegir ataques elementales (sin lógica aún implementada para el combate).
+- Hay botones para elegir ataques elementales.
+- El juego decide el resultado de los combates, actualiza las vidas, muestra mensajes y frases finales.
+- Hay un sistema de instrucciones con reglas, y un flujo de pantallas ordenado y funcional.
 - La página tiene un diseño visual cuidado y es funcional desde el navegador sin necesidad de servidor.
+- La página presenta responsividad para varios tipos de pantallas.
 
 ---
 

@@ -23,7 +23,7 @@
         <div class="modal-content">
             <!-- Botón para cerrar el modal -->
             <span class="close">&times;</span>
-             <!-- Explicación básica del juego -->
+            <!-- Explicación básica del juego -->
             <h2>📜 Reglas del Juego</h2>
             <p>Seleccioná un personaje para comenzar.<br>Ambos tienen <strong>3 vidas</strong>.</p>
             <p>Ataca con uno de los siguientes movimientos:</p>
@@ -36,80 +36,95 @@
             <p>¡Consultá esto cuando lo necesites!</p>
         </div>
     </div>
+
+    <!-- Pantalla de inicio -->
+    <div id="pantalla-inicio">
+        <section id="seccion-inicio">
+            <img src="./assets/avatar.jpg" alt="AvatarGame" class="avatar-icon">
+            <button id="boton-jugar">Iniciar</button>
+        </section>
+    </div>
     
-    <!-- Sección para seleccionar personaje -->
-    <section id="seleccionar-personaje">
-        <h2>Elige tu personaje</h2>
-        <div class="personajes-fila">
-            <!-- Personaje: Zuko -->
-            <div class="personaje-container" id="zuko" onclick="seleccionarPersonaje('zuko')"> <img src="./assets/zuko.png" alt="Zuko">
-                <p>Zuko <img src="./assets/fuego.png" alt="Fuego" class="element-icon"></p>
+    <!-- Pantalla de selección de personaje -->
+    <div id="pantalla-personaje" class="oculto">
+        <!-- Sección para seleccionar personaje -->
+        <section id="seleccionar-personaje">
+            <h2>Elige tu personaje</h2>
+            <div class="personajes-fila">
+                <!-- Personaje: Zuko -->
+                <div class="personaje-container" id="zuko" onclick="seleccionarPersonaje('zuko')"> <img src="./assets/zuko.png" alt="Zuko">
+                    <p>Zuko <img src="./assets/fuego.png" alt="Fuego" class="element-icon"></p>
+                </div>
+                <!-- Personaje: Katara -->
+                <div class="personaje-container" id="katara" onclick="seleccionarPersonaje('katara')"> <img src="./assets/katara.png" alt="Katara">
+                    <p>Katara <img src="./assets/agua.png" alt="Agua" class="element-icon"></p>
+                </div>
+                <!-- Personaje: Aang -->
+                <div class="personaje-container" id="aang" onclick="seleccionarPersonaje('aang')"> <img src="./assets/aang.png" alt="Aang">
+                    <p>Aang <img src="./assets/aire.png" alt="Aire" class="element-icon"></p>
+                </div>
+                <!-- Personaje: Toph -->
+                <div class="personaje-container" id="toph" onclick="seleccionarPersonaje('toph')"> <img src="./assets/toph.png" alt="Toph">
+                    <p>Toph <img src="./assets/tierra.png" alt="Tierra" class="element-icon"></p>
+                </div>
             </div>
-            <!-- Personaje: Katara -->
-            <div class="personaje-container" id="katara" onclick="seleccionarPersonaje('katara')"> <img src="./assets/katara.png" alt="Katara">
-                <p>Katara <img src="./assets/agua.png" alt="Agua" class="element-icon"></p>
-            </div>
-            <!-- Personaje: Aang -->
-            <div class="personaje-container" id="aang" onclick="seleccionarPersonaje('aang')"> <img src="./assets/aang.png" alt="Aang">
-                <p>Aang <img src="./assets/aire.png" alt="Aire" class="element-icon"></p>
-            </div>
-            <!-- Personaje: Toph -->
-            <div class="personaje-container" id="toph" onclick="seleccionarPersonaje('toph')"> <img src="./assets/toph.png" alt="Toph">
-                <p>Toph <img src="./assets/tierra.png" alt="Tierra" class="element-icon"></p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
+    
+    <!-- Pantalla de combate -->
+    <div id="pantalla-combate" class="oculto">
+        <!-- Sección para seleccionar ataque -->
+        <section id="seleccionar-ataque">
+            <h2>Elige tu ataque</h2>
+            <!-- Vidas del jugador -->
+            <p>Tu personaje <span id="personajeJugador">...</span> tiene 
+                <span id="vidas-jugador-display">
+                    <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-1">
+                    <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-2">
+                    <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-3">
+                </span> vidas
+            </p>
+            <!-- Vidas del enemigo -->
+            <p>El personaje enemigo <span id="personajeEnemigo">...</span> tiene 
+                <span id="vidas-enemigo-display">
+                    <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-1">
+                    <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-2">
+                    <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-3">
+                </span> vidas
+            </p>
+            <!-- Botones de ataque -->
+            <p>
+                <button id="ataque-punch">Puño <img src="./assets/punch.png" alt="Puño" class="element-icon"></button>
+                <button id="ataque-kick">Patada <img src="./assets/kick.png" alt="Patada" class="element-icon"></button>
+                <button id="ataque-sweep">Barrida <img src="./assets/sweep.png" alt="Barrida" class="element-icon"></button>
+            </p>
+        </section>
 
-    <!-- Sección para seleccionar ataque -->
-    <section id="seleccionar-ataque">
-        <h2>Elige tu ataque</h2>
-        <!-- Vidas del jugador -->
-        <p>Tu personaje <span id="personajeJugador">...</span> tiene 
-            <span id="vidas-jugador-display">
-                <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-1">
-                <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-2">
-                <img src="./assets/heart.png" class="vida-icon" id="vida-jugador-3">
-            </span> vidas
-        </p>
-        <!-- Vidas del enemigo -->
-        <p>El personaje enemigo <span id="personajeEnemigo">...</span> tiene 
-            <span id="vidas-enemigo-display">
-                <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-1">
-                <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-2">
-                <img src="./assets/heart.png" class="vida-icon" id="vida-enemigo-3">
-            </span> vidas
-        </p>
-        <!-- Botones de ataque -->
-        <p>
-            <button id="ataque-punch">Puño <img src="./assets/punch.png" alt="Puño" class="element-icon"></button>
-            <button id="ataque-kick">Patada <img src="./assets/kick.png" alt="Patada" class="element-icon"></button>
-            <button id="ataque-sweep">Barrida <img src="./assets/sweep.png" alt="Barrida" class="element-icon"></button>
-        </p>
-    </section>
+        <!-- Sección de mensajes y combate -->
+        <section id="mensajes">
+            <!-- Mensaje inicial -->
+            <p id="mensaje-personaje">Por favor, selecciona un personaje.</p>
+            <!-- Contenedor del combate visual -->
+            <div class="versus-container">
+                <!-- Imagen del personaje del jugador -->
+                <div class="personaje-jugador">
+                    <img id="imagen-personaje" alt="Personaje del jugador">
+                </div>
+                <!-- Texto "vs" -->
+                <div class="versus-text">vs</div>
+                <!-- Imagen del personaje enemigo -->
+                <div class="personaje-enemigo">
+                    <img id="imagen-enemigo" alt="Personaje enemigo">
+                </div>
+            </div>  
+        </section>
 
-    <!-- Sección de mensajes y combate -->
-    <section id="mensajes">
-        <!-- Mensaje inicial -->
-        <p id="mensaje-personaje">Por favor, selecciona un personaje.</p>
-        <!-- Contenedor del combate visual -->
-        <div class="versus-container">
-            <!-- Imagen del personaje del jugador -->
-            <div class="personaje-jugador">
-                <img id="imagen-personaje" alt="Personaje del jugador">
-            </div>
-            <!-- Texto "vs" -->
-            <div class="versus-text">vs</div>
-            <!-- Imagen del personaje enemigo -->
-            <div class="personaje-enemigo">
-                <img id="imagen-enemigo" alt="Personaje enemigo">
-            </div>
-        </div>  
-    </section>
-
-    <!-- Botón para reiniciar el juego -->
-    <section id="reiniciar">
-        <button id="boton-reiniciar">Reiniciar</button>
-    </section>
+        <!-- Botón para reiniciar el juego y para volver al inicio -->
+        <section id="reiniciar">
+            <button id="boton-reiniciar">Reiniciar</button>
+            <button id="boton-inicio">Volver al inicio</button>
+        </section>
+    </div>
 
     <!-- Pie de página con créditos -->
     <footer>
