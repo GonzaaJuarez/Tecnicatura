@@ -214,3 +214,27 @@ Nos da como resultado el mensaje: `La suma de 10 + 20 es: 1020`.
 - [ ] c. Este tema es muy amplio ya que en algunas ocasiones puede suceder algo parecido
 - [ ] d. Todas las respuestas.
 - [ ] e. Ninguna de las respuestas
+
+## Quiz de hoy: Miércoles 18 de junio del 2025
+
+**1. ¿Qué es más aconsejable, factorizar o crear desde cero?**
+
+- [x] a. Se aconseja que se factorice lo más que se pueda.
+- [ ] b. Se se cree que no hay nada mejor que reutilizar algoritmos.
+- [ ] c. Lo más aconsejable dentro de la programación es crear desde cero, ya que lleva más tiempo factorizar que hacer el trabajo desde cero.
+- [ ] d. Se puede ver si funciona o no.
+- [ ] e. Ninguna de las respuestas.
+
+**2. ¿Qué significa para ti deployar?**
+- [x] a. Mover código para una buena ejecución.
+- [ ] b. Crear diferentes pruebas de como se ejecuta el algoritmo, viendo como es el resultado final, donde si necesita ajustes se hacen, de otra manera el algoritmo esta ok.
+- [ ] c. Dentro de las buenas prácticas revisando el código paso a paso y línea por línea
+- [ ] d. Dentro de las buenas prácticas se utiliza un ojo clínico y muy analítico
+- [ ] e. Ninguna de las respuestas.
+  
+**3. ¿Qué representa para ti una variable globa?**
+- [ ] a. Es una variable limitada.
+- [x] b. Estas variables son las únicas variables que pueden ser utilizadas en cada parte del código, sin limitaciones.
+- [ ] c. Este tema es muy amplio ya que en algunas ocasiones puede suceder que tengan problemas
+- [ ] d. Todas las respuestas.
+- [ ] e. Ninguna de las respuestas
