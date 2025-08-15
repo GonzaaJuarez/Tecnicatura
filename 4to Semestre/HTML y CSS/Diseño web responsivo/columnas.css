@@ -1,0 +1,29 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+/* Contenedor */
+.contenedor {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+/* Fila */
+.fila {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+/* Columna completa */
+.col-12 {
+    width: 100%;
+}
