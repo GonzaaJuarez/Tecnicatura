@@ -5,6 +5,7 @@
     list-style: none;
     text-decoration: none;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 /* Contenedor */
@@ -21,9 +22,25 @@
     margin: auto;
     width: 100%;
     height: auto;
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    border: 1px solid black;
+    padding: 20px;
 }
 
 /* Columna completa */
 .col-12 {
     width: 100%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-4 {
+    width: 33.3333333%;
 }
