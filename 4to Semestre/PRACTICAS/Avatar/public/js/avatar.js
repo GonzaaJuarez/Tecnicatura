@@ -4,6 +4,17 @@ let vidasEnemigo = 3;
 let vidasJugadorAnterior = 3;
 let vidasEnemigoAnterior = 3;
 
+// Muestra el personaje seleccionado
+function mostrarPersonaje(elementoNombre, elementoImagen, personaje, mensaje = null) {
+    if (mensaje) {
+        document.getElementById('mensaje-personaje').innerHTML = mensaje;
+    }
+    elementoNombre.textContent = personaje.nombre;
+    elementoImagen.src = personaje.imagen;
+    elementoImagen.alt = personaje.nombre;
+    elementoImagen.style.display = 'block';
+}
+
 // Función para seleccionar el personaje
 function seleccionarPersonaje(personaje) {
     const mensaje = document.getElementById('mensaje-personaje');
@@ -37,12 +48,6 @@ function seleccionarPersonaje(personaje) {
     };
 
     if (personajes[personaje]) {
-        // Mostrar personaje seleccionado
-        mensaje.innerHTML = personajes[personaje].mensaje;
-        imagenPersonaje.src = personajes[personaje].imagen;
-        imagenPersonaje.alt = personaje;
-        imagenPersonaje.style.display = 'block';
-        personajeJugador.textContent = personajes[personaje].nombre;
 
         // Selección aleatoria de enemigo (distinto al jugador)
         const personajesKeys = Object.keys(personajes);
@@ -51,11 +56,11 @@ function seleccionarPersonaje(personaje) {
             enemigo = personajesKeys[Math.floor(Math.random() * personajesKeys.length)];
         } while (enemigo === personaje);
 
+        // Mostrar personaje del jugador
+        mostrarPersonaje(personajeJugador, imagenPersonaje, personajes[personaje], personajes[personaje].mensaje);
+
         // Mostrar enemigo seleccionado
-        personajeEnemigo.textContent = personajes[enemigo].nombre;
-        imagenEnemigo.src = personajes[enemigo].imagen;
-        imagenEnemigo.alt = enemigo;
-        imagenEnemigo.style.display = 'block';
+        mostrarPersonaje(personajeEnemigo, imagenEnemigo, personajes[enemigo]);
 
         actualizarVidas(); // Mostrar vidas iniciales
         habilitarBotonesAtaque(); // Habilitar botones de ataque
@@ -132,6 +137,34 @@ function obtenerIconoAtaque(ataque) {
     }
 }
 
+// Mostrar mensajes de resultado del ataque
+function mostrarMensaje(tipo, jugador, enemigo, ataqueJugador, ataqueEnemigo) {
+    const mensaje = document.getElementById("mensaje-personaje");
+    const iconoJugador = obtenerIconoAtaque(ataqueJugador);
+    const iconoEnemigo = obtenerIconoAtaque(ataqueEnemigo);
+    const mensajes = {
+        empate: `${jugador} y ${enemigo} usaron ${ataqueJugador} ${iconoJugador}. ¡Empate!`,
+        victoria: `${jugador} usó ${ataqueJugador} ${iconoJugador} y ${enemigo} usó ${ataqueEnemigo} ${iconoEnemigo}.<br><strong>${enemigo} pierde una vida 💔</strong>`,
+        derrota: `${jugador} usó ${ataqueJugador} ${iconoJugador} pero perdió contra ${enemigo} (${ataqueEnemigo}) ${iconoEnemigo}.<br><strong>${jugador} pierde una vida 💔</strong>`
+    };
+    mensaje.innerHTML = mensajes[tipo];
+}
+
+// Muestra mensaje de victoria o de derrota
+function mostrarResultadoFinal(ganador, perdedor, frases, tipo) {
+    const mensaje = document.getElementById("mensaje-personaje");
+    const frase = frases[Math.floor(Math.random() * frases.length)];
+    if (tipo === "victoria") {
+        mensaje.innerHTML = `🎉 <strong>${ganador}</strong> ha ganado el combate 🎉<br><em>${frase}</em>`;
+        mensaje.classList.add('victoria-final');
+    } else {
+        mensaje.innerHTML = `💀 <strong>${ganador}</strong> ha ganado el combate<br><em>${frase}</em>`;
+        mensaje.classList.add('derrota-final');
+    }
+    document.querySelector('.versus-text').style.display = 'none';
+    deshabilitarBotonesAtaque();
+}
+
 // Función para ejecutar un ataque
 function atacar(ataqueJugador) {
     const mensaje = document.getElementById('mensaje-personaje');
@@ -150,19 +183,19 @@ function atacar(ataqueJugador) {
     // Comparar ataques y decidir resultado
     let mensajeFinal = `${personajeJugador} usó ${ataqueJugador} ${obtenerIconoAtaque(ataqueJugador)} y ${personajeEnemigo} usó ${ataqueEnemigo} ${obtenerIconoAtaque(ataqueEnemigo)}.<br>`;
     if (ataqueJugador === ataqueEnemigo) {
-        mensajeFinal += '¡Empate!';
+        mostrarMensaje("empate", personajeJugador, personajeEnemigo, ataqueJugador, ataqueEnemigo);
     } else if (
         (ataqueJugador === 'puño' && ataqueEnemigo === 'barrida') ||
         (ataqueJugador === 'barrida' && ataqueEnemigo === 'patada') ||
         (ataqueJugador === 'patada' && ataqueEnemigo === 'puño')
     ) {
         vidasEnemigo--;
-        mensajeFinal += `${personajeEnemigo} pierde una vida.`;
+        mostrarMensaje("victoria", personajeJugador, personajeEnemigo, ataqueJugador, ataqueEnemigo);
     } else {
         vidasJugador--;
-        mensajeFinal += `${personajeJugador} pierde una vida.`;
+        mostrarMensaje("derrota", personajeJugador, personajeEnemigo, ataqueJugador, ataqueEnemigo);
     }
-    mensaje.innerHTML = mensajeFinal;
+
 
     // Mostrar feedback visual
     mensaje.classList.remove('win', 'lose', 'tie');
@@ -210,23 +243,13 @@ function atacar(ataqueJugador) {
 
     // Mostrar mensaje de victoria o derrota
     if (vidasJugador <= 0) {
-        const frase = frasesDerrota[Math.floor(Math.random() * frasesDerrota.length)];
-        mensaje.innerHTML = `💀 <strong>${personajeEnemigo}</strong> ha ganado el combate<br><em>${frase}</em>`;
-        mensaje.classList.remove('neutro-inicial');
-        mensaje.classList.add('derrota-final');
-        document.querySelector('.versus-text').style.display = 'none';
+        mostrarResultadoFinal(personajeEnemigo, personajeJugador, frasesDerrota, "derrota");
         document.querySelector('.personaje-jugador img').style.display = 'none';
         document.querySelector('.personaje-enemigo img').style.display = 'block';
-        deshabilitarBotonesAtaque();
     } else if (vidasEnemigo <= 0) {
-        const frase = frasesVictoria[Math.floor(Math.random() * frasesVictoria.length)];
-        mensaje.innerHTML = `🎉 <strong>${personajeJugador}</strong> ha ganado el combate 🎉<br><em>${frase}</em>`;
-        mensaje.classList.remove('neutro-inicial');
-        mensaje.classList.add('victoria-final');
-        document.querySelector('.versus-text').style.display = 'none';
+        mostrarResultadoFinal(personajeJugador, personajeEnemigo, frasesVictoria, "victoria");
         document.querySelector('.personaje-enemigo img').style.display = 'none';
         document.querySelector('.personaje-jugador img').style.display = 'block';
-        deshabilitarBotonesAtaque();
     }
 }
 
@@ -321,10 +344,10 @@ function iniciarJuego() {
     });
 
     // Eventos para seleccionar ataque
-    const botonesAtaque = document.querySelectorAll('#seleccionar-ataque button');
+    const botonesAtaque = document.querySelectorAll('.btn-ataque');
     botonesAtaque.forEach(boton => {
         boton.addEventListener('click', () => {
-            const ataque = boton.textContent.toLowerCase().split(' ')[0];
+            const ataque = boton.dataset.tipo; // lee el data-tipo del HTML
             atacar(ataque);
         });
     });
