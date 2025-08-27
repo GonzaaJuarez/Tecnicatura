@@ -96,7 +96,6 @@ La estructura del proyecto es la siguiente:
 - Implementamos mostrarPersonaje() para jugador y enemigo.
 - Simplificamos los manejadores de ataques: ahora usamos data-tipo en los botones y un solo addEventListener genérico.
 
-
 ## Resultado de momento
 
 - Puedes seleccionar entre **Zuko**, **Katara**, **Aang** o **Toph**.
@@ -107,6 +106,7 @@ La estructura del proyecto es la siguiente:
 - Hay un sistema de instrucciones con reglas, y un flujo de pantallas ordenado y funcional.
 - La página tiene un diseño visual cuidado y es funcional desde el navegador sin necesidad de servidor.
 - La página presenta responsividad para varios tipos de pantallas.
+- El código se encuentra limpio y aplíca el principio DRY.
 
 ---
 
