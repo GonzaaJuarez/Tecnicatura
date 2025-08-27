@@ -90,6 +90,13 @@ La estructura del proyecto es la siguiente:
 - Este botón permite volver directamente a la pantalla principal.
 - Se reinician todas las variables, vidas, clases y se ocultan las pantallas de selección y combate.
 
+### 13. Aplicación del principio DRY (Don’t Repeat Yourself) y un código más limpio.
+
+- Reemplazamos funciones repetitivas (selección de personaje, botones de ataque) por funciones genéricas reutilizables.
+- Implementamos mostrarPersonaje() para jugador y enemigo.
+- Simplificamos los manejadores de ataques: ahora usamos data-tipo en los botones y un solo addEventListener genérico.
+
+
 ## Resultado de momento
 
 - Puedes seleccionar entre **Zuko**, **Katara**, **Aang** o **Toph**.
