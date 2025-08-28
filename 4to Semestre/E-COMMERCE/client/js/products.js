@@ -16,7 +16,7 @@ const productos = [
   {
     id: 3,
     productName: "Mayonesa",
-    price: 950,
+    price: 510,
     quanty: 1,
     img: "/4to Semestre/E-COMMERCE/client/media/mayonesa.png",
   },
