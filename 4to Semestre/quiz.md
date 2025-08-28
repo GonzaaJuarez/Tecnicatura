@@ -23,7 +23,9 @@
 - [ ] d. Es un sinónimo de programar
 
 **4. Tienes el siguiente  [código HTML](https://campus.frsr.utn.edu.ar/moodle/mod/page/view.php?id=62509 "CÓDIGO HTML"):**
+
 `<button id="lanzar-ataque">¡Lanzar ataque!</button>`
+
 **Necesitas ejecutar una alerta cada vez que los usuarios le den click a este botón.**
 **¿Cómo lo harías?**
 
