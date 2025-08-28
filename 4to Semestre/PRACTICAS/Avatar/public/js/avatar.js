@@ -182,8 +182,14 @@ function atacar(ataqueJugador) {
 
     // Comparar ataques y decidir resultado
     let mensajeFinal = `${personajeJugador} usó ${ataqueJugador} ${obtenerIconoAtaque(ataqueJugador)} y ${personajeEnemigo} usó ${ataqueEnemigo} ${obtenerIconoAtaque(ataqueEnemigo)}.<br>`;
+  
+    document.querySelector('.personaje-jugador').classList.remove('ganador','perdedor','empate');
+    document.querySelector('.personaje-enemigo').classList.remove('ganador','perdedor','empate');
+
     if (ataqueJugador === ataqueEnemigo) {
         mostrarMensaje("empate", personajeJugador, personajeEnemigo, ataqueJugador, ataqueEnemigo);
+        document.querySelector('.personaje-jugador').classList.add('empate');
+        document.querySelector('.personaje-enemigo').classList.add('empate');
     } else if (
         (ataqueJugador === 'puño' && ataqueEnemigo === 'barrida') ||
         (ataqueJugador === 'barrida' && ataqueEnemigo === 'patada') ||
@@ -191,11 +197,19 @@ function atacar(ataqueJugador) {
     ) {
         vidasEnemigo--;
         mostrarMensaje("victoria", personajeJugador, personajeEnemigo, ataqueJugador, ataqueEnemigo);
+        document.querySelector('.personaje-jugador').classList.add('ganador');
+        document.querySelector('.personaje-enemigo').classList.add('perdedor');
     } else {
         vidasJugador--;
         mostrarMensaje("derrota", personajeJugador, personajeEnemigo, ataqueJugador, ataqueEnemigo);
+        document.querySelector('.personaje-jugador').classList.add('perdedor');
+        document.querySelector('.personaje-enemigo').classList.add('ganador');
     }
 
+    setTimeout(() => {
+        document.querySelector('.personaje-jugador').classList.remove('ganador','perdedor','empate');
+        document.querySelector('.personaje-enemigo').classList.remove('ganador','perdedor','empate');
+    }, 1000);
 
     // Mostrar feedback visual
     mensaje.classList.remove('win', 'lose', 'tie');

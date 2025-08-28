@@ -319,6 +319,28 @@ button:disabled {
     transform: translateX(-10px) rotate(-5deg); /* Desplaza la imagen del enemigo 10 píxeles a la izquierda y la rota -5 grados al atacar */
 }
 
+/* Fondo destacado para el jugador/enemigo según resultado */
+.personaje-jugador.ganador, .personaje-enemigo.ganador {
+    background-color: rgba(100, 200, 100, 0.15); /* color del fondo */
+    border: 2px solid #6b8e23; /* tamaño y color del borde del fondo */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    transition: background-color 0.5s ease;  /* Aplica una transición suave al aparecer el fondo */
+}
+
+.personaje-jugador.perdedor, .personaje-enemigo.perdedor {
+    background-color: rgba(200, 80, 80, 0.15); /* color del fondo */
+    border: 2px solid #8b0000; /* tamaño y color del borde del fondo */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    transition: background-color 0.5s ease;  /* Aplica una transición suave al aparecer el fondo */
+}
+
+.personaje-jugador.empate, .personaje-enemigo.empate {
+    background-color: rgba(255, 200, 100, 0.15); /* color del fondo */
+    border: 2px solid #c2a000; /* tamaño y color del borde del fondo */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    transition: background-color 0.5s ease;  /* Aplica una transición suave al aparecer el fondo */
+}
+
 /* boton con las reglas de juego */
 .instrucciones-container {
     margin-top: -10px; /* Establece un margen superior negativo para acercar el botón a los elementos de arriba */
