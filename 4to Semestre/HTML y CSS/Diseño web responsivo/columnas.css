@@ -8,6 +8,34 @@
     box-sizing: border-box;
 }
 
+#logo {
+    background: url("logo.png") no-repeat center center;
+    background-size: contain;
+    height: 80px;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+nav {
+    background: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff9900;
+}
+
 /* Contenedor */
 .contenedor {
     position: relative;
@@ -43,4 +71,26 @@
 
 .col-4 {
     width: 33.3333333%;
+}
+
+/* Pantallas grandes (PC) */
+@media (min-width: 1200px) {
+    .col-12 { width: 100%; }
+    .col-6 { width: 50%; }
+    .col-4 { width: 33.3333%; }
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 991px) {
+    .col-6, .col-4 {
+        width: 100%;
+    }
+}
+
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+    [class*="col-"] {
+        width: 100%;
+        padding: 10px;
+    }
 }
