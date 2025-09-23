@@ -19,6 +19,20 @@ header {
     padding: 10px;
 }
 
+/* Íconos circulares */
+header center p {
+    text-align: center;
+    width: 42px;
+    line-height: 42px;
+    border-radius: 100%;
+    background: #ccc;
+    color: white;
+}
+
+header center#icono1 p { background: blue; }
+header center#icono2 p { background: green; }
+header center#icono3 p { background: red; }
+
 nav {
     background: #333;
     text-align: center;
@@ -36,6 +50,29 @@ nav a:hover {
     color: #ff9900;
 }
 
+/* Menú nav */
+nav ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul li a {
+    display: block;
+    background: rgb(104, 22, 104);
+    font-family: "Kaushan Script", cursive;
+    color: white;
+    line-height: 48px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: rosybrown;
+}
+
+nav ul li a:active {
+    background: rgb(224, 22, 224);
+}
+
 /* Contenedor */
 .contenedor {
     position: relative;
@@ -51,12 +88,13 @@ nav a:hover {
     width: 100%;
     height: auto;
     clear: both;
-    display: table;
+    display: flex;
+    justify-content: space-between;
 }
 
 [class*="col-"] {
     float: left;
-    border: 1px solid black;
+    /* border: 1px solid black;*/
     padding: 20px;
 }
 
@@ -71,6 +109,25 @@ nav a:hover {
 
 .col-4 {
     width: 33.3333333%;
+}
+
+/* Sección 3 */
+#seccion3 center {
+    padding: 20px;
+}
+#seccion3 img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+}
+#seccion3 h1 {
+    font-family: "Kaushan Script", cursive;
+    font-size: 40px;
+    padding: 10px;
+}
+#seccion3 p {
+    padding: 10px;
 }
 
 /* Pantallas grandes (PC) */

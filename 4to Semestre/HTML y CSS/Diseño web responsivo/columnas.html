@@ -3,23 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Columnas</title>
+    <title>Página Principal</title>
     <link rel="stylesheet" href="columnas.css">
 </head>
 <body>
     <div class="contenedor">
+
+        <!-- Header -->
         <header class="fila">
-            <div id="logo" class="col-log-2"></div>
-            <div class="col-log-8"><h1>Mi Sitio Responsivo</h1></div>
-            <div class="col-log-2"></div>
+            <div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">Logotipo</div>
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-0"></div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <center id="icono1"><p>x</p></center>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <center id="icono2"><p>x</p></center>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <center id="icono3"><p>x</p></center>
+                </div>
+            </div>
         </header>
-        <nav class="fila"></nav>
-            <a href="index.html">Inicio</a>
-            <a href="columnas.html">Columnas</a>
-            <a href="#">Contacto</a>
-        <section id="seccion3" class="fila"></section>
-        <section id="seccion4" class="fila"></section>
-        <footer class="fila"></footer>
+
+        <!-- Nav -->
+        <nav class="fila">
+            <ul>
+                <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><a href="#">Botón 1</a></li>
+                <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><a href="#">Botón 2</a></li>
+                <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><a href="#">Botón 3</a></li>
+                <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><a href="#">Botón 4</a></li>
+                <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><a href="#">Botón 5</a></li>
+                <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><a href="#">Botón 6</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sección 3 -->
+        <section id="seccion3" class="fila">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <center>
+                    <img src="./asssets/image1.jpg" alt="Imagen 1">
+                    <h1>Lorem Ipsum</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </center>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <center>
+                    <img src="./asssets/image2.jpg" alt="Imagen 2">
+                    <h1>Lorem Ipsum</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </center>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <center>
+                    <img src="./asssets/image3.jpg" alt="Imagen 3">
+                    <h1>Lorem Ipsum</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </center>
+            </div>
+        </section>
+
     </div>
 </body>
 </html>
