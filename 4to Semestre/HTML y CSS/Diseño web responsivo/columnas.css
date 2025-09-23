@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+}
+
 #logo {
     background: url("logo.png") no-repeat center center;
     background-size: contain;
@@ -79,6 +84,8 @@ nav ul li a:active {
     margin: auto;
     width: 100%;
     height: auto;
+    justify-content: space-between;
+    padding: 20px;
 }
 
 /* Fila */
@@ -130,24 +137,223 @@ nav ul li a:active {
     padding: 10px;
 }
 
-/* Pantallas grandes (PC) */
-@media (min-width: 1200px) {
-    .col-12 { width: 100%; }
-    .col-6 { width: 50%; }
-    .col-4 { width: 33.3333%; }
+/* Sección 4 */
+.seccion4 {
+    background-color: #f4f4f9;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
-/* Pantallas medianas (tablets) */
-@media (max-width: 991px) {
-    .col-6, .col-4 {
-        width: 100%;
+.seccion4 h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.seccion4 .contenido-seccion {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.seccion4 img {
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.seccion4 p, 
+.seccion4 ul {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Columna izquierda */
+.columna.izquierda {
+    width: 20%;
+}
+
+.columna.izquierda ul {
+    list-style: none;
+}
+
+.columna.izquierda ul li {
+    margin-bottom: 10px;
+    background: #e066d3;
+    padding: 10px;
+    text-align: center;
+}
+
+.columna.izquierda ul li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+.columna.izquierda ul li a:hover {
+    color: white;
+    background-color: #b84db3;
+    text-decoration: underline;
+}
+
+
+/* Columna central */
+.columna.central {
+    width: 50%;
+    text-align: center;
+}
+
+.columna.central h1 {
+    margin-bottom: 20px;
+}
+
+.columna.central img {
+    width: 250px;
+    margin: 15px 0;
+}
+
+.image-text{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* Columna derecha */
+.columna.derecha {
+    width: 20%;
+    background: #f7f7f7;
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+    
+}
+
+.columna.derecha h3 {
+    background: #8fc93a;
+    padding: 10px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.columna.derecha form input,
+.columna.derecha form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.columna.derecha form button {
+    background: #e06666;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.columna.derecha form button:hover {
+    background: #c45050;
+}
+
+/* Footer */
+footer {
+    background: purple;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+/* Sistema de columnas responsivo */
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Por defecto: columnas ocupan todo (mobile first) */
+[class*="col-"] {
+    flex: 0 0 100%;
+    padding: 10px;
+}
+
+/* Breakpoints */
+@media (min-width: 768px) {   /* Tablets */
+    .col-sm-6 { flex: 0 0 50%; }
+    .col-sm-4 { flex: 0 0 33.33%; }
+    .col-sm-3 { flex: 0 0 25%; }
+}
+
+@media (min-width: 992px) {   /* Escritorio mediano */
+    .col-md-6 { flex: 0 0 50%; }
+    .col-md-4 { flex: 0 0 33.33%; }
+    .col-md-3 { flex: 0 0 25%; }
+    .col-md-2 { flex: 0 0 16.66%; }
+}
+
+@media (min-width: 1200px) {  /* Escritorio grande */
+    .col-lg-6 { flex: 0 0 50%; }
+    .col-lg-4 { flex: 0 0 33.33%; }
+    .col-lg-3 { flex: 0 0 25%; }
+    .col-lg-2 { flex: 0 0 16.66%; }
+}
+
+/* Responsividad para el contenedor */
+@media (max-width: 992px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columna {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .columna.central img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
-/* Pantallas pequeñas (celulares) */
+/* Ajustes extra para celulares pequeños */
 @media (max-width: 600px) {
-    [class*="col-"] {
+
+    .seccion4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-text{
+        flex-direction: column;
+    }
+
+    .columna.izquierda ul li {
+        margin-bottom: 8px;
+        padding: 8px;
+        width: 100%;
+    }
+
+    .columna.derecha {
         width: 100%;
         padding: 10px;
+    }
+
+    .columna.derecha form input,
+    .columna.derecha form button {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .columna.central h1 {
+        font-size: 1.5rem;
     }
 }
