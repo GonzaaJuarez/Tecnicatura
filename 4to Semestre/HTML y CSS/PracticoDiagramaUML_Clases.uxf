@@ -1,0 +1,102 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>18</x><y>54</y><w>1026</w><h>630</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>342</x><y>351</y><w>243</w><h>216</h></coordinates><panel_attributes>Usuario
+--
+-nombre : String
+-dni : String
+-correo : String
+-estadoCuenta : String  // (activo|bloqueado)
+--
+/registrarse()/
+/buscarLibro()/
+/solicitarPrestamo()/
+/reservarLibro()/
+/pagarMulta()/
+--
+Responsibilities
+- Gestionar su cuenta y datos personales
+- Buscar libros y realizar préstamos o reservas
+- Cumplir con las fechas de devolución</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>18</x><y>27</y><w>144</w><h>27</h></coordinates><panel_attributes>gestionBiblioteca</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>342</x><y>108</y><w>243</w><h>216</h></coordinates><panel_attributes>Libro
+--
+-idLibro : String
+-titulo : String
+-autor : String
+-genero : String
+-disponible : boolean
+-estado : String  // (bueno|malo|perdido)
+--
+/marcarDisponible()/
+/marcarPrestado()/
+/actualizarDatos()/
+--
+Responsibilities
+- Representar la información 
+de cada ejemplar
+- Indicar disponibilidad y estado del libro</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>657</x><y>432</y><w>153</w><h>198</h></coordinates><panel_attributes>Prestamo
+--
+-idPrestamo : String
+-fechaPrestamo : Date
+-fechaDevolucion : Date
+-devuelto : boolean
+--
+/registrarPrestamo()/
+/registrarDevolucion()/
+/calcularMulta()/
+--
+Responsibilities
+- Registrar y controlar 
+préstamos activos
+- Calcular multas 
+en caso de demora</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>675</x><y>135</y><w>189</w><h>162</h></coordinates><panel_attributes>Reserva
+--
+-idReserva : String
+-fechaReserva : Date
+-notificado : boolean
+--
+/notificarDisponibilidad()/
+/anularReserva()/
+--
+Responsibilities
+- Mantener el registro de reservas
+- Notificar al usuario cuando 
+el libro esté disponible</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>459</y><w>189</w><h>189</h></coordinates><panel_attributes>Bibliotecario
+--
+-nombre : String
+-legajo : String
+--
+/agregarLibro()/
+/modificarLibro()/
+/darBajaLibro()/
+/registrarDevolucion()/
+/generarMulta()/
+--
+Responsibilities
+- Administrar el catálogo de libros
+- Gestionar préstamos, 
+devoluciones y sanciones</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>873</x><y>432</y><w>135</w><h>198</h></coordinates><panel_attributes>Multa
+--
+-idMulta : String
+-monto : Double
+-fechaEmision : Date
+-pagada : boolean
+--
+/generarMulta()/
+/pagarMulta()/
+--
+Responsibilities
+- Registrar sanciones 
+económicas
+- Controlar el pago y 
+estado de las multas</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>117</y><w>189</w><h>198</h></coordinates><panel_attributes>Catalogo
+--
+-listaLibros : List&lt;Libro&gt;
+--
+/buscarPorTitulo(titulo)/
+/buscarPorAutor(autor)/
+/buscarPorGenero(genero)/
+--
+Responsibilities
+- Mantener el listado general
+de libros disponibles
+- Facilitar la búsqueda de libros
+por diferentes criterios
+- Actualizar el catálogo cuando
+se agregan o eliminan libros</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>576</x><y>468</y><w>99</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>576</x><y>198</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>252</x><y>216</y><w>108</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>100;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>153</x><y>306</y><w>27</w><h>171</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>801</x><y>522</y><w>90</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>252</x><y>612</y><w>243</w><h>27</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>250;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>558</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>756</x><y>288</y><w>27</w><h>126</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>576</x><y>387</y><w>207</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;210;10</additional_attributes></element><element><id>Relation</id><coordinates><x>234</x><y>306</y><w>27</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>234</x><y>387</y><w>126</w><h>27</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>120;10;10;10</additional_attributes></element></diagram>
